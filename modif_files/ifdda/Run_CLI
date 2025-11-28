@@ -1,0 +1,8 @@
+cd ../cdmlib 
+gfortran -Warray-bounds -fcheck=bounds -w -cpp -DUSE_FFTW -DUSE_HDF5 -O3 -mcmodel=large -fopenmp -c *.f -I/usr/include/hdf5/serial -I/usr/include -L/usr/lib/x86_64-linux-gnu -lhdf5_serialhl_fortran -lhdf5_serial_hl -lhdf5_serial_fortran -lhdf5_serial
+rm libcdm.a
+ar vq libcdm.a *.o
+cd ../tests
+cd test_command
+gfortran -Warray-bounds -fcheck=bounds -w -cpp -DUSE_FFTW -DUSE_HDF5 -O3 -mcmodel=large -fopenmp -c main.f -I/usr/include/hdf5/serial -I/usr/include -L/usr/lib/x86_64-linux-gnu -lhdf5_serialhl_fortran -lhdf5_serial_hl -lhdf5_serial_fortran -lhdf5_serial
+gfortran -Warray-bounds -fcheck=bounds -w -cpp -DUSE_FFTW -DUSE_HDF5 -O3 -mcmodel=large -fopenmp -o ifdda main.o ../../cdmlib/libcdm.a -L/usr/lib/x86_64-linux-gnu -lfftw3_omp -lfftw3 -lm -I/usr/include/hdf5/serial -I/usr/include -L/usr/lib/x86_64-linux-gnu -lhdf5_serialhl_fortran -lhdf5_serial_hl -lhdf5_serial_fortran -lhdf5_serial
