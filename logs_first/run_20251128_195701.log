@@ -1,0 +1,4042 @@
+===== DDA batch run started: ven. 28 nov. 2025 19:57:01 CET on c-2024-057 =====
+Main log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/run_20251128_195701.log
+
+
+==============================
+          N = 150
+==============================
+
+### ADDA (MPI) runs, N=150
+
+---- ADDA: N=150, mpirun -np 1 ----
+all data is saved in 'run082_box_g150_m1.313'
+box dimensions: 150x150x150
+lambda: 0.5   Dipoles/lambda: 31.4159
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 3375000
+Memory usage for MatVec matrices (per processor): 1561.5 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing FFTW3
+Total memory usage: 2897.2 MB
+Maximum memory usage of single processor: 2897.2 MB
+
+here we go, calc Y
+
+CoupleConstant: 1.875675177e-07+4.654291949e-11i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60813630483392389E-01  + 
+RE_002 = 4.28302725238365323E-01  + 
+RE_003 = 2.65248343078125948E-01  + 
+RE_004 = 2.63946934877003159E-01  + 
+RE_005 = 2.38232931296231465E-01  + 
+RE_006 = 1.70032872079774522E-01  + 
+RE_007 = 1.38799526809855661E-01  + 
+RE_008 = 1.60997680593865961E-01  - 
+RE_009 = 1.31596743102605024E-01  + 
+RE_010 = 7.09054375613782151E-01  - 
+RE_011 = 2.19747540032673327E-01  -+
+RE_012 = 4.64477144247741724E-01  - 
+RE_013 = 1.10293407819950798E-01  + 
+RE_014 = 8.03070625952796158E-02  + 
+RE_015 = 7.25650855399551653E-02  + 
+RE_016 = 7.52025753353570553E-02  - 
+RE_017 = 1.18100259800529808E-01  - 
+RE_018 = 4.44283538886133533E-02  + 
+RE_019 = 4.71816544126850562E-02  - 
+RE_020 = 1.97314811501959238E-02  + 
+RE_021 = 1.78519204616991410E-02  + 
+RE_022 = 1.32799093557540437E-02  + 
+RE_023 = 1.12834890536014573E-02  + 
+RE_024 = 1.08345281814982396E-02  + 
+RE_025 = 9.58677899305727596E-03  + 
+RE_026 = 7.00852853344829420E-03  + 
+RE_027 = 6.34705140797437763E-03  + 
+RE_028 = 7.19818815039598246E-03  - 
+RE_029 = 8.29243420153295309E-03  - 
+RE_030 = 5.19459396605793326E-03  + 
+RE_031 = 2.85261429380641437E-03  + 
+RE_032 = 2.12159087689920735E-03  + 
+RE_033 = 1.68376085476616179E-03  + 
+RE_034 = 1.57847504927871368E-03  + 
+RE_035 = 1.32175320667616810E-03  + 
+RE_036 = 1.24658725810911021E-03  + 
+RE_037 = 1.02730219405196450E-03  + 
+RE_038 = 8.18204874565388752E-04  + 
+RE_039 = 8.48131008847023064E-04  - 
+RE_040 = 7.65468229315022317E-04  + 
+RE_041 = 7.52560978747702993E-04  + 
+RE_042 = 7.07323661332060231E-04  + 
+RE_043 = 6.38143746805556610E-04  + 
+RE_044 = 3.47632805445112253E-04  + 
+RE_045 = 3.76568215728257446E-04  - 
+RE_046 = 2.95834225445479478E-04  + 
+RE_047 = 1.91323681688550386E-04  + 
+RE_048 = 1.69045607889698314E-04  + 
+RE_049 = 1.54811501062167132E-04  + 
+RE_050 = 1.74704792849133216E-04  - 
+RE_051 = 1.47878934846448133E-04  + 
+RE_052 = 1.14094541640532836E-04  + 
+RE_053 = 9.98762915175471663E-05  + 
+RE_054 = 8.89339106797913670E-05  + 
+Cext	= 24.729875277346014
+Qext	= 3.5890128352901587
+Cabs	= -1.3843295879275064e-17
+Qabs	= -2.0090585187443607e-18
+	Command being timed: "mpirun -np 1 ./adda_mpi -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 150 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 136.14
+	System time (seconds): 2.49
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:19.37
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2355960
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7
+	Minor (reclaiming a frame) page faults: 626863
+	Voluntary context switches: 2135
+	Involuntary context switches: 638
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run082_box_g150_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/adda/adda_log_N=150_np=1.log
+Removing ADDA run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run082_box_g150_m1.313
+
+---- ADDA: N=150, mpirun -np 2 ----
+all data is saved in 'run083_box_g150_m1.313'
+box dimensions: 150x150x150
+lambda: 0.5   Dipoles/lambda: 31.4159
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 3375000
+Memory usage for MatVec matrices (per processor): 630.4 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing FFTW3
+Total memory usage: 2596.5 MB
+Maximum memory usage of single processor: 1298.2 MB
+
+here we go, calc Y
+
+CoupleConstant: 1.875675177e-07+4.654291949e-11i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60813630489967130E-01  + 
+RE_002 = 4.28302725221116010E-01  + 
+RE_003 = 2.65248343107492124E-01  + 
+RE_004 = 2.63946935623785017E-01  + 
+RE_005 = 2.38232938633200081E-01  + 
+RE_006 = 1.70032858276361831E-01  + 
+RE_007 = 1.38799496653660676E-01  + 
+RE_008 = 1.60995143881747071E-01  - 
+RE_009 = 1.31610163551664522E-01  + 
+RE_010 = 7.15057253290278694E-01  - 
+RE_011 = 2.18397809709830110E-01  -+
+RE_012 = 4.53308668917553059E-01  - 
+RE_013 = 1.12431045767025811E-01  + 
+RE_014 = 8.14455168204795826E-02  + 
+RE_015 = 7.38630449835463998E-02  + 
+RE_016 = 7.62466346207575502E-02  - 
+RE_017 = 1.22132180240495547E-01  - 
+RE_018 = 4.48875407882418434E-02  + 
+RE_019 = 4.68937554997817668E-02  - 
+RE_020 = 1.66588791229431848E-02  + 
+RE_021 = 1.73942851046926007E-02  - 
+RE_022 = 1.32099579992333918E-02  + 
+RE_023 = 1.13246486747917447E-02  + 
+RE_024 = 1.06916810289410056E-02  + 
+RE_025 = 9.70994784183619453E-03  + 
+RE_026 = 7.03389923663984718E-03  + 
+RE_027 = 6.39290811592076874E-03  + 
+RE_028 = 7.32637161706101766E-03  - 
+RE_029 = 8.41912196372316193E-03  - 
+RE_030 = 5.26806649764881112E-03  + 
+RE_031 = 2.87753421303296730E-03  + 
+RE_032 = 2.11136390300922490E-03  + 
+RE_033 = 1.67808621254031311E-03  + 
+RE_034 = 1.56822643901364188E-03  + 
+RE_035 = 1.32068322540858092E-03  + 
+RE_036 = 1.22670346708481938E-03  + 
+RE_037 = 1.07232238926408354E-03  + 
+RE_038 = 8.95081039949051165E-04  + 
+RE_039 = 8.62132852408113975E-04  + 
+RE_040 = 7.89933434238160878E-04  + 
+RE_041 = 7.61549623664435995E-04  + 
+RE_042 = 7.37044537862216530E-04  + 
+RE_043 = 6.46306767299447749E-04  + 
+RE_044 = 3.54426897632543949E-04  + 
+RE_045 = 3.84303644980401725E-04  - 
+RE_046 = 3.02225916629754996E-04  + 
+RE_047 = 1.93959951165032212E-04  + 
+RE_048 = 1.70873721977629281E-04  + 
+RE_049 = 1.56422923434446992E-04  + 
+RE_050 = 1.76990643423791702E-04  - 
+RE_051 = 1.49919714099245487E-04  + 
+RE_052 = 1.17253116293271830E-04  + 
+RE_053 = 1.03060970223406152E-04  + 
+RE_054 = 9.24953003645230906E-05  + 
+Cext	= 24.72987527738487
+Qext	= 3.5890128352957977
+Cabs	= -1.3843303584814992e-17
+Qabs	= -2.0090596370387876e-18
+	Command being timed: "mpirun -np 2 ./adda_mpi -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 150 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 184.58
+	System time (seconds): 6.01
+	Percent of CPU this job got: 198%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:35.84
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1351696
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7
+	Minor (reclaiming a frame) page faults: 737161
+	Voluntary context switches: 3413
+	Involuntary context switches: 1201
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run083_box_g150_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/adda/adda_log_N=150_np=2.log
+Removing ADDA run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run083_box_g150_m1.313
+
+---- ADDA: N=150, mpirun -np 5 ----
+all data is saved in 'run084_box_g150_m1.313'
+box dimensions: 150x150x150
+lambda: 0.5   Dipoles/lambda: 31.4159
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 3375000
+Memory usage for MatVec matrices (per processor): 220.0 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing FFTW3
+Total memory usage: 2435.8 MB
+Maximum memory usage of single processor: 487.2 MB
+
+here we go, calc Y
+
+CoupleConstant: 1.875675177e-07+4.654291949e-11i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60813630489389259E-01  + 
+RE_002 = 4.28302725154091957E-01  + 
+RE_003 = 2.65248343185720103E-01  + 
+RE_004 = 2.63946937845713270E-01  + 
+RE_005 = 2.38232960528546117E-01  + 
+RE_006 = 1.70032817041509382E-01  + 
+RE_007 = 1.38799406554870663E-01  + 
+RE_008 = 1.60987570456306239E-01  - 
+RE_009 = 1.31650300877197202E-01  + 
+RE_010 = 7.29831173312271320E-01  - 
+RE_011 = 2.13911801818946506E-01  -+
+RE_012 = 1.60104365726759512E-01  -+
+RE_013 = 1.20335460157405455E-01  + 
+RE_014 = 8.02227683516206352E-02  + 
+RE_015 = 7.31921777407797403E-02  + 
+RE_016 = 7.39381492054305423E-02  - 
+RE_017 = 1.33053998690822906E-01  - 
+RE_018 = 4.63982914231751142E-02  + 
+RE_019 = 4.67446903759700660E-02  - 
+RE_020 = 1.67108884083193091E-02  + 
+RE_021 = 1.76265191483991716E-02  - 
+RE_022 = 2.07605335472932466E-02  - 
+RE_023 = 1.09899478094483277E-02  + 
+RE_024 = 9.95510387353020117E-03  + 
+RE_025 = 9.39936928663343864E-03  + 
+RE_026 = 7.14840787496772746E-03  + 
+RE_027 = 6.53186684070190034E-03  + 
+RE_028 = 6.64509356280284461E-03  - 
+RE_029 = 7.90357790737932463E-03  - 
+RE_030 = 4.83896912603462917E-03  + 
+RE_031 = 2.91816193616750968E-03  + 
+RE_032 = 2.22630111681453458E-03  + 
+RE_033 = 1.76045108282394443E-03  + 
+RE_034 = 1.64543674268758560E-03  + 
+RE_035 = 1.36179879383270075E-03  + 
+RE_036 = 1.28018401631258038E-03  + 
+RE_037 = 1.09626834658784009E-03  + 
+RE_038 = 8.88375783972206005E-04  + 
+RE_039 = 8.97027137423974763E-04  - 
+RE_040 = 8.24082691310305620E-04  + 
+RE_041 = 8.04346480672495784E-04  + 
+RE_042 = 7.59317777058531040E-04  + 
+RE_043 = 6.80527451989314139E-04  + 
+RE_044 = 3.65817501092608377E-04  + 
+RE_045 = 3.95056585166845609E-04  - 
+RE_046 = 3.13027525514121487E-04  + 
+RE_047 = 2.00070468302152238E-04  + 
+RE_048 = 1.75518583365919260E-04  + 
+RE_049 = 1.59424114561613475E-04  + 
+RE_050 = 1.80123465394273002E-04  - 
+RE_051 = 1.52084797188836105E-04  + 
+RE_052 = 1.16531289498278444E-04  + 
+RE_053 = 1.00969143884284412E-04  + 
+RE_054 = 8.98664534528749903E-05  + 
+Cext	= 24.729875277383822
+Qext	= 3.5890128352956459
+Cabs	= -1.3843334593396566e-17
+Qabs	= -2.0090641372716446e-18
+	Command being timed: "mpirun -np 5 ./adda_mpi -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 150 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 291.23
+	System time (seconds): 10.09
+	Percent of CPU this job got: 495%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:00.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 521256
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7
+	Minor (reclaiming a frame) page faults: 688271
+	Voluntary context switches: 8071
+	Involuntary context switches: 1607
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run084_box_g150_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/adda/adda_log_N=150_np=5.log
+Removing ADDA run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run084_box_g150_m1.313
+
+---- ADDA: N=150, mpirun -np 10 ----
+all data is saved in 'run085_box_g150_m1.313'
+box dimensions: 150x150x150
+lambda: 0.5   Dipoles/lambda: 31.4159
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 3375000
+Memory usage for MatVec matrices (per processor): 107.9 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing FFTW3
+Total memory usage: 2415.2 MB
+Maximum memory usage of single processor: 241.5 MB
+
+here we go, calc Y
+
+CoupleConstant: 1.875675177e-07+4.654291949e-11i
+x_0 = 0
+RE_000 = 9.99999999999999889E-01
+RE_001 = 5.60813630487582815E-01  + 
+RE_002 = 4.28302725157073128E-01  + 
+RE_003 = 2.65248343179728674E-01  + 
+RE_004 = 2.63946937699425233E-01  + 
+RE_005 = 2.38232959098804320E-01  + 
+RE_006 = 1.70032819740884134E-01  + 
+RE_007 = 1.38799412449872789E-01  + 
+RE_008 = 1.60988066692896004E-01  - 
+RE_009 = 1.31647670390006521E-01  + 
+RE_010 = 7.29019371908640745E-01  - 
+RE_011 = 2.14228329874477125E-01  -+
+RE_012 = 1.62321713850149180E-01  -+
+RE_013 = 1.20616529027293154E-01  + 
+RE_014 = 7.87027626216173087E-02  + 
+RE_015 = 7.18297852612536369E-02  + 
+RE_016 = 7.28087396373602730E-02  - 
+RE_017 = 1.28901782271869186E-01  - 
+RE_018 = 4.37487848298409726E-02  + 
+RE_019 = 4.18745890736453644E-02  + 
+RE_020 = 1.79843671101544526E-02  + 
+RE_021 = 1.59435222858835893E-02  + 
+RE_022 = 1.26783837547074767E-02  + 
+RE_023 = 1.02996362209678647E-02  + 
+RE_024 = 1.42341009905094500E-02  - 
+RE_025 = 9.75002515564987564E-03  + 
+RE_026 = 6.63114164468746846E-03  + 
+RE_027 = 5.92102067274680177E-03  + 
+RE_028 = 6.59136730321228416E-03  - 
+RE_029 = 7.58023284458520744E-03  - 
+RE_030 = 4.62775644912042598E-03  + 
+RE_031 = 2.69204970324080908E-03  + 
+RE_032 = 2.08739362032297560E-03  + 
+RE_033 = 1.66578222526789612E-03  + 
+RE_034 = 1.55746831507969107E-03  + 
+RE_035 = 1.30843331083070570E-03  + 
+RE_036 = 1.21613932767090384E-03  + 
+RE_037 = 1.05740043521463625E-03  + 
+RE_038 = 8.79273912484805457E-04  + 
+RE_039 = 8.61061048374064074E-04  + 
+RE_040 = 7.98674818934268465E-04  + 
+RE_041 = 7.72275029348831635E-04  + 
+RE_042 = 7.41873917237868222E-04  + 
+RE_043 = 6.49615348928856817E-04  + 
+RE_044 = 3.56130051413186609E-04  + 
+RE_045 = 3.84285160003279937E-04  - 
+RE_046 = 3.04475803240516379E-04  + 
+RE_047 = 1.96255970366153936E-04  + 
+RE_048 = 1.72641321616985447E-04  + 
+RE_049 = 1.58060226619045023E-04  + 
+RE_050 = 1.78805250606279604E-04  - 
+RE_051 = 1.49834727387452736E-04  + 
+RE_052 = 1.16161989938602881E-04  + 
+RE_053 = 1.00307674129019819E-04  + 
+RE_054 = 8.94772989800478292E-05  + 
+Cext	= 24.729875277374298
+Qext	= 3.5890128352942634
+Cabs	= -1.3843326601526133e-17
+Qabs	= -2.0090629774224649e-18
+	Command being timed: "mpirun -np 10 ./adda_mpi -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 150 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 630.42
+	System time (seconds): 17.80
+	Percent of CPU this job got: 990%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:05.45
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 271336
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 10
+	Minor (reclaiming a frame) page faults: 688252
+	Voluntary context switches: 18214
+	Involuntary context switches: 3718
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run085_box_g150_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/adda/adda_log_N=150_np=10.log
+Removing ADDA run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run085_box_g150_m1.313
+
+---- ADDA: N=150, mpirun -np 15 ----
+all data is saved in 'run086_box_g150_m1.313'
+box dimensions: 150x150x150
+lambda: 0.5   Dipoles/lambda: 31.4159
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 3375000
+Memory usage for MatVec matrices (per processor): 73.3 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing FFTW3
+Total memory usage: 2435.8 MB
+Maximum memory usage of single processor: 162.4 MB
+
+here we go, calc Y
+
+CoupleConstant: 1.875675177e-07+4.654291949e-11i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60813630488357417E-01  + 
+RE_002 = 4.28302725163474673E-01  + 
+RE_003 = 2.65248343173232870E-01  + 
+RE_004 = 2.63946937505635582E-01  + 
+RE_005 = 2.38232957183914101E-01  + 
+RE_006 = 1.70032823344339529E-01  + 
+RE_007 = 1.38799420322434142E-01  + 
+RE_008 = 1.60988728601989012E-01  - 
+RE_009 = 1.31644157710477827E-01  + 
+RE_010 = 7.27898397628203520E-01  - 
+RE_011 = 2.14645550496496335E-01  -+
+RE_012 = 1.66411810861070958E-01  -+
+RE_013 = 2.83125585463689822E-01  - 
+RE_014 = 7.93172107339336074E-02  + 
+RE_015 = 7.28680699722584757E-02  + 
+RE_016 = 7.42011020184786679E-02  - 
+RE_017 = 1.25092571846426553E-01  - 
+RE_018 = 4.32248333108484761E-02  + 
+RE_019 = 4.18589918924615820E-02  + 
+RE_020 = 1.59774529930616950E-02  + 
+RE_021 = 1.66635324778084577E-02  - 
+RE_022 = 1.20912104161983083E-02  + 
+RE_023 = 1.06278645474764712E-02  + 
+RE_024 = 9.77489028276423005E-03  + 
+RE_025 = 9.49819799824596321E-03  + 
+RE_026 = 7.33388152066088983E-03  + 
+RE_027 = 6.61624318554378168E-03  + 
+RE_028 = 6.80977834682348904E-03  - 
+RE_029 = 8.10472889902625650E-03  - 
+RE_030 = 5.00622563141052152E-03  + 
+RE_031 = 2.91587230110315881E-03  + 
+RE_032 = 2.20102674321043766E-03  + 
+RE_033 = 1.75459897913592382E-03  + 
+RE_034 = 1.65688921054340946E-03  + 
+RE_035 = 1.37750031909259960E-03  + 
+RE_036 = 1.29057853426718530E-03  + 
+RE_037 = 1.08138682010005486E-03  + 
+RE_038 = 8.64889053821515799E-04  + 
+RE_039 = 8.98974331041235090E-04  - 
+RE_040 = 8.15929797621732186E-04  + 
+RE_041 = 8.00507488973674374E-04  + 
+RE_042 = 7.54010871288910106E-04  + 
+RE_043 = 6.77864102930444360E-04  + 
+RE_044 = 3.65132337448470479E-04  + 
+RE_045 = 3.95504279416282727E-04  - 
+RE_046 = 3.09174924813056273E-04  + 
+RE_047 = 1.97979875214477345E-04  + 
+RE_048 = 1.73115329818841263E-04  + 
+RE_049 = 1.58338951571499874E-04  + 
+RE_050 = 1.79082110964843546E-04  - 
+RE_051 = 1.51710936365731584E-04  + 
+RE_052 = 1.18447739081443276E-04  + 
+RE_053 = 1.03830865683705262E-04  + 
+RE_054 = 9.27661406643371246E-05  + 
+Cext	= 24.729875277392328
+Qext	= 3.58901283529688
+Cabs	= -1.384334314833299e-17
+Qabs	= -2.0090653788378188e-18
+	Command being timed: "mpirun -np 15 ./adda_mpi -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 150 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 914.13
+	System time (seconds): 21.74
+	Percent of CPU this job got: 1483%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:03.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 186560
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 16
+	Minor (reclaiming a frame) page faults: 708670
+	Voluntary context switches: 30563
+	Involuntary context switches: 5347
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run086_box_g150_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/adda/adda_log_N=150_np=15.log
+Removing ADDA run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run086_box_g150_m1.313
+
+### IFDDA (OpenMP) runs, N=150
+
+---- IFDDA: N=150, OMP_NUM_THREADS=1 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          150
+ Size of the box      :          150         150         150
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :      3375000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :     3375000
+ Number of subunit for the mesh   :     3375000
+ Size of the mesh size            :   1.5915494309189534E-008
+ Number of subunit along x y and z:         150         150         150
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU   1.0000000000000000      NORM   4495994414.9696693     
+ RESIDU  0.56081363047393618     
+ RESIDU  0.42830272527656471     
+ RESIDU  0.26524834302009420     
+ RESIDU  0.26394693335765357     
+ RESIDU  0.23823291626863230     
+ RESIDU  0.17003290027658552     
+ RESIDU  0.13879958833236838     
+ RESIDU  0.16100287456581505     
+ RESIDU  0.13156930515464754     
+ RESIDU  0.69530959163453943     
+ RESIDU  0.22229886211804104     
+ RESIDU  0.29180034439997088     
+ RESIDU  0.10925636426185005     
+ RESIDU   7.9950317475173810E-002
+ RESIDU   7.2090584035484156E-002
+ RESIDU   7.4687904707548367E-002
+ RESIDU  0.11308394537627328     
+ RESIDU   4.2927983962843343E-002
+ RESIDU   4.5953928035913215E-002
+ RESIDU   2.2378816604784368E-002
+ RESIDU   1.7758888691647028E-002
+ RESIDU   1.3247438449611508E-002
+ RESIDU   1.1001563584535908E-002
+ RESIDU   1.0571901254101601E-002
+ RESIDU   9.5870715196876323E-003
+ RESIDU   7.0030630725851171E-003
+ RESIDU   6.3972313071527023E-003
+ RESIDU   7.1492518759142445E-003
+ RESIDU   8.3094428820554220E-003
+ RESIDU   5.1999427459900119E-003
+ RESIDU   2.8980350677753793E-003
+ RESIDU   2.1613587247911428E-003
+ RESIDU   1.7111617292954941E-003
+ RESIDU   1.5774282290795067E-003
+ RESIDU   1.3305794584488014E-003
+ RESIDU   1.2580981707349282E-003
+ RESIDU   1.0836447080756603E-003
+ RESIDU   9.0657763069568545E-004
+ RESIDU   8.6498895780421378E-004
+ RESIDU   8.0292076842808813E-004
+ RESIDU   7.5970872233517203E-004
+ RESIDU   7.3038287073638600E-004
+ RESIDU   6.5761529214238598E-004
+ RESIDU   3.5684930722513678E-004
+ RESIDU   3.8776503975082821E-004
+ RESIDU   3.0503202776810233E-004
+ RESIDU   1.9466159267256315E-004
+ RESIDU   1.7214518024976267E-004
+ RESIDU   1.5647166310986299E-004
+ RESIDU   1.7714434665561983E-004
+ RESIDU   1.4953282415693174E-004
+ RESIDU   1.1632972252220025E-004
+ RESIDU   1.0203401580769053E-004
+ RESIDU   8.5175681122978179E-005
+ CPU time to solve Ax=b in second  :    181.19526299999998     
+ Real time to solve Ax=b in second :    181.22399999999999     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.5175681122982828E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4729875277389057E-011 m2
+ Csca =    2.4729875277389057E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    190.11556999999999     
+ Real time to execute the code in second :    190.14800000000000     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 150 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 187.99
+	System time (seconds): 2.39
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:10.41
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6934244
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2021491
+	Voluntary context switches: 48
+	Involuntary context switches: 1131
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+---- IFDDA: N=150, OMP_NUM_THREADS=2 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          150
+ Size of the box      :          150         150         150
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :      3375000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :     3375000
+ Number of subunit for the mesh   :     3375000
+ Size of the mesh size            :   1.5915494309189534E-008
+ Number of subunit along x y and z:         150         150         150
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU  0.96722573874797912      NORM   4495994414.7969007     
+ RESIDU  0.56081363048872612     
+ RESIDU  0.42830272516558121     
+ RESIDU  0.26524834317131979     
+ RESIDU  0.26394693744604142     
+ RESIDU  0.23823295660410251     
+ RESIDU  0.17003282443998965     
+ RESIDU  0.13879942273664655     
+ RESIDU  0.16098892731136952     
+ RESIDU  0.13164310154230857     
+ RESIDU  0.72757274123732985     
+ RESIDU  0.21477209320514273     
+ RESIDU  0.16794357248814168     
+ RESIDU  0.19391536789918595     
+ RESIDU   8.9392858416850351E-002
+ RESIDU   8.1308484982079127E-002
+ RESIDU   8.2916884349222855E-002
+ RESIDU  0.15433745252795822     
+ RESIDU   5.1253754073494022E-002
+ RESIDU   3.6949045786674184E-002
+ RESIDU   1.5382847703015306E-002
+ RESIDU   1.6924949041822450E-002
+ RESIDU   1.2967257513300868E-002
+ RESIDU   1.0944886257620634E-002
+ RESIDU   1.0594213796005820E-002
+ RESIDU   9.8673955510205046E-003
+ RESIDU   7.0235984413337289E-003
+ RESIDU   6.4493469883743467E-003
+ RESIDU   8.1955826166753391E-003
+ RESIDU   9.1401546995117169E-003
+ RESIDU   5.8562208286673696E-003
+ RESIDU   2.9700429623757698E-003
+ RESIDU   2.1105042332718437E-003
+ RESIDU   1.6744012611164248E-003
+ RESIDU   1.5700390979362995E-003
+ RESIDU   1.3207918264399369E-003
+ RESIDU   1.2328801690275313E-003
+ RESIDU   1.0502190492588507E-003
+ RESIDU   8.7170494632558783E-004
+ RESIDU   8.4597924463991961E-004
+ RESIDU   7.7608440991133699E-004
+ RESIDU   7.6055979315784751E-004
+ RESIDU   7.0945208560997685E-004
+ RESIDU   6.3772516553828405E-004
+ RESIDU   3.5278709816501336E-004
+ RESIDU   3.8371438553555656E-004
+ RESIDU   2.9602564748008875E-004
+ RESIDU   1.9035026777475091E-004
+ RESIDU   1.6514950282916664E-004
+ RESIDU   1.5127426451390532E-004
+ RESIDU   1.7156943840187152E-004
+ RESIDU   1.4728374464757042E-004
+ RESIDU   1.1490461817743403E-004
+ RESIDU   1.0296560100147323E-004
+ RESIDU   8.6506417242846842E-005
+ CPU time to solve Ax=b in second  :    247.22920900000000     
+ Real time to solve Ax=b in second :    123.64400000000001     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.6506417242848807E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4729875277332961E-011 m2
+ Csca =    2.4729875277332961E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    255.42471000000000     
+ Real time to execute the code in second :    127.81100000000001     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 150 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 253.59
+	System time (seconds): 2.10
+	Percent of CPU this job got: 199%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:08.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6934836
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1915444
+	Voluntary context switches: 59
+	Involuntary context switches: 1662
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+---- IFDDA: N=150, OMP_NUM_THREADS=5 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          150
+ Size of the box      :          150         150         150
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :      3375000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :     3375000
+ Number of subunit for the mesh   :     3375000
+ Size of the mesh size            :   1.5915494309189534E-008
+ Number of subunit along x y and z:         150         150         150
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU  0.80960694626394225      NORM   4495994414.7711020     
+ RESIDU  0.56081363049094091     
+ RESIDU  0.42830272514900153     
+ RESIDU  0.26524834319387108     
+ RESIDU  0.26394693805604102     
+ RESIDU  0.23823296262055246     
+ RESIDU  0.17003281313120583     
+ RESIDU  0.13879939802988259     
+ RESIDU  0.16098684873049735     
+ RESIDU  0.13165413108639212     
+ RESIDU  0.73100173044096994     
+ RESIDU  0.21344778624778862     
+ RESIDU  0.15782574890186088     
+ RESIDU  0.12055420306549067     
+ RESIDU   8.1353519906108451E-002
+ RESIDU   7.4037315459070718E-002
+ RESIDU   7.4834443459618885E-002
+ RESIDU  0.13377580092179259     
+ RESIDU   4.5543852295707045E-002
+ RESIDU   5.3006444129431653E-002
+ RESIDU   2.4018429345759106E-002
+ RESIDU   1.8382442412044377E-002
+ RESIDU   1.2640940474925684E-002
+ RESIDU   1.0259307560000149E-002
+ RESIDU   1.3279448295196740E-002
+ RESIDU   9.5703645354642316E-003
+ RESIDU   7.1251131595681198E-003
+ RESIDU   6.4607157935464990E-003
+ RESIDU   6.7945622513232050E-003
+ RESIDU   8.0358194834035251E-003
+ RESIDU   4.9125828445125176E-003
+ RESIDU   2.8914282811447478E-003
+ RESIDU   2.1687544901737910E-003
+ RESIDU   1.7235191380328267E-003
+ RESIDU   1.6293739630109641E-003
+ RESIDU   1.3495637384850422E-003
+ RESIDU   1.2675078657368240E-003
+ RESIDU   1.0687378784998566E-003
+ RESIDU   8.5800814658412987E-004
+ RESIDU   8.8804291477786665E-004
+ RESIDU   8.0729544997895240E-004
+ RESIDU   7.9107143443524067E-004
+ RESIDU   7.4869452899647016E-004
+ RESIDU   6.7208781660905732E-004
+ RESIDU   3.6148746489343458E-004
+ RESIDU   3.9104865975996548E-004
+ RESIDU   3.0788552491087755E-004
+ RESIDU   1.9761896032827075E-004
+ RESIDU   1.7270872699471452E-004
+ RESIDU   1.5739308332238686E-004
+ RESIDU   1.7760764195023793E-004
+ RESIDU   1.5012876209581218E-004
+ RESIDU   1.1685194572240600E-004
+ RESIDU   1.0280343327230106E-004
+ RESIDU   8.6213930814428217E-005
+ CPU time to solve Ax=b in second  :    343.14392299999997     
+ Real time to solve Ax=b in second :    68.698999999999998     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.6213930814431388E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4729875277374262E-011 m2
+ Csca =    2.4729875277374262E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    352.83443299999999     
+ Real time to execute the code in second :    70.867999999999995     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 150 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 350.22
+	System time (seconds): 2.91
+	Percent of CPU this job got: 496%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:11.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6935764
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2333131
+	Voluntary context switches: 3497
+	Involuntary context switches: 1834
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+---- IFDDA: N=150, OMP_NUM_THREADS=10 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          150
+ Size of the box      :          150         150         150
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :      3375000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :     3375000
+ Number of subunit for the mesh   :     3375000
+ Size of the mesh size            :   1.5915494309189534E-008
+ Number of subunit along x y and z:         150         150         150
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU  0.50658040201126175      NORM   4495994414.7841072     
+ RESIDU  0.56081363048981403     
+ RESIDU  0.42830272515733003     
+ RESIDU  0.26524834318250468     
+ RESIDU  0.26394693774903943     
+ RESIDU  0.23823295958631938     
+ RESIDU  0.17003281883436383     
+ RESIDU  0.13879941047250025     
+ RESIDU  0.16098789919750345     
+ RESIDU  0.13164855957966060     
+ RESIDU  0.72930437932760961     
+ RESIDU  0.21412248806309414     
+ RESIDU  0.16149600788909221     
+ RESIDU  0.12033377054852556     
+ RESIDU   7.9286941963189944E-002
+ RESIDU   7.2376585819595135E-002
+ RESIDU   7.3232229500959589E-002
+ RESIDU  0.13061041271916882     
+ RESIDU   4.3217279466260916E-002
+ RESIDU   3.5164350821252535E-002
+ RESIDU   1.7817774870291885E-002
+ RESIDU   1.6889362769542757E-002
+ RESIDU   1.2815769757912428E-002
+ RESIDU   1.0401980677564451E-002
+ RESIDU   9.9669552384617117E-003
+ RESIDU   9.3447332294490162E-003
+ RESIDU   6.5396030909625671E-003
+ RESIDU   5.8832803520174875E-003
+ RESIDU   6.9071517810558210E-003
+ RESIDU   7.5896060362828721E-003
+ RESIDU   4.6812360950427749E-003
+ RESIDU   2.6769126962338128E-003
+ RESIDU   2.0725685536660821E-003
+ RESIDU   1.6586428681856615E-003
+ RESIDU   1.5396123900320332E-003
+ RESIDU   1.2945890431480935E-003
+ RESIDU   1.2131455980617862E-003
+ RESIDU   1.0472323816810953E-003
+ RESIDU   8.6325437901340848E-004
+ RESIDU   8.3999714348636958E-004
+ RESIDU   7.8201841397575449E-004
+ RESIDU   7.5137355129363775E-004
+ RESIDU   7.1807791556397502E-004
+ RESIDU   6.3674979376141894E-004
+ RESIDU   3.4802963389804270E-004
+ RESIDU   3.7653948890930075E-004
+ RESIDU   2.9795159051503311E-004
+ RESIDU   1.9288651687973186E-004
+ RESIDU   1.6945625639260776E-004
+ RESIDU   1.5566199331925739E-004
+ RESIDU   1.7612424568834805E-004
+ RESIDU   1.4768039964460449E-004
+ RESIDU   1.1367177204028812E-004
+ RESIDU   9.8345682317125388E-005
+ RESIDU   8.1431399318689755E-005
+ CPU time to solve Ax=b in second  :    757.59256599999992     
+ Real time to solve Ax=b in second :    77.224999999999994     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.1431399318691774E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4729875277377932E-011 m2
+ Csca =    2.4729875277377932E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    771.64748400000008     
+ Real time to execute the code in second :    78.971000000000004     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 150 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 756.48
+	System time (seconds): 15.52
+	Percent of CPU this job got: 974%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:19.23
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6937808
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1943860
+	Voluntary context switches: 5020
+	Involuntary context switches: 5201
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+---- IFDDA: N=150, OMP_NUM_THREADS=15 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          150
+ Size of the box      :          150         150         150
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :      3375000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :     3375000
+ Number of subunit for the mesh   :     3375000
+ Size of the mesh size            :   1.5915494309189534E-008
+ Number of subunit along x y and z:         150         150         150
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU  0.50326371850862817      NORM   4495994414.7971125     
+ RESIDU  0.56081363048870414     
+ RESIDU  0.42830272516569956     
+ RESIDU  0.26524834317110002     
+ RESIDU  0.26394693744061548     
+ RESIDU  0.23823295654627966     
+ RESIDU  0.17003282455037044     
+ RESIDU  0.13879942296127429     
+ RESIDU  0.16098894950341872     
+ RESIDU  0.13164298663108970     
+ RESIDU  0.72752158860899740     
+ RESIDU  0.21478400719236804     
+ RESIDU  0.16812848436831235     
+ RESIDU  0.18605992043721123     
+ RESIDU   9.0817974392528492E-002
+ RESIDU   8.2712773867209446E-002
+ RESIDU   8.4634234876450540E-002
+ RESIDU  0.17164363623794596     
+ RESIDU   5.0571707763101340E-002
+ RESIDU   4.5496120979960558E-002
+ RESIDU   1.6790906592400824E-002
+ RESIDU   1.5852245361244400E-002
+ RESIDU   1.2693649140340473E-002
+ RESIDU   1.0678429762466995E-002
+ RESIDU   1.4631210638202642E-002
+ RESIDU   1.0516252463903534E-002
+ RESIDU   7.2374296069567532E-003
+ RESIDU   6.6810060006397909E-003
+ RESIDU   7.5076278867337847E-003
+ RESIDU   8.7492104946885491E-003
+ RESIDU   5.4103321202191648E-003
+ RESIDU   2.9358774214733679E-003
+ RESIDU   2.1149491938752341E-003
+ RESIDU   1.6702536451007493E-003
+ RESIDU   1.5826597164025045E-003
+ RESIDU   1.3239616744151878E-003
+ RESIDU   1.2460916457363927E-003
+ RESIDU   1.0240299325546412E-003
+ RESIDU   8.2491635825876106E-004
+ RESIDU   8.2900189662528617E-004
+ RESIDU   7.5619884880818414E-004
+ RESIDU   7.4746062083551085E-004
+ RESIDU   6.9172411047997587E-004
+ RESIDU   6.2936716004616407E-004
+ RESIDU   3.4889937730755305E-004
+ RESIDU   3.8003827874083079E-004
+ RESIDU   2.9514107334323915E-004
+ RESIDU   1.9052577769853560E-004
+ RESIDU   1.6498725286305909E-004
+ RESIDU   1.5104810778056288E-004
+ RESIDU   1.7244834278976919E-004
+ RESIDU   1.4699995160514999E-004
+ RESIDU   1.1305781586717331E-004
+ RESIDU   1.0067213167219948E-004
+ RESIDU   8.4306830691673572E-005
+ CPU time to solve Ax=b in second  :    1327.6056149999999     
+ Real time to solve Ax=b in second :    91.322999999999993     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.4306830691678369E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4729875277380469E-011 m2
+ Csca =    2.4729875277380469E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    1345.8468990000001     
+ Real time to execute the code in second :    92.867000000000004     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 150 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 1327.25
+	System time (seconds): 19.02
+	Percent of CPU this job got: 1445%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:33.13
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6940628
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1943994
+	Voluntary context switches: 9790
+	Involuntary context switches: 10644
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+---- IFDDA: N=150, OMP_NUM_THREADS=22 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          150
+ Size of the box      :          150         150         150
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :      3375000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :     3375000
+ Number of subunit for the mesh   :     3375000
+ Size of the mesh size            :   1.5915494309189534E-008
+ Number of subunit along x y and z:         150         150         150
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU  0.33761121624171442      NORM   4495994414.8030787     
+ RESIDU  0.56081363048818988     
+ RESIDU  0.42830272516954310     
+ RESIDU  0.26524834316586354     
+ RESIDU  0.26394693729918078     
+ RESIDU  0.23823295515348830     
+ RESIDU  0.17003282717218157     
+ RESIDU  0.13879942868640677     
+ RESIDU  0.16098943155546791     
+ RESIDU  0.13164043066998549     
+ RESIDU  0.72666816572523618     
+ RESIDU  0.21508225572289011     
+ RESIDU  0.17264991728883444     
+ RESIDU  0.12709996973535467     
+ RESIDU   8.9520131718023213E-002
+ RESIDU   7.8860495938537292E-002
+ RESIDU   8.0597743986330100E-002
+ RESIDU  0.13977018207822686     
+ RESIDU   4.6307078537375326E-002
+ RESIDU   4.0522320726245176E-002
+ RESIDU   1.6476097038523430E-002
+ RESIDU   1.5993767958809170E-002
+ RESIDU   1.4279213520122092E-002
+ RESIDU   1.1218440339387287E-002
+ RESIDU   9.8879498408041763E-003
+ RESIDU   9.7173002764686708E-003
+ RESIDU   6.7928888025390512E-003
+ RESIDU   6.2180945931145900E-003
+ RESIDU   7.6116754627373927E-003
+ RESIDU   8.5219735750827613E-003
+ RESIDU   5.3193555545836893E-003
+ RESIDU   2.7637264008443583E-003
+ RESIDU   2.0162744106620336E-003
+ RESIDU   1.5948217728395857E-003
+ RESIDU   1.4960097795676183E-003
+ RESIDU   1.2604326330045471E-003
+ RESIDU   1.1871361246633511E-003
+ RESIDU   1.0126148416162381E-003
+ RESIDU   8.4593791623189141E-004
+ RESIDU   8.2134927257851236E-004
+ RESIDU   7.5856919934268034E-004
+ RESIDU   7.3394963401000261E-004
+ RESIDU   6.8589584645137899E-004
+ RESIDU   6.2069257941544016E-004
+ RESIDU   3.4817527143423787E-004
+ RESIDU   3.7466249124193873E-004
+ RESIDU   2.9359615159561765E-004
+ RESIDU   1.9144524446724207E-004
+ RESIDU   1.6599666007076792E-004
+ RESIDU   1.5157351624496904E-004
+ RESIDU   1.7288460776463137E-004
+ RESIDU   1.4683989401438095E-004
+ RESIDU   1.1454770348014986E-004
+ RESIDU   1.0244857504939678E-004
+ RESIDU   8.6133552979210921E-005
+ CPU time to solve Ax=b in second  :    1155.0135980000000     
+ Real time to solve Ax=b in second :    54.761000000000003     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.6133552979212710E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4729875277396127E-011 m2
+ Csca =    2.4729875277396127E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    1180.5383030000000     
+ Real time to execute the code in second :    56.255000000000003     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 150 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 1176.48
+	System time (seconds): 4.57
+	Percent of CPU this job got: 2089%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:56.52
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6954816
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1736753
+	Voluntary context switches: 4417
+	Involuntary context switches: 41018
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+### DDSCAT (OpenMP) runs, N=150
+
+---- DDSCAT: N=150, OMP_NUM_THREADS=1, FFT=FFTMKL ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: replaced.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[OK] Updated ddscat.par (backup: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.par.bak.20251128-201424)
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 150 150 150 -SHPAR 150 150 150 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT FFTMKL -run"
+	User time (seconds): 183.89
+	System time (seconds): 1.97
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:05.91
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6452816
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1660086
+	Voluntary context switches: 137
+	Involuntary context switches: 1105
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 171552
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=150-FFTMKL_omp-1.log
+
+---- DDSCAT: N=150, OMP_NUM_THREADS=2, FFT=FFTMKL ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 150 150 150 -SHPAR 150 150 150 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT FFTMKL -run"
+	User time (seconds): 190.61
+	System time (seconds): 1.87
+	Percent of CPU this job got: 121%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:39.07
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6452876
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1660083
+	Voluntary context switches: 906
+	Involuntary context switches: 1210
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 171512
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=150-FFTMKL_omp-2.log
+
+---- DDSCAT: N=150, OMP_NUM_THREADS=5, FFT=FFTMKL ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 150 150 150 -SHPAR 150 150 150 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT FFTMKL -run"
+	User time (seconds): 240.11
+	System time (seconds): 2.09
+	Percent of CPU this job got: 164%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:27.63
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6452528
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1660086
+	Voluntary context switches: 3229
+	Involuntary context switches: 1581
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 171512
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=150-FFTMKL_omp-5.log
+
+---- DDSCAT: N=150, OMP_NUM_THREADS=10, FFT=FFTMKL ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 150 150 150 -SHPAR 150 150 150 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT FFTMKL -run"
+	User time (seconds): 340.51
+	System time (seconds): 2.44
+	Percent of CPU this job got: 231%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:28.28
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6452424
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1660098
+	Voluntary context switches: 7760
+	Involuntary context switches: 3373
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 171512
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=150-FFTMKL_omp-10.log
+
+---- DDSCAT: N=150, OMP_NUM_THREADS=15, FFT=FFTMKL ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 150 150 150 -SHPAR 150 150 150 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT FFTMKL -run"
+	User time (seconds): 434.69
+	System time (seconds): 3.04
+	Percent of CPU this job got: 293%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 2:29.16
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6451868
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1660107
+	Voluntary context switches: 11730
+	Involuntary context switches: 5564
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 171520
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=150-FFTMKL_omp-15.log
+
+---- DDSCAT: N=150, OMP_NUM_THREADS=1, FFT=GPFAFT ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: replaced.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[OK] Updated ddscat.par (backup: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.par.bak.20251128-202735)
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 150 150 150 -SHPAR 150 150 150 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 316.39
+	System time (seconds): 1.91
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:18.35
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6449648
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1659927
+	Voluntary context switches: 111
+	Involuntary context switches: 1842
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 171528
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=150-GPFAFT_omp-1.log
+
+---- DDSCAT: N=150, OMP_NUM_THREADS=2, FFT=GPFAFT ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 150 150 150 -SHPAR 150 150 150 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 327.79
+	System time (seconds): 1.86
+	Percent of CPU this job got: 111%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:56.48
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6449228
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1659930
+	Voluntary context switches: 885
+	Involuntary context switches: 1893
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 171520
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=150-GPFAFT_omp-2.log
+
+---- DDSCAT: N=150, OMP_NUM_THREADS=5, FFT=GPFAFT ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 150 150 150 -SHPAR 150 150 150 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 378.89
+	System time (seconds): 2.06
+	Percent of CPU this job got: 132%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:46.84
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6448596
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1659933
+	Voluntary context switches: 3207
+	Involuntary context switches: 2321
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 171520
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=150-GPFAFT_omp-5.log
+
+---- DDSCAT: N=150, OMP_NUM_THREADS=10, FFT=GPFAFT ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 150 150 150 -SHPAR 150 150 150 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 477.67
+	System time (seconds): 2.51
+	Percent of CPU this job got: 167%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:47.06
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6449036
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1659940
+	Voluntary context switches: 7740
+	Involuntary context switches: 4112
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 171520
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=150-GPFAFT_omp-10.log
+
+---- DDSCAT: N=150, OMP_NUM_THREADS=15, FFT=GPFAFT ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 150 150 150 -SHPAR 150 150 150 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 570.09
+	System time (seconds): 3.15
+	Percent of CPU this job got: 199%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:47.14
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6448072
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1659953
+	Voluntary context switches: 11703
+	Involuntary context switches: 6475
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 171520
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=150-GPFAFT_omp-15.log
+
+==============================
+          N = 250
+==============================
+
+### ADDA (MPI) runs, N=250
+
+---- ADDA: N=250, mpirun -np 1 ----
+all data is saved in 'run087_box_g250_m1.313'
+box dimensions: 250x250x250
+lambda: 0.5   Dipoles/lambda: 52.3599
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 15625000
+Memory usage for MatVec matrices (per processor): 7198.4 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing FFTW3
+Total memory usage: 13382.4 MB
+Maximum memory usage of single processor: 13382.4 MB
+
+here we go, calc Y
+
+CoupleConstant: 4.045070133e-08+2.164663757e-12i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60809394951158890E-01  + 
+RE_002 = 4.28137791708702309E-01  + 
+RE_003 = 2.65255200673279123E-01  + 
+RE_004 = 2.63455613070373684E-01  + 
+RE_005 = 2.37582577466040834E-01  + 
+RE_006 = 1.69963498284040671E-01  + 
+RE_007 = 1.38694019060679907E-01  + 
+RE_008 = 1.61217013769035772E-01  - 
+RE_009 = 1.31874727690417110E-01  + 
+RE_010 = 7.83379863079576300E-01  - 
+RE_011 = 1.97723436181846429E-01  -+
+RE_012 = 1.65830016592357521E-01  -+
+RE_013 = 1.22932090529106697E-01  + 
+RE_014 = 8.60585323559938525E-02  + 
+RE_015 = 7.72506660520513033E-02  + 
+RE_016 = 7.90515835941681677E-02  - 
+RE_017 = 1.36867439054568690E-01  - 
+RE_018 = 4.56160282588836466E-02  + 
+RE_019 = 3.94266393326361611E-02  + 
+RE_020 = 1.60802359948517826E-02  + 
+RE_021 = 2.00454295352548127E-02  - 
+RE_022 = 1.36510237062604650E-02  + 
+RE_023 = 1.11199844431463940E-02  + 
+RE_024 = 1.01465702010641971E-02  + 
+RE_025 = 9.65674024548076292E-03  + 
+RE_026 = 7.09075441482790152E-03  + 
+RE_027 = 6.49342376185703569E-03  + 
+RE_028 = 7.51115377971123613E-03  - 
+RE_029 = 8.58746091373887091E-03  - 
+RE_030 = 5.53573310377178645E-03  + 
+RE_031 = 2.92994074310268726E-03  + 
+RE_032 = 2.06020912675602182E-03  + 
+RE_033 = 1.62544085973164842E-03  + 
+RE_034 = 1.55858151706534135E-03  + 
+RE_035 = 1.28062139474267715E-03  + 
+RE_036 = 1.19835590491280388E-03  + 
+RE_037 = 1.03183916187941037E-03  + 
+RE_038 = 8.56205794407434440E-04  + 
+RE_039 = 8.28580080276041008E-04  + 
+RE_040 = 7.48824909121375225E-04  + 
+RE_041 = 7.17750201858269755E-04  + 
+RE_042 = 6.62036798167862494E-04  + 
+RE_043 = 5.92185407893619335E-04  + 
+RE_044 = 3.47702504341114741E-04  + 
+RE_045 = 4.09604678489468050E-04  - 
+RE_046 = 2.84178056138220051E-04  + 
+RE_047 = 1.91630636417573189E-04  + 
+RE_048 = 1.66425998244473729E-04  + 
+RE_049 = 1.56999321492935496E-04  + 
+RE_050 = 1.80797739346405263E-04  - 
+RE_051 = 1.55051614150867440E-04  + 
+RE_052 = 1.14183651289139767E-04  + 
+RE_053 = 1.03101323937199860E-04  + 
+RE_054 = 9.20196014380826469E-05  + 
+Cext	= 24.730049767024436
+Qext	= 3.5890381587375462
+Cabs	= 2.9906570920402564e-18
+Qabs	= 4.3402995643558826e-19
+	Command being timed: "mpirun -np 1 ./adda_mpi -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 250 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 843.27
+	System time (seconds): 4.79
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 14:08.83
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 10800932
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7
+	Minor (reclaiming a frame) page faults: 2854732
+	Voluntary context switches: 2493
+	Involuntary context switches: 3770
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run087_box_g250_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/adda/adda_log_N=250_np=1.log
+Removing ADDA run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run087_box_g250_m1.313
+
+---- ADDA: N=250, mpirun -np 2 ----
+all data is saved in 'run088_box_g250_m1.313'
+box dimensions: 250x250x250
+lambda: 0.5   Dipoles/lambda: 52.3599
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 15625000
+Memory usage for MatVec matrices (per processor): 2895.4 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing FFTW3
+Total memory usage: 11974.7 MB
+Maximum memory usage of single processor: 5987.4 MB
+
+here we go, calc Y
+
+CoupleConstant: 4.045070133e-08+2.164663757e-12i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60809395002360045E-01  + 
+RE_002 = 4.28137792115067528E-01  + 
+RE_003 = 2.65255200272630276E-01  + 
+RE_004 = 2.63455600947615776E-01  + 
+RE_005 = 2.37582456979384404E-01  + 
+RE_006 = 1.69963729002792052E-01  + 
+RE_007 = 1.38694539634998393E-01  + 
+RE_008 = 1.61260691745681889E-01  - 
+RE_009 = 1.31646213998274891E-01  + 
+RE_010 = 7.13553523872236362E-01  - 
+RE_011 = 2.24196025001538041E-01  -+
+RE_012 = 2.25448961930983183E-01  - 
+RE_013 = 1.09419711489398080E-01  + 
+RE_014 = 7.96002993287954763E-02  + 
+RE_015 = 7.24898593291550403E-02  + 
+RE_016 = 7.48540631320852440E-02  - 
+RE_017 = 1.07745482726955000E-01  - 
+RE_018 = 4.32781212106968030E-02  + 
+RE_019 = 3.07273047186850251E-02  + 
+RE_020 = 1.81410845310446163E-02  + 
+RE_021 = 1.71490756720197070E-02  + 
+RE_022 = 1.34346269419911932E-02  + 
+RE_023 = 1.09136373322830833E-02  + 
+RE_024 = 1.02269377900628070E-02  + 
+RE_025 = 9.54294031694022903E-03  + 
+RE_026 = 7.03085421736144960E-03  + 
+RE_027 = 6.48501137073932438E-03  + 
+RE_028 = 7.32994143102643977E-03  - 
+RE_029 = 8.44643704122932486E-03  - 
+RE_030 = 5.41333541127840198E-03  + 
+RE_031 = 2.98862982499466289E-03  + 
+RE_032 = 2.14931581751514819E-03  + 
+RE_033 = 1.68006355340752280E-03  + 
+RE_034 = 1.58450538614838686E-03  + 
+RE_035 = 1.30294590117201116E-03  + 
+RE_036 = 1.22454240811833569E-03  + 
+RE_037 = 1.06883247363848805E-03  + 
+RE_038 = 8.95303026323076710E-04  + 
+RE_039 = 8.50232710215615404E-04  + 
+RE_040 = 7.68716944924314810E-04  + 
+RE_041 = 7.15283162557679817E-04  + 
+RE_042 = 6.77904726155842928E-04  + 
+RE_043 = 6.00421660057982734E-04  + 
+RE_044 = 3.51799813426781089E-04  + 
+RE_045 = 4.13657705159854933E-04  - 
+RE_046 = 2.89623151524915474E-04  + 
+RE_047 = 1.92390474748914923E-04  + 
+RE_048 = 1.67097609141541301E-04  + 
+RE_049 = 1.58165178630835100E-04  + 
+RE_050 = 1.82490113992970820E-04  - 
+RE_051 = 1.53855374459238028E-04  + 
+RE_052 = 1.14416821637555868E-04  + 
+RE_053 = 1.01173836989178651E-04  + 
+RE_054 = 9.05109793090529851E-05  + 
+Cext	= 24.730049767521585
+Qext	= 3.5890381588096969
+Cabs	= 2.9906556590449488e-18
+Qabs	= 4.3402974846694732e-19
+	Command being timed: "mpirun -np 2 ./adda_mpi -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 250 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 1118.45
+	System time (seconds): 26.07
+	Percent of CPU this job got: 199%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 9:32.86
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6158652
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7
+	Minor (reclaiming a frame) page faults: 3353018
+	Voluntary context switches: 3681
+	Involuntary context switches: 6064
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run088_box_g250_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/adda/adda_log_N=250_np=2.log
+Removing ADDA run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run088_box_g250_m1.313
+
+---- ADDA: N=250, mpirun -np 5 ----
+all data is saved in 'run089_box_g250_m1.313'
+box dimensions: 250x250x250
+lambda: 0.5   Dipoles/lambda: 52.3599
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 15625000
+Memory usage for MatVec matrices (per processor): 1000.2 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing FFTW3
+Total memory usage: 11185.1 MB
+Maximum memory usage of single processor: 2237.0 MB
+
+here we go, calc Y
+
+CoupleConstant: 4.045070133e-08+2.164663757e-12i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60809394986042764E-01  + 
+RE_002 = 4.28137791841809889E-01  + 
+RE_003 = 2.65255200566703486E-01  + 
+RE_004 = 2.63455609566088822E-01  + 
+RE_005 = 2.37582542548353370E-01  + 
+RE_006 = 1.69963565171281361E-01  + 
+RE_007 = 1.38694169968715308E-01  + 
+RE_008 = 1.61229677348117773E-01  - 
+RE_009 = 1.31808156530515336E-01  + 
+RE_010 = 7.83891228371734750E-01  - 
+RE_011 = 2.08098819535869312E-01  -+
+RE_012 = 1.55626739104746226E-01  -+
+RE_013 = 1.20528958457677665E-01  + 
+RE_014 = 8.14028417561005330E-02  + 
+RE_015 = 7.39255233929110162E-02  + 
+RE_016 = 7.50642878294932869E-02  - 
+RE_017 = 1.26115101154628595E-01  - 
+RE_018 = 4.41714645294666586E-02  + 
+RE_019 = 3.03355144315197583E-02  + 
+RE_020 = 1.95635971187275576E-02  + 
+RE_021 = 1.74794434653417832E-02  + 
+RE_022 = 1.30329016062301524E-02  + 
+RE_023 = 1.05100623713370450E-02  + 
+RE_024 = 9.95314673896638934E-03  + 
+RE_025 = 9.42020705641569318E-03  + 
+RE_026 = 6.76364712615423226E-03  + 
+RE_027 = 5.98669277135599563E-03  + 
+RE_028 = 7.33326603528098621E-03  - 
+RE_029 = 7.84951315236867911E-03  - 
+RE_030 = 5.01634529077310976E-03  + 
+RE_031 = 2.81555556362121867E-03  + 
+RE_032 = 2.11473445112861716E-03  + 
+RE_033 = 1.65139753310944958E-03  + 
+RE_034 = 1.55116219710021356E-03  + 
+RE_035 = 1.25886104272452727E-03  + 
+RE_036 = 1.19120195152480710E-03  + 
+RE_037 = 1.04875397878376100E-03  + 
+RE_038 = 8.47133092200331051E-04  + 
+RE_039 = 8.75073035370134747E-04  - 
+RE_040 = 7.68896166098977703E-04  + 
+RE_041 = 7.46139282619932712E-04  + 
+RE_042 = 6.95917020059032775E-04  + 
+RE_043 = 6.13836195335242104E-04  + 
+RE_044 = 3.53277773035625081E-04  + 
+RE_045 = 4.17646547085022716E-04  - 
+RE_046 = 2.91806240285543989E-04  + 
+RE_047 = 1.99839114451635718E-04  + 
+RE_048 = 1.68213894364919537E-04  + 
+RE_049 = 1.59820588608067531E-04  + 
+RE_050 = 1.84369942078949013E-04  - 
+RE_051 = 1.53687131606052561E-04  + 
+RE_052 = 1.14138814510973192E-04  + 
+RE_053 = 1.02582463706986737E-04  + 
+RE_054 = 9.09471352623377025E-05  + 
+Cext	= 24.73004976652782
+Qext	= 3.5890381586654732
+Cabs	= 2.9906573282078726e-18
+Qabs	= 4.3402999071027003e-19
+	Command being timed: "mpirun -np 5 ./adda_mpi -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 250 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 1775.62
+	System time (seconds): 48.65
+	Percent of CPU this job got: 499%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 6:05.50
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 2317264
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7
+	Minor (reclaiming a frame) page faults: 3089173
+	Voluntary context switches: 8234
+	Involuntary context switches: 9189
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run089_box_g250_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/adda/adda_log_N=250_np=5.log
+Removing ADDA run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run089_box_g250_m1.313
+
+---- ADDA: N=250, mpirun -np 10 ----
+all data is saved in 'run090_box_g250_m1.313'
+box dimensions: 250x250x250
+lambda: 0.5   Dipoles/lambda: 52.3599
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 15625000
+Memory usage for MatVec matrices (per processor): 482.9 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing FFTW3
+Total memory usage: 11013.4 MB
+Maximum memory usage of single processor: 1101.3 MB
+
+here we go, calc Y
+
+CoupleConstant: 4.045070133e-08+2.164663757e-12i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60809395002060396E-01  + 
+RE_002 = 4.28137791950854385E-01  + 
+RE_003 = 2.65255200462202745E-01  + 
+RE_004 = 2.63455606370695150E-01  + 
+RE_005 = 2.37582510750995651E-01  + 
+RE_006 = 1.69963626034551535E-01  + 
+RE_007 = 1.38694307271140072E-01  + 
+RE_008 = 1.61241203692498919E-01  - 
+RE_009 = 1.31747788512022374E-01  + 
+RE_010 = 7.67953979968871714E-01  - 
+RE_011 = 2.15257508661084646E-01  -+
+RE_012 = 2.87452628524015319E-01  - 
+RE_013 = 1.14525521240219252E-01  + 
+RE_014 = 8.26379010949655768E-02  + 
+RE_015 = 7.53463974030812444E-02  + 
+RE_016 = 7.73089313590699795E-02  - 
+RE_017 = 1.20530876036219203E-01  - 
+RE_018 = 4.52985293476063991E-02  + 
+RE_019 = 3.05920914907079726E-02  + 
+RE_020 = 1.89544744883884085E-02  + 
+RE_021 = 1.73877765274722852E-02  + 
+RE_022 = 1.36150140277152831E-02  + 
+RE_023 = 1.06269213983908178E-02  + 
+RE_024 = 1.03795923235764261E-02  + 
+RE_025 = 9.72630717276869519E-03  + 
+RE_026 = 6.78823629571121724E-03  + 
+RE_027 = 6.17055751238792648E-03  + 
+RE_028 = 7.49540875546969056E-03  - 
+RE_029 = 8.32816096613977520E-03  - 
+RE_030 = 5.38448216935799844E-03  + 
+RE_031 = 2.85019277312613091E-03  + 
+RE_032 = 2.05721290718924440E-03  + 
+RE_033 = 1.62787104002306529E-03  + 
+RE_034 = 1.55932887831534343E-03  + 
+RE_035 = 1.28025390430042780E-03  + 
+RE_036 = 1.19717210462587007E-03  + 
+RE_037 = 1.05323842386478655E-03  + 
+RE_038 = 8.72441775533067620E-04  + 
+RE_039 = 8.42219611234620706E-04  + 
+RE_040 = 7.61047625116614878E-04  + 
+RE_041 = 7.29995176208085008E-04  + 
+RE_042 = 6.79521740064179956E-04  + 
+RE_043 = 5.99950456165160685E-04  + 
+RE_044 = 3.49524225667332839E-04  + 
+RE_045 = 4.12409423285166495E-04  - 
+RE_046 = 2.85058481555450552E-04  + 
+RE_047 = 1.91882384096945076E-04  + 
+RE_048 = 1.66818135057610496E-04  + 
+RE_049 = 1.58186041795079922E-04  + 
+RE_050 = 1.81904094615540349E-04  - 
+RE_051 = 1.54654968446967775E-04  + 
+RE_052 = 1.13571125178730365E-04  + 
+RE_053 = 1.00728182541620751E-04  + 
+RE_054 = 8.99195877749081900E-05  + 
+Cext	= 24.730049767015974
+Qext	= 3.5890381587363178
+Cabs	= 2.9906558479060972e-18
+Qabs	= 4.3402977587610639e-19
+	Command being timed: "mpirun -np 10 ./adda_mpi -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 250 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 3258.52
+	System time (seconds): 84.78
+	Percent of CPU this job got: 997%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:35.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1164632
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 8
+	Minor (reclaiming a frame) page faults: 3021082
+	Voluntary context switches: 18117
+	Involuntary context switches: 14604
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16712
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run090_box_g250_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/adda/adda_log_N=250_np=10.log
+Removing ADDA run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run090_box_g250_m1.313
+
+---- ADDA: N=250, mpirun -np 15 ----
+all data is saved in 'run091_box_g250_m1.313'
+INFO: (ringID=14) No real voxels are assigned
+box dimensions: 250x250x250
+lambda: 0.5   Dipoles/lambda: 52.3599
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 15625000
+Memory usage for MatVec matrices (per processor): 375.0 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing FFTW3
+Total memory usage: 11808.7 MB
+Maximum memory usage of single processor: 820.2 MB
+
+here we go, calc Y
+
+CoupleConstant: 4.045070133e-08+2.164663757e-12i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60809395000495647E-01  + 
+RE_002 = 4.28137791927433342E-01  + 
+RE_003 = 2.65255200487169218E-01  + 
+RE_004 = 2.63455607104876033E-01  + 
+RE_005 = 2.37582518041258295E-01  + 
+RE_006 = 1.69963612075695630E-01  + 
+RE_007 = 1.38694275773092207E-01  + 
+RE_008 = 1.61238561109573519E-01  - 
+RE_009 = 1.31761608964496735E-01  + 
+RE_010 = 7.72878618627392378E-01  - 
+RE_011 = 2.13765650591021317E-01  -+
+RE_012 = 1.88874698117607903E-01  -+
+RE_013 = 1.19102637823091329E-01  + 
+RE_014 = 8.61219978938141811E-02  + 
+RE_015 = 7.78613134085485437E-02  + 
+RE_016 = 7.95641556210639894E-02  - 
+RE_017 = 1.32593199793626798E-01  - 
+RE_018 = 4.56139285181805937E-02  + 
+RE_019 = 3.64887156860095457E-02  + 
+RE_020 = 1.69360462234433365E-02  + 
+RE_021 = 1.64228330643370231E-02  + 
+RE_022 = 1.31338423813670141E-02  + 
+RE_023 = 1.08120458928088192E-02  + 
+RE_024 = 1.02741230869395350E-02  + 
+RE_025 = 9.81287791664755930E-03  + 
+RE_026 = 6.74208473236329129E-03  + 
+RE_027 = 6.18436894159998200E-03  + 
+RE_028 = 7.79875940441110763E-03  - 
+RE_029 = 8.53044920673731895E-03  - 
+RE_030 = 5.51399236019841331E-03  + 
+RE_031 = 2.82847138237651277E-03  + 
+RE_032 = 2.01194777983473979E-03  + 
+RE_033 = 1.58888186716986358E-03  + 
+RE_034 = 1.52231962374886664E-03  + 
+RE_035 = 1.25110108536143050E-03  + 
+RE_036 = 1.18114160937759561E-03  + 
+RE_037 = 1.01089165495056371E-03  + 
+RE_038 = 8.36461613198206987E-04  + 
+RE_039 = 8.12027244521062574E-04  + 
+RE_040 = 7.33577069396656621E-04  + 
+RE_041 = 7.06654819081918312E-04  + 
+RE_042 = 6.47708045750943384E-04  + 
+RE_043 = 5.76305343887117830E-04  + 
+RE_044 = 3.40246306806732033E-04  + 
+RE_045 = 4.02503712441739574E-04  - 
+RE_046 = 2.76562681978375952E-04  + 
+RE_047 = 1.89626028302098136E-04  + 
+RE_048 = 1.63478323136393019E-04  + 
+RE_049 = 1.55178179080738612E-04  + 
+RE_050 = 1.79365186615201958E-04  - 
+RE_051 = 1.51944074057186294E-04  + 
+RE_052 = 1.11640817165288962E-04  + 
+RE_053 = 1.01183917196621845E-04  + 
+RE_054 = 9.03508313478522271E-05  + 
+Cext	= 24.730049767383008
+Qext	= 3.589038158789585
+Cabs	= 2.9906549965001264e-18
+Qabs	= 4.3402965231272721e-19
+	Command being timed: "mpirun -np 15 ./adda_mpi -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 250 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 5179.04
+	System time (seconds): 145.93
+	Percent of CPU this job got: 1496%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:55.73
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 872784
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 10
+	Minor (reclaiming a frame) page faults: 3264705
+	Voluntary context switches: 33563
+	Involuntary context switches: 23644
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 16592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run091_box_g250_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/adda/adda_log_N=250_np=15.log
+Removing ADDA run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/mpi/run091_box_g250_m1.313
+
+### IFDDA (OpenMP) runs, N=250
+
+---- IFDDA: N=250, OMP_NUM_THREADS=1 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          250
+ Size of the box      :          250         250         250
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :     15625000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :    15625000
+ Number of subunit for the mesh   :    15625000
+ Size of the mesh size            :   9.5492965855137218E-009
+ Number of subunit along x y and z:         250         250         250
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU   1.0000000000000000      NORM   9673839719.0798264     
+ RESIDU  0.56080939496951732     
+ RESIDU  0.42813779210642233     
+ RESIDU  0.26525520023784876     
+ RESIDU  0.26345560038687954     
+ RESIDU  0.23758245138786582     
+ RESIDU  0.16996373950260954     
+ RESIDU  0.13869456319917045     
+ RESIDU  0.16126270542384122     
+ RESIDU  0.13163576104188698     
+ RESIDU  0.70649252276971775     
+ RESIDU  0.22494055556440679     
+ RESIDU  0.22065944430878706     
+ RESIDU  0.10965438219607770     
+ RESIDU   7.9710138825381513E-002
+ RESIDU   7.2654557398273326E-002
+ RESIDU   7.4986169117817789E-002
+ RESIDU  0.11029777818668994     
+ RESIDU   4.2617827196542453E-002
+ RESIDU   3.5501828846414847E-002
+ RESIDU   1.8207148285818046E-002
+ RESIDU   1.6835911308697108E-002
+ RESIDU   1.4046416847384715E-002
+ RESIDU   1.1114584703245436E-002
+ RESIDU   1.0441072560288365E-002
+ RESIDU   9.6089869503713701E-003
+ RESIDU   7.0067896543372791E-003
+ RESIDU   6.4265814618650096E-003
+ RESIDU   7.3008256582801287E-003
+ RESIDU   8.4007917996946346E-003
+ RESIDU   5.4037059393459526E-003
+ RESIDU   2.9510883168526710E-003
+ RESIDU   2.1211096263175689E-003
+ RESIDU   1.6580403495230318E-003
+ RESIDU   1.5777748938450814E-003
+ RESIDU   1.2880087689046667E-003
+ RESIDU   1.2148761412889436E-003
+ RESIDU   1.0387330669730640E-003
+ RESIDU   8.4665354169387297E-004
+ RESIDU   8.3368001575082789E-004
+ RESIDU   7.5488850720617777E-004
+ RESIDU   7.2721349757250402E-004
+ RESIDU   6.6780797191376201E-004
+ RESIDU   5.9200899828985452E-004
+ RESIDU   3.4566575496135319E-004
+ RESIDU   4.0703222161241905E-004
+ RESIDU   2.8382295947741536E-004
+ RESIDU   1.9162055135219143E-004
+ RESIDU   1.6639283904194114E-004
+ RESIDU   1.5830513271829455E-004
+ RESIDU   1.8151288525633386E-004
+ RESIDU   1.5277189846807460E-004
+ RESIDU   1.1127445151506281E-004
+ RESIDU   9.7796542153520154E-005
+ RESIDU   8.1948408622676476E-005
+ CPU time to solve Ax=b in second  :    960.31506700000000     
+ Real time to solve Ax=b in second :    960.46000000000004     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.1948408622681070E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4730049766924467E-011 m2
+ Csca =    2.4730049766924467E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    999.48786800000005     
+ Real time to execute the code in second :    999.64300000000003     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 250 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 991.31
+	System time (seconds): 9.10
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:40.57
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32056112
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8011834
+	Voluntary context switches: 49
+	Involuntary context switches: 5633
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+---- IFDDA: N=250, OMP_NUM_THREADS=2 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          250
+ Size of the box      :          250         250         250
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :     15625000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :    15625000
+ Number of subunit for the mesh   :    15625000
+ Size of the mesh size            :   9.5492965855137218E-009
+ Number of subunit along x y and z:         250         250         250
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU  0.97557912237552458      NORM   9673839718.9995308     
+ RESIDU  0.56080939497273985     
+ RESIDU  0.42813779208335045     
+ RESIDU  0.26525520026930477     
+ RESIDU  0.26345560123856637     
+ RESIDU  0.23758246004301728     
+ RESIDU  0.16996372316694286     
+ RESIDU  0.13869452649728448     
+ RESIDU  0.16125958366188980     
+ RESIDU  0.13165197859862279     
+ RESIDU  0.71733432550202336     
+ RESIDU  0.22377045591332526     
+ RESIDU  0.22866580143745274     
+ RESIDU  0.10929278020967848     
+ RESIDU   7.9539875054490755E-002
+ RESIDU   7.2396814229522641E-002
+ RESIDU   7.4802506047135564E-002
+ RESIDU  0.10979045192701425     
+ RESIDU   4.0580013123736706E-002
+ RESIDU   3.0586748403899224E-002
+ RESIDU   1.6653285938222500E-002
+ RESIDU   1.7710192039804090E-002
+ RESIDU   1.3525680518723231E-002
+ RESIDU   1.0449354228340722E-002
+ RESIDU   9.8539222930528296E-003
+ RESIDU   9.2521751858893140E-003
+ RESIDU   6.5843289490951692E-003
+ RESIDU   5.9319919099041938E-003
+ RESIDU   7.3323175342565813E-003
+ RESIDU   7.7805716326541279E-003
+ RESIDU   5.0452569089711082E-003
+ RESIDU   2.7296188628899523E-003
+ RESIDU   2.0627887281568094E-003
+ RESIDU   1.6025480889268278E-003
+ RESIDU   1.4876414880249918E-003
+ RESIDU   1.2262255961144506E-003
+ RESIDU   1.1641714914110268E-003
+ RESIDU   1.0101584428431332E-003
+ RESIDU   8.3326804782972495E-004
+ RESIDU   8.2875487166852297E-004
+ RESIDU   7.5417442334501283E-004
+ RESIDU   7.2080398273741608E-004
+ RESIDU   6.7731636649252976E-004
+ RESIDU   5.9639091662342498E-004
+ RESIDU   3.4536529667222849E-004
+ RESIDU   4.0658946271848127E-004
+ RESIDU   2.8420506630972512E-004
+ RESIDU   1.9505922384710451E-004
+ RESIDU   1.6587277764559818E-004
+ RESIDU   1.5759825734814760E-004
+ RESIDU   1.8117225199301554E-004
+ RESIDU   1.5160102860363149E-004
+ RESIDU   1.1218819396185506E-004
+ RESIDU   1.0132903432476032E-004
+ RESIDU   8.4464756792627734E-005
+ CPU time to solve Ax=b in second  :    1184.8198590000002     
+ Real time to solve Ax=b in second :    592.50800000000004     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.4464756792624495E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4730049766666351E-011 m2
+ Csca =    2.4730049766666351E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    1222.6294690000000     
+ Real time to execute the code in second :    611.68299999999999     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 250 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 1214.76
+	System time (seconds): 8.84
+	Percent of CPU this job got: 199%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 10:12.65
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32056816
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8012054
+	Voluntary context switches: 69
+	Involuntary context switches: 7090
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+---- IFDDA: N=250, OMP_NUM_THREADS=5 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          250
+ Size of the box      :          250         250         250
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :     15625000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :    15625000
+ Number of subunit for the mesh   :    15625000
+ Size of the mesh size            :   9.5492965855137218E-009
+ Number of subunit along x y and z:         250         250         250
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU  0.81392618832323294      NORM   9673839718.7586441     
+ RESIDU  0.56080939498227700     
+ RESIDU  0.42813779201141916     
+ RESIDU  0.26525520036538180     
+ RESIDU  0.26345560386067512     
+ RESIDU  0.23758248596060086     
+ RESIDU  0.16996367350252772     
+ RESIDU  0.13869441439695382     
+ RESIDU  0.16125018845597364     
+ RESIDU  0.13170088349209710     
+ RESIDU  0.74633012928161724     
+ RESIDU  0.21978374469870327     
+ RESIDU  0.30341600210262143     
+ RESIDU  0.10858990114827212     
+ RESIDU   7.9197755269125134E-002
+ RESIDU   7.1809314384535167E-002
+ RESIDU   7.4354898305631176E-002
+ RESIDU  0.10928552574586180     
+ RESIDU   4.0225148189038232E-002
+ RESIDU   3.1910189101371396E-002
+ RESIDU   1.7556976272179236E-002
+ RESIDU   1.7369082092399016E-002
+ RESIDU   1.3496265021738056E-002
+ RESIDU   1.0414623177299112E-002
+ RESIDU   9.8380011499202679E-003
+ RESIDU   9.3116836187001114E-003
+ RESIDU   6.5653407423995067E-003
+ RESIDU   5.9305954811016042E-003
+ RESIDU   7.2173785200425628E-003
+ RESIDU   7.7820101782302706E-003
+ RESIDU   5.0467090187203472E-003
+ RESIDU   2.7454546864115353E-003
+ RESIDU   2.0660394244580303E-003
+ RESIDU   1.6150424037233704E-003
+ RESIDU   1.4872491986367830E-003
+ RESIDU   1.2285339898582277E-003
+ RESIDU   1.1613653831465919E-003
+ RESIDU   1.0132984660339061E-003
+ RESIDU   8.3725173839737082E-004
+ RESIDU   8.3486344192850869E-004
+ RESIDU   7.5575711543075103E-004
+ RESIDU   7.2316997058105375E-004
+ RESIDU   6.8213962234116082E-004
+ RESIDU   5.9841051811867314E-004
+ RESIDU   3.4652422858388995E-004
+ RESIDU   4.0915469201866216E-004
+ RESIDU   2.8505800966201211E-004
+ RESIDU   1.9570676959176485E-004
+ RESIDU   1.6602589998497344E-004
+ RESIDU   1.5793114066450225E-004
+ RESIDU   1.8142986636580143E-004
+ RESIDU   1.5160310344651220E-004
+ RESIDU   1.1218462364598053E-004
+ RESIDU   1.0088810994746326E-004
+ RESIDU   8.4226272162790775E-005
+ CPU time to solve Ax=b in second  :    1585.8485269999999     
+ Real time to solve Ax=b in second :    331.58100000000002     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.4226272162796819E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4730049767527171E-011 m2
+ Csca =    2.4730049767527171E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    1629.3298890000001     
+ Real time to execute the code in second :    341.12400000000002     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 250 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 1620.41
+	System time (seconds): 9.95
+	Percent of CPU this job got: 476%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 5:42.11
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32058928
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8012714
+	Voluntary context switches: 3426
+	Involuntary context switches: 8080
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+---- IFDDA: N=250, OMP_NUM_THREADS=10 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          250
+ Size of the box      :          250         250         250
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :     15625000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :    15625000
+ Number of subunit for the mesh   :    15625000
+ Size of the mesh size            :   9.5492965855137218E-009
+ Number of subunit along x y and z:         250         250         250
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU  0.52838228587808111      NORM   9673839718.3571644     
+ RESIDU  0.56080939499823934     
+ RESIDU  0.42813779189199214     
+ RESIDU  0.26525520052509016     
+ RESIDU  0.26345560821870329     
+ RESIDU  0.23758252909615002     
+ RESIDU  0.16996359090659258     
+ RESIDU  0.13869422799833955     
+ RESIDU  0.16123455461696715     
+ RESIDU  0.13178258627700332     
+ RESIDU  0.77891908303128243     
+ RESIDU  0.21134073914116056     
+ RESIDU  0.15675464342960491     
+ RESIDU  0.12021465174079866     
+ RESIDU   8.0840198197069210E-002
+ RESIDU   7.3818422120188076E-002
+ RESIDU   7.4611227145090359E-002
+ RESIDU  0.13117704675184028     
+ RESIDU   4.2857156764811534E-002
+ RESIDU   3.4208727275270169E-002
+ RESIDU   1.6500803198164254E-002
+ RESIDU   1.6574167222350129E-002
+ RESIDU   1.3967761649801411E-002
+ RESIDU   1.0434523666186158E-002
+ RESIDU   9.9347884499200855E-003
+ RESIDU   9.3223433818151354E-003
+ RESIDU   6.6288287236993156E-003
+ RESIDU   5.9658672953014453E-003
+ RESIDU   7.1692177248388186E-003
+ RESIDU   7.7631509524011171E-003
+ RESIDU   4.9242001795192945E-003
+ RESIDU   2.7629792178309642E-003
+ RESIDU   2.0733248717405691E-003
+ RESIDU   1.6496803596928759E-003
+ RESIDU   1.5787846246501651E-003
+ RESIDU   1.2866798991528912E-003
+ RESIDU   1.2061140094116697E-003
+ RESIDU   1.0586756706314131E-003
+ RESIDU   8.6918522404889941E-004
+ RESIDU   8.5627531097329939E-004
+ RESIDU   7.7977856334766015E-004
+ RESIDU   7.5075023989946965E-004
+ RESIDU   6.9951634077827015E-004
+ RESIDU   6.1053726017633130E-004
+ RESIDU   3.5293576087857040E-004
+ RESIDU   4.1552492180554857E-004
+ RESIDU   2.8968756635629732E-004
+ RESIDU   1.9475790704828643E-004
+ RESIDU   1.6860881499558864E-004
+ RESIDU   1.6076262525499855E-004
+ RESIDU   1.8459648190263659E-004
+ RESIDU   1.5502052066321354E-004
+ RESIDU   1.1234533187396735E-004
+ RESIDU   9.7292985962922935E-005
+ RESIDU   8.1485350299917813E-005
+ CPU time to solve Ax=b in second  :    2496.2288469999999     
+ Real time to solve Ax=b in second :    281.61900000000003     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.1485350299930119E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4730049767248551E-011 m2
+ Csca =    2.4730049767248551E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    2557.8994210000001     
+ Real time to execute the code in second :    289.31299999999999     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 250 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 2546.82
+	System time (seconds): 12.15
+	Percent of CPU this job got: 881%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:50.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32063152
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8013794
+	Voluntary context switches: 14221
+	Involuntary context switches: 26737
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+---- IFDDA: N=250, OMP_NUM_THREADS=15 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          250
+ Size of the box      :          250         250         250
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :     15625000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :    15625000
+ Number of subunit for the mesh   :    15625000
+ Size of the mesh size            :   9.5492965855137218E-009
+ Number of subunit along x y and z:         250         250         250
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU  0.48894492125737099      NORM   9673839718.3512821     
+ RESIDU  0.56080939499846283     
+ RESIDU  0.42813779189022039     
+ RESIDU  0.26525520052741969     
+ RESIDU  0.26345560828245906     
+ RESIDU  0.23758252970784716     
+ RESIDU  0.16996358971007836     
+ RESIDU  0.13869422529308797     
+ RESIDU  0.16123432961137221     
+ RESIDU  0.13178376305974412     
+ RESIDU  0.77918674639204843     
+ RESIDU  0.21119715513797752     
+ RESIDU  0.15629654372398177     
+ RESIDU  0.12020867581856698     
+ RESIDU   8.0965419360991969E-002
+ RESIDU   7.3892219185299826E-002
+ RESIDU   7.4697462699717998E-002
+ RESIDU  0.13036589499870621     
+ RESIDU   4.5194741399872104E-002
+ RESIDU   4.4486283068778450E-002
+ RESIDU   1.6540118004566486E-002
+ RESIDU   1.6139677681338692E-002
+ RESIDU   1.3905286816545756E-002
+ RESIDU   1.1127348994048792E-002
+ RESIDU   1.0148470998754338E-002
+ RESIDU   9.4083592636376809E-003
+ RESIDU   7.1865411129516926E-003
+ RESIDU   6.4531301086405632E-003
+ RESIDU   7.0392824262848876E-003
+ RESIDU   8.1747214052296062E-003
+ RESIDU   5.1581021986834511E-003
+ RESIDU   2.9599819355147546E-003
+ RESIDU   2.1587312237528744E-003
+ RESIDU   1.7083318862403886E-003
+ RESIDU   1.6600656563925873E-003
+ RESIDU   1.3369045690062281E-003
+ RESIDU   1.2540386012041464E-003
+ RESIDU   1.0520243981214951E-003
+ RESIDU   8.4053787946927088E-004
+ RESIDU   8.8571384351592095E-004
+ RESIDU   7.8690931867659013E-004
+ RESIDU   7.6557618400166223E-004
+ RESIDU   7.1449372479818975E-004
+ RESIDU   6.2752149278838781E-004
+ RESIDU   3.6120027542020688E-004
+ RESIDU   4.2589067706583954E-004
+ RESIDU   2.9503834065219435E-004
+ RESIDU   1.9674030323649843E-004
+ RESIDU   1.7093660381597737E-004
+ RESIDU   1.6130299555565419E-004
+ RESIDU   1.8511656071945322E-004
+ RESIDU   1.5615218714539158E-004
+ RESIDU   1.1241696655948562E-004
+ RESIDU   9.7594799145788282E-005
+ RESIDU   8.1608436823830182E-005
+ CPU time to solve Ax=b in second  :    3360.0401120000001     
+ Real time to solve Ax=b in second :    260.74400000000003     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.1608436823833516E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4730049767148730E-011 m2
+ Csca =    2.4730049767148730E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    3439.4221339999999     
+ Real time to execute the code in second :    267.70499999999998     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 250 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 3425.51
+	System time (seconds): 15.08
+	Percent of CPU this job got: 1280%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:28.71
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32067904
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8014934
+	Voluntary context switches: 20376
+	Involuntary context switches: 41898
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+---- IFDDA: N=250, OMP_NUM_THREADS=22 ----
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          250
+ Size of the box      :          250         250         250
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :     15625000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :    15625000
+ Number of subunit for the mesh   :    15625000
+ Size of the mesh size            :   9.5492965855137218E-009
+ Number of subunit along x y and z:         250         250         250
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU  0.36563658461034970      NORM   9673839718.3597450     
+ RESIDU  0.56080939499812521     
+ RESIDU  0.42813779189277068     
+ RESIDU  0.26525520052404450     
+ RESIDU  0.26345560819001929     
+ RESIDU  0.23758252880886785     
+ RESIDU  0.16996359144893411     
+ RESIDU  0.13869422922838998     
+ RESIDU  0.16123465674143300     
+ RESIDU  0.13178204916266500     
+ RESIDU  0.77878962431543097     
+ RESIDU  0.21140571214567055     
+ RESIDU  0.15699060974337986     
+ RESIDU  0.12021031873590346     
+ RESIDU   8.0766810900662969E-002
+ RESIDU   7.3774115814352073E-002
+ RESIDU   7.4543705308509997E-002
+ RESIDU  0.13024063117580087     
+ RESIDU   4.4473401464667772E-002
+ RESIDU   4.2638959721164195E-002
+ RESIDU   1.6908294088503448E-002
+ RESIDU   1.5959800914935880E-002
+ RESIDU   1.3707231400757811E-002
+ RESIDU   1.1609615923526703E-002
+ RESIDU   9.5175946899883485E-003
+ RESIDU   9.3441130522922949E-003
+ RESIDU   6.7909394222919143E-003
+ RESIDU   6.0466897525858140E-003
+ RESIDU   6.8376864943968671E-003
+ RESIDU   7.7480190877045035E-003
+ RESIDU   4.8569806995497535E-003
+ RESIDU   2.7657209211207879E-003
+ RESIDU   2.0754720141521544E-003
+ RESIDU   1.6386894943867954E-003
+ RESIDU   1.5654482194385744E-003
+ RESIDU   1.2768870717227467E-003
+ RESIDU   1.1800428350301577E-003
+ RESIDU   1.0261604669636664E-003
+ RESIDU   8.4126965467528887E-004
+ RESIDU   8.4488748432144699E-004
+ RESIDU   7.6666196758978160E-004
+ RESIDU   7.4129695583043120E-004
+ RESIDU   6.9855034841638985E-004
+ RESIDU   6.0351342063994645E-004
+ RESIDU   3.5317789407215034E-004
+ RESIDU   4.1564781477141375E-004
+ RESIDU   2.9041927068879363E-004
+ RESIDU   1.9558923383673093E-004
+ RESIDU   1.6887309667761307E-004
+ RESIDU   1.6021934204409817E-004
+ RESIDU   1.8420004294139979E-004
+ RESIDU   1.5473422534906361E-004
+ RESIDU   1.1318867751062027E-004
+ RESIDU   9.8808222647624478E-005
+ RESIDU   8.2772686979036103E-005
+ CPU time to solve Ax=b in second  :    4858.2602049999996     
+ Real time to solve Ax=b in second :    242.95900000000000     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.2772686979026467E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4730049767204086E-011 m2
+ Csca =    2.4730049767204086E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    4966.3022090000004     
+ Real time to execute the code in second :    249.73500000000001     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 250 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 4945.50
+	System time (seconds): 22.12
+	Percent of CPU this job got: 1980%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:10.80
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32076176
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8017178
+	Voluntary context switches: 28014
+	Involuntary context switches: 172413
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+
+### DDSCAT (OpenMP) runs, N=250
+
+---- DDSCAT: N=250, OMP_NUM_THREADS=1, FFT=FFTMKL ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: replaced.
+  - CALPHA: already correct.
+  - MEM_ALLOW: replaced.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[OK] Updated ddscat.par (backup: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.par.bak.20251128-221934)
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT FFTMKL -run"
+	User time (seconds): 858.90
+	System time (seconds): 9.25
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 14:28.29
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29829240
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 3
+	Minor (reclaiming a frame) page faults: 7677446
+	Voluntary context switches: 140
+	Involuntary context switches: 5101
+	Swaps: 0
+	File system inputs: 688
+	File system outputs: 793632
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=250-FFTMKL_omp-1.log
+
+---- DDSCAT: N=250, OMP_NUM_THREADS=2, FFT=FFTMKL ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT FFTMKL -run"
+	User time (seconds): 871.76
+	System time (seconds): 8.62
+	Percent of CPU this job got: 115%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 12:39.60
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29828260
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7677444
+	Voluntary context switches: 915
+	Involuntary context switches: 5526
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 793608
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=250-FFTMKL_omp-2.log
+
+---- DDSCAT: N=250, OMP_NUM_THREADS=5, FFT=FFTMKL ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT FFTMKL -run"
+	User time (seconds): 992.60
+	System time (seconds): 9.40
+	Percent of CPU this job got: 140%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 11:51.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29828176
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7677453
+	Voluntary context switches: 3364
+	Involuntary context switches: 6087
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 793600
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=250-FFTMKL_omp-5.log
+
+---- DDSCAT: N=250, OMP_NUM_THREADS=10, FFT=FFTMKL ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT FFTMKL -run"
+	User time (seconds): 1282.85
+	System time (seconds): 10.52
+	Percent of CPU this job got: 181%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 11:53.19
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29827716
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7677461
+	Voluntary context switches: 9327
+	Involuntary context switches: 11289
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 793600
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=250-FFTMKL_omp-10.log
+
+---- DDSCAT: N=250, OMP_NUM_THREADS=15, FFT=FFTMKL ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT FFTMKL -run"
+	User time (seconds): 1533.94
+	System time (seconds): 12.63
+	Percent of CPU this job got: 217%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 11:50.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29827616
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7677473
+	Voluntary context switches: 14475
+	Involuntary context switches: 15552
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 793600
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=250-FFTMKL_omp-15.log
+
+---- DDSCAT: N=250, OMP_NUM_THREADS=1, FFT=GPFAFT ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: replaced.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[OK] Updated ddscat.par (backup: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.par.bak.20251128-232218)
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 1475.75
+	System time (seconds): 8.99
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 24:44.99
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29824664
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7677276
+	Voluntary context switches: 110
+	Involuntary context switches: 8639
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 793616
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=250-GPFAFT_omp-1.log
+
+---- DDSCAT: N=250, OMP_NUM_THREADS=2, FFT=GPFAFT ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 1496.33
+	System time (seconds): 8.56
+	Percent of CPU this job got: 108%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 23:05.36
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29824452
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7677271
+	Voluntary context switches: 884
+	Involuntary context switches: 8458
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 793608
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=250-GPFAFT_omp-2.log
+
+---- DDSCAT: N=250, OMP_NUM_THREADS=5, FFT=GPFAFT ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 1618.21
+	System time (seconds): 9.46
+	Percent of CPU this job got: 121%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 22:17.94
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29824084
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7677278
+	Voluntary context switches: 3308
+	Involuntary context switches: 9597
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 793600
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=250-GPFAFT_omp-5.log
+
+---- DDSCAT: N=250, OMP_NUM_THREADS=10, FFT=GPFAFT ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 1908.67
+	System time (seconds): 10.77
+	Percent of CPU this job got: 143%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 22:18.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29824084
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7677288
+	Voluntary context switches: 9361
+	Involuntary context switches: 13822
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 793600
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=250-GPFAFT_omp-10.log
+
+---- DDSCAT: N=250, OMP_NUM_THREADS=15, FFT=GPFAFT ----
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: already correct.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[--] No changes (already matched).
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 2161.87
+	System time (seconds): 12.67
+	Percent of CPU this job got: 162%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 22:18.45
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29824012
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7677300
+	Voluntary context switches: 14449
+	Involuntary context switches: 17371
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 793600
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving DDSCAT log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.log_000 -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs/ddscat/ddscat_fft_N=250-GPFAFT_omp-15.log
+
+===== DDA batch run finished: sam. 29 nov. 2025 01:17:04 CET =====

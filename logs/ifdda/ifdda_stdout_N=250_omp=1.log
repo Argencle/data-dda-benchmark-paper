@@ -1,0 +1,176 @@
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          250
+ Size of the box      :          250         250         250
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :     15625000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :    15625000
+ Number of subunit for the mesh   :    15625000
+ Size of the mesh size            :   9.5492965855137218E-009
+ Number of subunit along x y and z:         250         250         250
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ INIT RESIDU   1.0000000000000000      NORM   9673839719.0798264     
+ RESIDU  0.56080939496951732     
+ RESIDU  0.42813779210642233     
+ RESIDU  0.26525520023784876     
+ RESIDU  0.26345560038687954     
+ RESIDU  0.23758245138786582     
+ RESIDU  0.16996373950260954     
+ RESIDU  0.13869456319917045     
+ RESIDU  0.16126270542384122     
+ RESIDU  0.13163576104188698     
+ RESIDU  0.70649252276971775     
+ RESIDU  0.22494055556440679     
+ RESIDU  0.22065944430878706     
+ RESIDU  0.10965438219607770     
+ RESIDU   7.9710138825381513E-002
+ RESIDU   7.2654557398273326E-002
+ RESIDU   7.4986169117817789E-002
+ RESIDU  0.11029777818668994     
+ RESIDU   4.2617827196542453E-002
+ RESIDU   3.5501828846414847E-002
+ RESIDU   1.8207148285818046E-002
+ RESIDU   1.6835911308697108E-002
+ RESIDU   1.4046416847384715E-002
+ RESIDU   1.1114584703245436E-002
+ RESIDU   1.0441072560288365E-002
+ RESIDU   9.6089869503713701E-003
+ RESIDU   7.0067896543372791E-003
+ RESIDU   6.4265814618650096E-003
+ RESIDU   7.3008256582801287E-003
+ RESIDU   8.4007917996946346E-003
+ RESIDU   5.4037059393459526E-003
+ RESIDU   2.9510883168526710E-003
+ RESIDU   2.1211096263175689E-003
+ RESIDU   1.6580403495230318E-003
+ RESIDU   1.5777748938450814E-003
+ RESIDU   1.2880087689046667E-003
+ RESIDU   1.2148761412889436E-003
+ RESIDU   1.0387330669730640E-003
+ RESIDU   8.4665354169387297E-004
+ RESIDU   8.3368001575082789E-004
+ RESIDU   7.5488850720617777E-004
+ RESIDU   7.2721349757250402E-004
+ RESIDU   6.6780797191376201E-004
+ RESIDU   5.9200899828985452E-004
+ RESIDU   3.4566575496135319E-004
+ RESIDU   4.0703222161241905E-004
+ RESIDU   2.8382295947741536E-004
+ RESIDU   1.9162055135219143E-004
+ RESIDU   1.6639283904194114E-004
+ RESIDU   1.5830513271829455E-004
+ RESIDU   1.8151288525633386E-004
+ RESIDU   1.5277189846807460E-004
+ RESIDU   1.1127445151506281E-004
+ RESIDU   9.7796542153520154E-005
+ RESIDU   8.1948408622676476E-005
+ CPU time to solve Ax=b in second  :    957.54899200000000     
+ Real time to solve Ax=b in second :    957.70200000000000     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.1948408622681070E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4730049766924467E-011 m2
+ Csca =    2.4730049766924467E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    997.16329399999995     
+ Real time to execute the code in second :    997.32299999999998     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
+	Command being timed: "./ifdda -object cube 2387.3241463784303 -lambda 500 -epsmulti 1.7239689999999999 0.0 -ninitest 0 -nnnr 250 -tolinit 9.46237161365793d-5 -methodeit BICGSTAB -polarizability FG"
+	User time (seconds): 989.02
+	System time (seconds): 9.08
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 16:38.26
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 32056640
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 8011830
+	Voluntary context switches: 49
+	Involuntary context switches: 6395
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 8
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

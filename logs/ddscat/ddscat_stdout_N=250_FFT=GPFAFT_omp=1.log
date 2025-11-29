@@ -1,0 +1,40 @@
+>DDSCAT using parameter file=
+        
+ddscat.par                                                  
+>DDSCAT NUMPROC=   1                                                          
+  - CSHAPE: already correct.
+  - CMDSOL: already correct.
+  - CMDFFT: replaced.
+  - CALPHA: already correct.
+  - MEM_ALLOW: already correct.
+  - WAVELENGTHS: already correct.
+  - AEFF: already correct.
+  - NRFLD: already correct.
+  - TOL: already correct.
+  - ETASCA: already correct.
+  - IORTH: already correct.
+[OK] Updated ddscat.par (backup: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/ddscat.par.bak.20251129-121310)
+[RUN] /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505/src/ddscat (cwd: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/ddscat7.3.4_250505)
+	Command being timed: "ddscatcli -CSHAPE RCTGLPRSM -AEFF 1.4809777061418503 1.4809777061418503 1 'LIN' -WAVELENGTHS 0.5 0.5 1 'LIN' -DIEL diel/m1.313_0.00 -MEM_ALLOW 250 250 250 -SHPAR 250 250 250 -TOL 9.46237161365793e-5 -CMDSOL PBCGST -CALPHA FLTRCD -ETASCA 10 -IORTH 1 -NPLANES 0 -NRFLD 0 -CMDFFT GPFAFT -run"
+	User time (seconds): 1470.11
+	System time (seconds): 8.90
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 24:39.27
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 29824280
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 7677274
+	Voluntary context switches: 113
+	Involuntary context switches: 8241
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 793616
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

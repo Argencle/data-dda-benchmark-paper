@@ -5,7 +5,7 @@ set -euo pipefail
 # Project setup
 ###############################################################################
 
-PROJECT_ROOT="/home/argentic@coria.fr/Bureau/Work/paper1"
+PROJECT_ROOT="/home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper"
 
 VENV_DIR="$PROJECT_ROOT/.venv"
 ADDA_DIR="$PROJECT_ROOT/adda/src/mpi"
@@ -74,7 +74,7 @@ safe_value() {
 # Main loop over N
 ###############################################################################
 
-for N in 150; do
+for N in 150 250; do
   echo
   echo "=============================="
   echo "          N = ${N}"
@@ -117,7 +117,7 @@ for N in 150; do
   # Keep OpenMP threads at 1 to avoid oversubscription during MPI runs
   export OMP_NUM_THREADS=1
 
-  for NP in 1 2; do
+  for NP in 1 2 5 10 15; do
     echo
     echo "---- ADDA: N=${N}, mpirun -np ${NP} ----"
 
@@ -235,7 +235,7 @@ for N in 150; do
   echo "### IFDDA (OpenMP) runs, N=${N}"
   cd "$IFDDA_DIR"
 
-  for OMP in 1 2; do
+  for OMP in 1 2 5 10 15 22; do
     echo
     echo "---- IFDDA: N=${N}, OMP_NUM_THREADS=${OMP} ----"
     export OMP_NUM_THREADS="$OMP"
@@ -305,7 +305,7 @@ for N in 150; do
   DDSCAT_LOG_SRC="$DDSCAT_DIR/ddscat7.3.4_250505/ddscat.log_000"
 
   for FFT in FFTMKL GPFAFT; do
-    for OMP in 1 2; do
+    for OMP in 1 2 5 10 15; do
       echo
       echo "---- DDSCAT: N=${N}, OMP_NUM_THREADS=${OMP}, FFT=${FFT} ----"
       export OMP_NUM_THREADS="$OMP"
