@@ -1,0 +1,167 @@
+Computation with CUDA DP.
+Memory available : 48073 Mo
+Memory total     : 48508 Mo
+Memory used      : 435 Mo
+sizewrk: 6
+Memory available : 42171 Mo
+Memory total     : 48508 Mo
+Memory used      : 6337 Mo
+NORME  4.49599e+09    
+RESIDU 0.56081363048868726, Iteration: 1
+RESIDU 0.42830272516581652, Iteration: 2
+RESIDU 0.2652483431709392, Iteration: 3
+RESIDU 0.26394693743640574, Iteration: 4
+RESIDU 0.23823295650433157, Iteration: 5
+RESIDU 0.17003282462891275, Iteration: 6
+RESIDU 0.1387994231319894, Iteration: 7
+RESIDU 0.16098896407132238, Iteration: 8
+RESIDU 0.13164290965959166, Iteration: 9
+RESIDU 0.7274952194254628, Iteration: 10
+RESIDU 0.21479295406344087, Iteration: 11
+RESIDU 0.16824944600379171, Iteration: 12
+RESIDU 0.18096433628260539, Iteration: 13
+RESIDU 0.091742672796330652, Iteration: 14
+RESIDU 0.084778782077646705, Iteration: 15
+RESIDU 0.084213623846798952, Iteration: 16
+RESIDU 0.048908397012295796, Iteration: 17
+RESIDU 0.040001761862115924, Iteration: 18
+RESIDU 0.043059103058196532, Iteration: 19
+RESIDU 0.016735212641062574, Iteration: 20
+RESIDU 0.014545845698233409, Iteration: 21
+RESIDU 0.012871137979666363, Iteration: 22
+RESIDU 0.012540153129085437, Iteration: 23
+RESIDU 0.009695503552714934, Iteration: 24
+RESIDU 0.0082886945200751228, Iteration: 25
+RESIDU 0.0070439891308038032, Iteration: 26
+RESIDU 0.0061278828142914419, Iteration: 27
+RESIDU 0.0070099602789052079, Iteration: 28
+RESIDU 0.0088359074558386451, Iteration: 29
+RESIDU 0.0055095351681329358, Iteration: 30
+RESIDU 0.00294174353028691, Iteration: 31
+RESIDU 0.0021123062054506079, Iteration: 32
+RESIDU 0.0016778291478382892, Iteration: 33
+RESIDU 0.0015711513548180569, Iteration: 34
+RESIDU 0.0013153894855739343, Iteration: 35
+RESIDU 0.0012118131059844475, Iteration: 36
+RESIDU 0.0010146216372708761, Iteration: 37
+RESIDU 0.00084655230974632839, Iteration: 38
+RESIDU 0.00082081235801549537, Iteration: 39
+RESIDU 0.00074243532798137172, Iteration: 40
+RESIDU 0.00072933566208280168, Iteration: 41
+RESIDU 0.00067918114441520294, Iteration: 42
+RESIDU 0.00061662062815031867, Iteration: 43
+RESIDU 0.00034925216561450565, Iteration: 44
+RESIDU 0.00038208142942749605, Iteration: 45
+RESIDU 0.00029348995496294018, Iteration: 46
+RESIDU 0.00018712254026154732, Iteration: 47
+RESIDU 0.00016486076491734614, Iteration: 48
+RESIDU 0.00015047960621185547, Iteration: 49
+RESIDU 0.00017377901360245552, Iteration: 50
+RESIDU 0.00014778207819916888, Iteration: 51
+RESIDU 0.00011106479092622116, Iteration: 52
+RESIDU 9.8714088804226536e-05, Iteration: 53
+RESIDU 8.2387401574750472e-05, Iteration: 54
+ tol1 1.37206e+11    
+ tol1 8.23874e-05    
+tol: 0.000082
+ncompte: 110
+nloop: 54
+End computation with CUDA.
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          150
+ Size of the box      :          150         150         150
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :      3375000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :     3375000
+ Number of subunit for the mesh   :     3375000
+ Size of the mesh size            :   1.5915494309189534E-008
+ Number of subunit along x y and z:         150         150         150
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ CPU time to solve Ax=b in second  :    6.3121000000000009     
+ Real time to solve Ax=b in second :    6.3810000000000002     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.2387401574753074E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4729875277379752E-011 m2
+ Csca =    2.4729875277379752E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    14.557495000000001     
+ Real time to execute the code in second :    14.650000000000000     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************

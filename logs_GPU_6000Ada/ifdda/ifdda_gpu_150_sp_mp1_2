@@ -1,0 +1,179 @@
+Computation with CUDA.
+Memory available : 48073 Mo
+Memory total     : 48508 Mo
+Memory used      : 435 Mo
+planXX : 0
+planX : 1
+planY : 2
+planZ : 3
+planX : 1
+norme  4.49599e+09 
+sizewrk: 6
+Memory available : 45107 Mo
+Memory total     : 48508 Mo
+Memory used      : 3401 Mo
+trope = iso
+isotrope.
+gamma  0 
+Computation with CUDA SP.
+NORME 1 
+RESIDU 0.5608135461807251, Iteration: 1
+RESIDU 0.4283023476600647, Iteration: 2
+RESIDU 0.26524856686592102, Iteration: 3
+RESIDU 0.26395651698112488, Iteration: 4
+RESIDU 0.23820585012435913, Iteration: 5
+RESIDU 0.16996283829212189, Iteration: 6
+RESIDU 0.13855598866939545, Iteration: 7
+RESIDU 0.1581069678068161, Iteration: 8
+RESIDU 1.1683135032653809, Iteration: 9
+RESIDU 0.10057807713747025, Iteration: 10
+RESIDU 0.27091652154922485, Iteration: 11
+RESIDU 0.20909924805164337, Iteration: 12
+RESIDU 0.12853983044624329, Iteration: 13
+RESIDU 0.10487955063581467, Iteration: 14
+RESIDU 0.079664841294288635, Iteration: 15
+RESIDU 0.076384164392948151, Iteration: 16
+RESIDU 0.084571219980716705, Iteration: 17
+RESIDU 0.19659720361232758, Iteration: 18
+RESIDU 0.035238858312368393, Iteration: 19
+RESIDU 0.027098484337329865, Iteration: 20
+RESIDU 0.017480790615081787, Iteration: 21
+RESIDU 0.014403605833649635, Iteration: 22
+RESIDU 0.011250225827097893, Iteration: 23
+RESIDU 0.010818043723702431, Iteration: 24
+RESIDU 0.0099606886506080627, Iteration: 25
+RESIDU 0.0071193650364875793, Iteration: 26
+RESIDU 0.006416326854377985, Iteration: 27
+RESIDU 0.0082199405878782272, Iteration: 28
+RESIDU 0.0084725199267268181, Iteration: 29
+RESIDU 0.0044856495223939419, Iteration: 30
+RESIDU 0.0025502699427306652, Iteration: 31
+RESIDU 0.0020688145887106657, Iteration: 32
+RESIDU 0.001639016205444932, Iteration: 33
+RESIDU 0.0014719706960022449, Iteration: 34
+RESIDU 0.0012859919806942344, Iteration: 35
+RESIDU 0.0013137365458533168, Iteration: 36
+RESIDU 0.0011231238022446632, Iteration: 37
+RESIDU 0.00088719226187095046, Iteration: 38
+RESIDU 0.00087547494331374764, Iteration: 39
+RESIDU 0.00080785568570718169, Iteration: 40
+RESIDU 0.00077963917283341289, Iteration: 41
+RESIDU 0.00067224184749647975, Iteration: 42
+RESIDU 0.001749808550812304, Iteration: 43
+RESIDU 0.00036460557021200657, Iteration: 44
+RESIDU 0.0003395916719455272, Iteration: 45
+RESIDU 0.00049693218898028135, Iteration: 46
+RESIDU 0.0001976863422896713, Iteration: 47
+RESIDU 0.00018064683536067605, Iteration: 48
+RESIDU 0.00015525482012890279, Iteration: 49
+RESIDU 0.00018698255007620901, Iteration: 50
+RESIDU 0.0001883974764496088, Iteration: 51
+RESIDU 0.00028226285940036178, Iteration: 52
+RESIDU 9.9564735137391835e-05, Iteration: 53
+RESIDU 8.2934253441635519e-05, Iteration: 54
+ tol1 6.87838e-09      
+ tol1 8.2936e-05      
+tol: 0.000083
+ncompte: 110
+nloop: 54
+Avant destruction : planX=1, planY=2, planZ=3
+Avant destruction : planX=1, planY=2, planZ=3
+End computation with CUDA.
+ cdm with FFTW with HDF5          12
+ ******************************************
+ [91m*************** INPUT DATA ***************                                                          [0m
+ ******************************************
+ Wavelength           :    500.00000000000000      nm
+ Beam                 : pwavelinear
+ Object               : cube
+ Isotropy             : iso
+ Discretization       :          150
+ Size of the box      :          150         150         150
+ Iterative method     : BICGSTAB    
+ Preconditionner      :            0 (0 no precon.)
+ Initial guess        ;            0 (0 null, 1 Born)
+ Tolerance asked      :    9.4623716136579296E-005
+ Maximum of iteration :         1000
+ Rigorous or approx.  :            0 (0 rigourous)
+ Local field          :            0 (1 compute)
+ Macroscopic field    :            0 (1 compute)
+ Cross section        :            1 Csca           0 (1 compute)
+ Poynting asym. fac.  :            0 (1 compute)
+ Energy conservation  :            0 (1 compute)
+ Microscopy           :            0 Type           0
+ NA for hollographic mic. :   0.90000000000000002     
+ Side study           :            1 (1 kz>0, -1 kz<0)
+ Quick Lens           :            0 (1 compute with FFT)
+ Focal plane position :    0.0000000000000000      nm
+ Optical force        :            0           0 (1 compute)
+ Optical torque       :            0           0 (1 compute)
+ Near field           :            0
+ Additional side      :            0           0           0
+ Polarizability       : FG
+ Integration Green    :            0 (0 no integration)
+ Write  file          :            1 0 ascii file: 1 no file: 2 hdf5 file
+ Relative permittivity:                (1.7239689999999999,0.0000000000000000)
+ Maximum of subunit   :      3375000
+ Near field options   :           -1 Wide field :           0
+ [91m***********END INPUT DATA ****************                                                          [0m
+  
+ ******************************************
+ [94m************ BEGIN OBJECT ****************                                                          [0m
+ ******************************************
+ cube:side   2387.3241463784302     
+ CUBE
+ objetcube::side=   2.3873241463784303E-006
+ Object under study created       : cube
+ Number of subunit for the object :     3375000
+ Number of subunit for the mesh   :     3375000
+ Size of the mesh size            :   1.5915494309189534E-008
+ Number of subunit along x y and z:         150         150         150
+ Lambda/(10n)                     :   3.8080731150038088E-008
+ [94m************** END OBJECT ****************                                                          [0m
+  
+ ******************************************
+ [95m******** COMPUTE INCIDENT  FIELD *********                                                          [0m
+ ******************************************
+ Beam used  : pwavelinear
+ theta      :    0.0000000000000000     
+ phi        :    0.0000000000000000     
+ pola.      :    0.0000000000000000     
+ Power      :    1.0000000000000000      W
+ Irradiance :    7949085830.6736641      W/m2
+ Field      :                (2447309.3783680922,0.0000000000000000) V/m
+ [95m********** END INCIDENT FIELD ***********                                                           [0m
+  
+ ******************************************
+ [92m**** BEGIN COMPUTATION GREEN FUNCTION ****                                                          [0m
+ ******************************************
+ Use filtered Green function
+ End computation of the Green function
+ End FFT Green function
+ [92m***** END COMPUTATION GREEN FUNCTION *****                                                          [0m
+  
+ ******************************************
+ [95m***** BEGIN TO SOLVE LINEAR SYSTEM *******                                                          [0m
+ ******************************************
+ CPU time to solve Ax=b in second  :    3.1577279999999996     
+ Real time to solve Ax=b in second :    3.1650000000000000     
+ Method iterative used             : BICGSTAB    
+ Tolerance obtained                :    8.2936006947420537E-005
+ Tolerance asked                   :    9.4623716136579296E-005
+ Number of product Ax needs        :          110
+ Number of iterations              :           54
+ [95m******** END SOLVE LINEAR SYSTEM *********                                                          [0m
+  
+ ******************************************
+ [91m*********** COMPUTE CROSS SECTION ********                                                          [0m
+ ******************************************
+ Cext =    2.4729877427131161E-011 m2
+ Csca =    2.4729877427560978E-011 m2
+ Cabs =    0.0000000000000000      m2
+ **************** CPU TIME ****************
+ CPU time to execute the code in second  :    11.041146999999999     
+ Real time to execute the code in second :    11.069000000000001     
+ ******************************************
+ [91m*************** END **********************                                                          [0m
+ ***********************************************
+ Computation finished without problem:
+ ***********************************************
