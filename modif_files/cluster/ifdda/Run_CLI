@@ -1,0 +1,18 @@
+FFTW_CFLAGS="-I$FFTW_INC"
+FFTW_LIBS="-L$FFTW_DIR -Wl,-rpath,$FFTW_DIR -lfftw3_omp -lfftw3"
+HDF5_CFLAGS="-I$HDF5_DIR/include"
+HDF5_LIBS="-L$HDF5_DIR/lib -Wl,-rpath,$HDF5_DIR/lib -lhdf5hl_fortran -lhdf5_fortran -lhdf5_hl -lhdf5"
+
+FC=ftn
+FFLAGS="-cpp -DUSE_FFTW -DUSE_HDF5 -Warray-bounds -O3 -w -mcmodel=large -fopenmp"
+
+# --- build library ---
+cd ../cdmlib
+$FC $FFLAGS $FFTW_CFLAGS $HDF5_CFLAGS -c *.f
+rm -f libcdm.a
+ar rcs libcdm.a *.o
+
+# --- build test ---
+cd ../tests/test_command
+$FC $FFLAGS $FFTW_CFLAGS $HDF5_CFLAGS -c main.f
+$FC -fopenmp -o ifdda main.o ../../cdmlib/libcdm.a $FFTW_LIBS $HDF5_LIBS -lm
