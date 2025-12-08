@@ -1,11 +1,26 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.patches import Patch
+from matplotlib.lines import Line2D
 from matplotlib.colors import to_rgb
+
+
+# greyscale semantics for the legend
+matvec_grey = "#444444"  # dark grey
+solver_grey = "#777777"  # medium grey
+overhead_grey = "#BBBBBB"  # light grey
+overlay_color = "black"
+
+
+legend_handles = [
+    Patch(facecolor=matvec_grey, label="FFTs time"),
+    Patch(facecolor=solver_grey, label="Solver time"),
+    Patch(facecolor=overhead_grey, label="Wall time"),
+    Line2D(
+        [0], [0], color=overlay_color, linewidth=3, label="10-core wall time"
+    ),
+]
 
 
 # ------------------------------------------------------------
@@ -148,7 +163,6 @@ def grouped_stacked_bars_with_overlay_ax(
                 alpha=solver_alpha,
             )
 
-            bar_base_color = solver_color
         else:
             # Other codes: the whole solver chunk in base color
             ax.bar(
@@ -618,6 +632,11 @@ def main():
     )
     fig.subplots_adjust(hspace=0.35)
 
+    ax_top.legend(
+        handles=legend_handles,
+        loc="upper left",
+        frameon=False,
+    )
     # Define base colors per code
     code_colors = {
         "ADDA": "#1f77b4",  # blue
