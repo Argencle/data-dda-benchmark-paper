@@ -5,8 +5,30 @@ import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
 from matplotlib.patches import Patch
+from matplotlib.colors import to_rgb
 
 
+# ------------------------------------------------------------
+# Color helpers
+# ------------------------------------------------------------
+def lighten_color(color, factor=0.7):
+    """
+    Return a lighter shade of the given matplotlib color by mixing with white.
+
+    factor in (0,1): closer to 1 → closer to original color,
+                     closer to 0 → closer to white.
+    """
+    r, g, b = to_rgb(color)
+    return (
+        (1 - factor) + factor * r,
+        (1 - factor) + factor * g,
+        (1 - factor) + factor * b,
+    )
+
+
+# ------------------------------------------------------------
+# Grouped stacked bars with overlay
+# ------------------------------------------------------------
 def grouped_stacked_bars_with_overlay_ax(
     ax,
     title,
@@ -14,35 +36,42 @@ def grouped_stacked_bars_with_overlay_ax(
     solver_series,
     total_series,
     overlay_total_series=None,  # e.g., {"IFDDA DP": [...], "IFDDA SP": [...]}
-    overlay_label="10-core wall time",
+    matvec_series=None,  # e.g., {"ADDA": [...]}
+    code_colors=None,  # dict: series_name -> base color
+    xtick_series="IFDDA SP",  # which series to use to place x-ticks
     ylabel="Seconds",
     solver_alpha=0.95,
     overhead_alpha=0.35,
-    hatch_pattern="//",
-    seg_legend_loc=None,
-    code_legend_loc=None,
     annotate_fontsize=9,
     overlay_offset=0.6,
 ):
     """
     Draw on a provided Axes `ax`:
-      - grouped bars per code
-      - bottom segment: solver time (1 core / baseline OMP)
-      - top segment: overhead = total - solver
-      - optional hatched overlay bar for e.g. 10-core TOTAL
-      - annotate TOTAL and solver values, and overlay values above hatched bars
+      - grouped bars per code (ADDA, IFDDA DP, IFDDA SP, ...)
+      - if no matvec for a code:
+          bottom segment: solver time (baseline OMP)
+          top segment   : overhead = total - solver
+      - if matvec for a code (e.g. ADDA):
+          bottom : matvec time
+          middle : solver - matvec
+          top    : overhead = total - solver
+      - overlay: thick black horizontal line representing (e.g.) 10-core TOTAL
+      - annotate TOTAL, solver, and overlay values.
+      - x tick labels aligned on the chosen `xtick_series`.
     """
     series_names = list(solver_series.keys())
     assert set(series_names) == set(
         total_series.keys()
     ), "Solver/Total keys must match."
-
     n_series = len(series_names)
     n_groups = len(x_labels)
 
     for s in series_names:
         assert len(solver_series[s]) == n_groups
         assert len(total_series[s]) == n_groups
+        if matvec_series is not None and s in matvec_series:
+            assert len(matvec_series[s]) == n_groups
+
     if overlay_total_series:
         for s, arr in overlay_total_series.items():
             assert (
@@ -52,38 +81,96 @@ def grouped_stacked_bars_with_overlay_ax(
                 len(arr) == n_groups
             ), f"Overlay series length mismatch for {s}"
 
+    # Choose colors for each series
+    if code_colors is None:
+        default_colors = plt.rcParams["axes.prop_cycle"].by_key()["color"]
+        code_colors = {
+            name: default_colors[i % len(default_colors)]
+            for i, name in enumerate(series_names)
+        }
+
     x = np.arange(n_groups)
     width = 0.8 / max(1, n_series)
 
-    code_patches = []
-    bar_positions = {}
+    bar_positions = {}  # store x-offsets per series
 
     # Draw stacked bars for each code
     for i, s in enumerate(series_names):
+        base_color = code_colors[s]
+
         sol = np.array(solver_series[s], dtype=float)
         tot = np.array(total_series[s], dtype=float)
 
-        # Replace NaNs by zero for plotting, but keep original values for labels
+        # Replace NaNs for plotting (we still use original values for labels)
         sol_plot = np.nan_to_num(sol, nan=0.0)
         tot_plot = np.nan_to_num(tot, nan=0.0)
+
         over = np.maximum(tot_plot - sol_plot, 0.0)
+
+        has_matvec = matvec_series is not None and s in matvec_series
+        if has_matvec:
+            mv = np.array(matvec_series[s], dtype=float)
+            mv_plot = np.nan_to_num(mv, nan=0.0)
+            # Safety: ensure matvec <= solver for display
+            mv_plot = np.minimum(mv_plot, sol_plot)
+            sol_rest_plot = np.maximum(sol_plot - mv_plot, 0.0)
+        else:
+            mv = None
+            mv_plot = None
+            sol_rest_plot = sol_plot.copy()
 
         x_off = x + i * width - 0.4 + (width * n_series) / 2
         bar_positions[s] = x_off
 
-        b1 = ax.bar(x_off, sol_plot, width, alpha=solver_alpha)
-        face = b1.patches[0].get_facecolor()
+        solver_color = lighten_color(base_color, 0.6)
 
+        # --- Draw bars ---
+        if has_matvec and s == "ADDA":
+            # For ADDA: darker matvec bar + lighter solver bar
+            matvec_color = base_color
+
+            # Matvec chunk (bottom)
+            ax.bar(
+                x_off,
+                mv_plot,
+                width,
+                color=matvec_color,
+                alpha=1.0,
+            )
+
+            # Remaining solver time above matvec
+            ax.bar(
+                x_off,
+                sol_rest_plot,
+                width,
+                bottom=mv_plot,
+                color=solver_color,
+                alpha=solver_alpha,
+            )
+
+            bar_base_color = solver_color
+        else:
+            # Other codes: the whole solver chunk in base color
+            ax.bar(
+                x_off,
+                sol_plot,
+                width,
+                color=solver_color,
+                alpha=solver_alpha,
+            )
+
+        # Overhead chunk (same hue, more transparent)
         ax.bar(
             x_off,
             over,
             width,
             bottom=sol_plot,
-            color=face,
+            color=solver_color,
             alpha=overhead_alpha,
         )
 
-        # Annotate totals and solver (only if finite)
+        # --- Annotations ---
+        # Total time on top of stacked bar
         for xi, si, oi, ti in zip(x_off, sol_plot, over, tot):
             if np.isfinite(ti) and ti > 0:
                 ax.text(
@@ -94,41 +181,62 @@ def grouped_stacked_bars_with_overlay_ax(
                     va="bottom",
                     fontsize=annotate_fontsize,
                 )
+
+        # Solver time label
         for xi, si, ti in zip(x_off, sol_plot, sol):
             if np.isfinite(ti) and si > 0:
-                ax.text(
-                    xi,
-                    si / 2.0,
-                    f"{ti:.1f}",
-                    ha="center",
-                    va="center",
-                    fontsize=annotate_fontsize,
-                )
+                # For ADDA, put solver label slightly above the solver segment
+                if s == "ADDA":
+                    ax.text(
+                        xi,
+                        si + 0.5,
+                        f"{ti:.1f}",
+                        ha="center",
+                        va="bottom",
+                        fontsize=annotate_fontsize,
+                    )
+                else:
+                    ax.text(
+                        xi,
+                        si / 2.0,
+                        f"{ti:.1f}",
+                        ha="center",
+                        va="center",
+                        fontsize=annotate_fontsize,
+                    )
 
-        code_patches.append(
-            Patch(facecolor=face, edgecolor=face, alpha=solver_alpha, label=s)
-        )
+        # Matvec label (only if available)
+        if has_matvec and mv is not None:
+            for xi, mvi in zip(x_off, mv_plot):
+                if mvi > 0:
+                    ax.text(
+                        xi,
+                        mvi / 2.0,
+                        f"{mvi:.1f}",
+                        ha="center",
+                        va="center",
+                        fontsize=annotate_fontsize,
+                        color="black",
+                    )
 
-    # Hatched overlays (e.g., 10-core totals) + annotate above hatch
-    overlay_patch = None
+    # --- Overlay: 10-core total as thick black horizontal line ---
     if overlay_total_series:
         for s, arr in overlay_total_series.items():
             x_off = bar_positions[s]
             arr = np.array(arr, dtype=float)
             arr_plot = np.nan_to_num(arr, nan=0.0)
 
-            ax.bar(
-                x_off,
-                arr_plot,
-                width * 0.95,
-                fill=False,
-                hatch=hatch_pattern,
-                linewidth=0.6,
-                label=overlay_label if overlay_patch is None else None,
-            )
-            # Values above the hatched bars
             for xi, yi, val in zip(x_off, arr_plot, arr):
                 if np.isfinite(val) and yi > 0:
+                    # Thick black line centered on bar
+                    ax.hlines(
+                        yi,
+                        xi - width * 0.45,
+                        xi + width * 0.45,
+                        linewidth=3.0,
+                        color="black",
+                    )
+                    # Label above the overlay line
                     ax.text(
                         xi,
                         yi + overlay_offset,
@@ -137,50 +245,24 @@ def grouped_stacked_bars_with_overlay_ax(
                         va="bottom",
                         fontsize=annotate_fontsize,
                     )
-            if overlay_patch is None:
-                overlay_patch = Patch(
-                    fill=False, hatch=hatch_pattern, label=overlay_label
-                )
 
-    ax.set_xticks(x)
+    # --- X ticks: align labels with the chosen series (e.g. "IFDDA SP") ---
+    if xtick_series is not None and xtick_series in bar_positions:
+        xtick_positions = bar_positions[xtick_series]
+    else:
+        # fallback: group centers
+        xtick_positions = x
+
+    ax.set_xticks(xtick_positions)
     ax.set_xticklabels(x_labels, rotation=15, ha="right")
     ax.set_ylabel(ylabel)
     if title:
         ax.set_title(title, pad=6)
 
-    # Legends (optional)
-    if seg_legend_loc:
-        seg_patches = [
-            Patch(alpha=solver_alpha),
-            Patch(alpha=overhead_alpha),
-        ]
-        leg1 = ax.legend(
-            seg_patches,
-            ["Solver", "Wall time"],
-            loc=seg_legend_loc,
-            ncols=1,
-            frameon=False,
-        )
-        ax.add_artist(leg1)
-
-    if code_legend_loc:
-        patches = code_patches.copy()
-        if overlay_patch:
-            patches.append(overlay_patch)
-        ax.legend(
-            patches,
-            [p.get_label() for p in patches],
-            loc=code_legend_loc,
-            ncols=1,
-            frameon=False,
-        )
-
 
 # -------------------------------------------------------------------
 # Helpers to load & label data
 # -------------------------------------------------------------------
-
-
 def load_ifdda_gpu_data():
     """
     Load all IFDDA GPU CSVs, add a 'gpu_label' column, and concatenate.
@@ -209,7 +291,6 @@ def load_ifdda_gpu_data():
 
     dfs = []
 
-    # Map 'partition' -> GPU label for the cluster file
     cluster_partition_to_label = {
         "gpu_all": "NVIDIA A100",
         "gpu_h200": "NVIDIA H200",
@@ -226,7 +307,6 @@ def load_ifdda_gpu_data():
                 )
             df["gpu_label"] = df["partition"].map(cluster_partition_to_label)
         else:
-            # Single-GPU files: assign constant label
             df["gpu_label"] = src["gpu_label"]
 
         dfs.append(df)
@@ -301,13 +381,11 @@ def get_ifdda_times(df_ifdda, N, gpu_label, precision, omp):
     -------
     solver_mean, total_mean  (floats or np.nan if no data)
     """
-    # Executable names according to precision (both variants supported)
     if precision.lower() == "dp":
         exe_names = ["ifdda_gpu", "ifdda_GPU"]
     else:
         exe_names = ["ifdda_gpu_sp", "ifdda_GPU_single"]
 
-    # Columns are lowercase: n, omp, exe, gpu_label, total_time, solver_time
     mask = (
         (df_ifdda["n"] == N)
         & (df_ifdda["gpu_label"] == gpu_label)
@@ -320,7 +398,6 @@ def get_ifdda_times(df_ifdda, N, gpu_label, precision, omp):
     if sub.empty:
         return np.nan, np.nan
 
-    # Use the mean over repetitions
     if "solver_time" not in sub.columns or "total_time" not in sub.columns:
         raise ValueError(
             "IFDDA CSV must contain 'solver_time' and 'total_time' columns."
@@ -334,7 +411,7 @@ def get_ifdda_times(df_ifdda, N, gpu_label, precision, omp):
 
 def get_adda_times(df_adda, N, gpu_label):
     """
-    Extract mean solver_time and total_wall_time (or equivalent) for ADDA GPU.
+    Extract mean solver_time, total time, and matvec/FFT time for ADDA GPU.
 
     Parameters
     ----------
@@ -344,10 +421,9 @@ def get_adda_times(df_adda, N, gpu_label):
 
     Returns
     -------
-    solver_mean, total_mean
+    solver_mean, total_mean, matvec_mean
     """
-    # Executable name for ADDA GPU
-    exe_names = ["adda_ocl", "adda_OCL"]  # be a bit permissive
+    exe_names = ["adda_ocl", "adda_OCL"]
 
     mask = (
         (df_adda["n"] == N)
@@ -358,12 +434,12 @@ def get_adda_times(df_adda, N, gpu_label):
     sub = df_adda.loc[mask]
 
     if sub.empty:
-        return np.nan, np.nan
+        return np.nan, np.nan, np.nan
 
     if "solver_time" not in sub.columns:
         raise ValueError("ADDA CSV must contain 'solver_time' column.")
 
-    # Depending on your CSV, total time may be 'total_wall_time', 'total_time' or 'elapsed_seconds'
+    # Determine total time column
     if "total_wall_time" in sub.columns:
         total_col = "total_wall_time"
     elif "total_time" in sub.columns:
@@ -375,16 +451,29 @@ def get_adda_times(df_adda, N, gpu_label):
             "ADDA CSV must contain 'total_wall_time', 'total_time' or 'elapsed_seconds'."
         )
 
+    # Matvec/FFT time (if available)
+    if "matvec_time" in sub.columns:
+        matvec_col = "matvec_time"
+    elif "fft_time" in sub.columns:
+        matvec_col = "fft_time"
+    else:
+        matvec_col = None
+
     solver_mean = sub["solver_time"].mean()
     total_mean = sub[total_col].mean()
+    if matvec_col is not None:
+        matvec_mean = sub[matvec_col].mean()
+    else:
+        matvec_mean = np.nan
 
-    return solver_mean, total_mean
+    return solver_mean, total_mean, matvec_mean
 
 
+# -------------------------------------------------------------------
+# Main
+# -------------------------------------------------------------------
 def main():
-    # ------------------------------------------------------------------
-    # 1) Labels on x-axis for N=150 and N=250
-    # ------------------------------------------------------------------
+    # X labels for each N
     x_labels_150 = [
         "NVIDIA A100",
         "NVIDIA H200",
@@ -395,47 +484,28 @@ def main():
         "NVIDIA A100",
         "NVIDIA H200",
         "RTX 6000 Ada",
-        # RTX 2000 Ada can be added here if you have N=250 data for this GPU
     ]
 
-    # OMP used for "baseline" (full filled bar) and "overlay" (hatched)
-    # If your current data uses OMP=2 and OMP=10, change baseline_omp=2.
-    baseline_omp = 1
-    overlay_omp = 10
+    baseline_omp = 1  # baseline (bar filled)
+    overlay_omp = 10  # 10-core overlay line
 
-    # ------------------------------------------------------------------
-    # 2) Load data from CSVs
-    # ------------------------------------------------------------------
     df_ifdda = load_ifdda_gpu_data()
     df_adda = load_adda_gpu_data()
 
-    # ------------------------------------------------------------------
-    # 3) Build data dictionaries from CSV
-    # ------------------------------------------------------------------
-
-    # N = 150
-    solver_150 = {
-        "ADDA": [],
-        "IFDDA DP": [],
-        "IFDDA SP": [],
-    }
-    total_150 = {
-        "ADDA": [],
-        "IFDDA DP": [],
-        "IFDDA SP": [],
-    }
-    overlay_150 = {
-        "IFDDA DP": [],
-        "IFDDA SP": [],
-    }
+    # ----------------- N = 150 -----------------
+    solver_150 = {"ADDA": [], "IFDDA DP": [], "IFDDA SP": []}
+    total_150 = {"ADDA": [], "IFDDA DP": [], "IFDDA SP": []}
+    overlay_150 = {"IFDDA DP": [], "IFDDA SP": []}
+    matvec_150 = {"ADDA": []}
 
     for gpu_label in x_labels_150:
-        # ADDA (baseline)
-        adda_solver, adda_total = get_adda_times(
+        # ADDA
+        adda_solver, adda_total, adda_matvec = get_adda_times(
             df_adda, N=150, gpu_label=gpu_label
         )
         solver_150["ADDA"].append(adda_solver)
         total_150["ADDA"].append(adda_total)
+        matvec_150["ADDA"].append(adda_matvec)
 
         # IFDDA DP
         ifdda_dp_solver_1, ifdda_dp_total_1 = get_ifdda_times(
@@ -475,29 +545,20 @@ def main():
         total_150["IFDDA SP"].append(ifdda_sp_total_1)
         overlay_150["IFDDA SP"].append(ifdda_sp_total_ov)
 
-    # N = 250
-    solver_250 = {
-        "ADDA": [],
-        "IFDDA DP": [],
-        "IFDDA SP": [],
-    }
-    total_250 = {
-        "ADDA": [],
-        "IFDDA DP": [],
-        "IFDDA SP": [],
-    }
-    overlay_250 = {
-        "IFDDA DP": [],
-        "IFDDA SP": [],
-    }
+    # ----------------- N = 250 -----------------
+    solver_250 = {"ADDA": [], "IFDDA DP": [], "IFDDA SP": []}
+    total_250 = {"ADDA": [], "IFDDA DP": [], "IFDDA SP": []}
+    overlay_250 = {"IFDDA DP": [], "IFDDA SP": []}
+    matvec_250 = {"ADDA": []}
 
     for gpu_label in x_labels_250:
         # ADDA
-        adda_solver, adda_total = get_adda_times(
+        adda_solver, adda_total, adda_matvec = get_adda_times(
             df_adda, N=250, gpu_label=gpu_label
         )
         solver_250["ADDA"].append(adda_solver)
         total_250["ADDA"].append(adda_total)
+        matvec_250["ADDA"].append(adda_matvec)
 
         # IFDDA DP
         ifdda_dp_solver_1, ifdda_dp_total_1 = get_ifdda_times(
@@ -537,9 +598,7 @@ def main():
         total_250["IFDDA SP"].append(ifdda_sp_total_1)
         overlay_250["IFDDA SP"].append(ifdda_sp_total_ov)
 
-    # ------------------------------------------------------------------
-    # 4) Plot
-    # ------------------------------------------------------------------
+    # ----------------- Plotting -----------------
     plt.rcParams.update(
         {
             "figure.figsize": (9.5, 9.5),
@@ -559,6 +618,13 @@ def main():
     )
     fig.subplots_adjust(hspace=0.35)
 
+    # Define base colors per code
+    code_colors = {
+        "ADDA": "#1f77b4",  # blue
+        "IFDDA DP": "#ff7f0e",  # orange
+        "IFDDA SP": "#2ca02c",  # green
+    }
+
     # (a) N=150
     grouped_stacked_bars_with_overlay_ax(
         ax=ax_top,
@@ -567,9 +633,10 @@ def main():
         solver_series=solver_150,
         total_series=total_150,
         overlay_total_series=overlay_150,
+        matvec_series=matvec_150,
+        code_colors=code_colors,
+        xtick_series="IFDDA SP",  # align x-ticks on IFDDA SP
         ylabel="Seconds",
-        seg_legend_loc="upper center",
-        code_legend_loc="upper left",
         annotate_fontsize=9,
         overlay_offset=0.6,
     )
@@ -582,15 +649,16 @@ def main():
         solver_series=solver_250,
         total_series=total_250,
         overlay_total_series=overlay_250,
+        matvec_series=matvec_250,
+        code_colors=code_colors,
+        xtick_series="IFDDA SP",
         ylabel="Seconds",
-        seg_legend_loc=None,
-        code_legend_loc=None,
         annotate_fontsize=9,
         overlay_offset=1.0,
     )
 
     plt.tight_layout()
-    plt.savefig("Figure3_from_csv.pdf", dpi=300, bbox_inches="tight")
+    plt.savefig("Figure3.pdf", dpi=300, bbox_inches="tight")
     plt.show()
 
 
