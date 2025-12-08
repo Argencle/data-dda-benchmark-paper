@@ -1,0 +1,58 @@
+===== DDA GPU batch run started: lun. 08 déc. 2025 14:15:13 CET on c-2024-057 =====
+Main GPU log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs_GPU_2000Ada/run_GPU_20251208_141513.log
+
+
+Number of GPU jobs to run (including repetitions): 18
+Randomizing GPU job order...
+
+
+==============================
+ ADDA GPU job: N=250, exe=adda_ocl_blas, solver=bicg, rep=1
+==============================
+all data is saved in 'run083_box_g250_m1.313'
+box dimensions: 250x250x250
+lambda: 0.5   Dipoles/lambda: 52.3599
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 15625000
+Searching for OpenCL devices
+Using OpenCL device NVIDIA RTX 2000 Ada Generation Laptop GPU, based on NVIDIA CUDA
+Device memory: total - 7808 MB, maximum object - 1952 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing clFFT
+Total memory usage: 4038.2 MB
+OpenCL memory usage: peak total - 8017.9 MB, maximum object - 2884.0 MB
+
+here we go, calc Y
+
+CoupleConstant: 4.045070133e-08+2.164663757e-12i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+ERROR: (../oclmatvec.c:182) CL error code -4: Memory object allocation failure
+
+Warning:  Program terminating, but clFFT resources not freed.
+Please consider explicitly calling clfftTeardown( ).
+Command exited with non-zero status 1
+	Command being timed: "./adda_ocl_blas -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 250 -eps 4.024 -iter bicg -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 13.26
+	System time (seconds): 2.68
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:16.04
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 4147748
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 1781177
+	Voluntary context switches: 4393
+	Involuntary context switches: 131
+	Swaps: 0
+	File system inputs: 40
+	File system outputs: 200
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 1
