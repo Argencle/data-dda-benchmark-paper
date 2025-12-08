@@ -219,7 +219,6 @@ module load cray-fftw cray-hdf5
 ```
 - GPU
 ```GPU
-module load gcc-native/12.2
 module load nvhpc-hpcx-cuda12/23.11
 module load cray-fftw cray-hdf5
 ```

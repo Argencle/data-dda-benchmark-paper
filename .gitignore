@@ -4,4 +4,7 @@ __pycache__/
 bin/
 adda/
 if-dda/
+ifdda/
+ddscat/
+ddscat_runs/
 ddscat7.3.4_250505/
