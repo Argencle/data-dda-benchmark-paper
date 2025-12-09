@@ -1,106 +1,101 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.patches as mpatches
 from matplotlib.lines import Line2D
 from matplotlib.colors import to_rgb
 
 
-def add_color_legend_grid(
-    ax, code_colors, solver_alpha=0.95, overhead_alpha=0.35
-):
+def add_legend_table(ax, code_colors, solver_alpha=0.95, overhead_alpha=0.35):
     """
-    Ajoute dans le coin haut gauche de `ax` une légende organisée en tableau :
+    Tableau de légende :
 
-        lignes   : ADDA, IFDDA DP, IFDDA SP
-        colonnes : FFTs, Solver, Wall, 10-core
-
-    - FFTs  : couleur base (ADDA uniquement)
-    - Solver: couleur solver (lighten_color) avec alpha élevé
-    - Wall  : même couleur mais alpha plus faible
-    - 10-core: ligne fine pour montrer que c'est un trait, pas une barre.
+    Lignes   : ADDA, IFDDA DP, IFDDA SP
+    Colonnes : FFTs, Solver, Wall, 10-core
     """
     codes = ["ADDA", "IFDDA DP", "IFDDA SP"]
     col_labels = ["FFTs", "Solver", "Wall", "10-core"]
 
-    # Position globale dans l'axe (coordonnées 0–1)
-    x0, y0 = 0.1, 0.9  # coin haut gauche de la "table"
-    col_w, row_h = 0.08, 0.04  # largeur d'une colonne / hauteur d'une ligne
+    n_rows = len(codes)
+    n_cols = len(col_labels)
 
-    # --- Noms des colonnes au-dessus ---
-    for j, label in enumerate(col_labels):
-        xc = x0 + (j + 0.4) * col_w
-        ax.text(
-            xc,
-            y0 + 0.03,
-            label,
-            ha="center",
-            va="top",
-            transform=ax.transAxes,
-            fontsize=9,
-        )
+    # Texte vide, on n’affiche que la couleur
+    cell_text = [["" for _ in range(n_cols)] for _ in range(n_rows)]
 
-    # --- Lignes (codes) ---
+    def rgba(c, a=1.0):
+        r, g, b = to_rgb(c)
+        return (r, g, b, a)
+
+    # Couleurs de fond des cellules
+    cell_colours = [
+        [(0.0, 0.0, 0.0, 0.0) for _ in range(n_cols)] for _ in range(n_rows)
+    ]
+
     for i, code in enumerate(codes):
-        # y de la ligne i
-        y = y0 - (i + 1) * row_h
-
-        # label de ligne (ADDA / IFDDA DP / IFDDA SP)
-        ax.text(
-            x0 - 0.01,
-            y + 0.4 * row_h,
-            code,
-            ha="right",
-            va="center",
-            transform=ax.transAxes,
-            fontsize=9,
-        )
-
         base = code_colors[code]
         solver_col = lighten_color(base, 0.6)
 
-        # Petite fonction utilitaire pour dessiner un rectangle "échantillon"
-        def draw_box(col_idx, facecolor=None, alpha=1.0, edge=True):
-            if facecolor is None:
-                return
-            box_x = x0 + col_idx * col_w + 0.02 * col_w
-            box_y = y + 0.2 * row_h
-            rect = mpatches.Rectangle(
-                (box_x, box_y),
-                0.76 * col_w,
-                0.6 * row_h,
-                transform=ax.transAxes,
-                facecolor=facecolor,
-                edgecolor="black" if edge else "none",
-                linewidth=0.0,
-                alpha=alpha,
-                zorder=5,
-            )
-            ax.add_patch(rect)
-
-        # Colonne FFTs : seulement pour ADDA
+        # FFTs seulement pour ADDA (colonne 0)
         if code == "ADDA":
-            draw_box(col_idx=0, facecolor=base, alpha=1.0)
+            cell_colours[i][0] = rgba(base, 1.0)
 
-        # Colonne Solver
-        draw_box(col_idx=1, facecolor=solver_col, alpha=solver_alpha)
+        # Solver (colonne 1)
+        cell_colours[i][1] = rgba(solver_col, solver_alpha)
 
-        # Colonne Wall (overhead, plus transparent)
-        draw_box(col_idx=2, facecolor=solver_col, alpha=overhead_alpha)
+        # Wall / overhead (colonne 2)
+        cell_colours[i][2] = rgba(solver_col, overhead_alpha)
+        # colonne 3 (10-core) reste transparente, on dessinera un trait
 
-        # Colonne 10-core : petite ligne fine pour symboliser le trait
-        x_line_start = x0 + 3 * col_w + 0.08 * col_w
-        x_line_end = x0 + 3 * col_w + 0.75 * col_w
-        y_line = y + 0.5 * row_h
-        line = Line2D(
-            [x_line_start, x_line_end],
-            [y_line, y_line],
+    table = ax.table(
+        cellText=cell_text,
+        cellColours=cell_colours,
+        rowLabels=codes,
+        colLabels=col_labels,
+        cellLoc="center",
+        rowLoc="center",
+        loc="upper left",
+        bbox=[0.08, 0.78, 0.20, 0.20],
+    )
+
+    table.auto_set_font_size(False)
+    table.set_fontsize(8)
+
+    for key, cell in table.get_celld().items():
+        cell.set_linewidth(0.3)
+
+    # ------------------------------
+    # Traits "10-core" dans la DERNIÈRE
+    # colonne de données (index = n_cols - 1)
+    # ------------------------------
+    last_data_col = n_cols - 1  # 0..n_cols-1 sont les colonnes de données
+
+    for i, code in enumerate(codes):
+        if not code.startswith("IFDDA"):
+            continue
+
+        cell = table[(i + 1, last_data_col)]
+        x, y = cell.get_xy()
+        w, h = cell.get_width(), cell.get_height()
+
+        line_DP = Line2D(
+            [x + 0.95 * w, x + 1.09 * w],
+            [y + 15.95 * h, y + 15.95 * h],
             transform=ax.transAxes,
             color="black",
-            linewidth=3.0,  # plus fin pour bien marquer que c'est une ligne
+            linewidth=3.0,
+            clip_on=False,
             zorder=6,
         )
-        ax.add_line(line)
+        line_SP = Line2D(
+            [x + 0.95 * w, x + 1.09 * w],
+            [y + 15.0 * h, y + 15.0 * h],
+            transform=ax.transAxes,
+            color="black",
+            linewidth=3.0,
+            clip_on=False,
+            zorder=6,
+        )
+        ax.add_line(line_DP)
+        ax.add_line(line_SP)
 
 
 # ------------------------------------------------------------
@@ -578,6 +573,7 @@ def main():
         "NVIDIA A100",
         "NVIDIA H200",
         "RTX 6000 Ada",
+        "RTX 2000 Ada",
     ]
 
     baseline_omp = 1  # baseline (bar filled)
@@ -736,9 +732,11 @@ def main():
         ylabel="Seconds",
         annotate_fontsize=9,
         overlay_offset=0.6,
+        solver_alpha=solver_alpha,
+        overhead_alpha=overhead_alpha,
     )
 
-    add_color_legend_grid(
+    add_legend_table(
         ax_top,
         code_colors,
         solver_alpha=solver_alpha,
@@ -759,6 +757,8 @@ def main():
         ylabel="Seconds",
         annotate_fontsize=9,
         overlay_offset=1.0,
+        solver_alpha=solver_alpha,
+        overhead_alpha=overhead_alpha,
     )
 
     plt.tight_layout()

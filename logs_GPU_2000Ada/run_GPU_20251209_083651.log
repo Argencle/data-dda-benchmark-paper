@@ -1,0 +1,326 @@
+===== DDA GPU batch run started: mar. 09 déc. 2025 08:36:51 CET on c-2024-057 =====
+Main GPU log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs_GPU_2000Ada/run_GPU_20251209_083651.log
+
+
+Number of GPU jobs to run (including repetitions): 3
+Randomizing GPU job order...
+
+
+==============================
+ ADDA GPU job: N=250, exe=adda_ocl, solver=bicgstab, rep=1
+==============================
+all data is saved in 'run114_box_g250_m1.313'
+box dimensions: 250x250x250
+lambda: 0.5   Dipoles/lambda: 52.3599
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 15625000
+Searching for OpenCL devices
+Using OpenCL device NVIDIA RTX 2000 Ada Generation Laptop GPU, based on NVIDIA CUDA
+Device memory: total - 7808 MB, maximum object - 1952 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing clFFT
+Total memory usage: 6303.2 MB
+OpenCL memory usage: peak total - 6700.9 MB, maximum object - 2884.0 MB
+
+here we go, calc Y
+
+CoupleConstant: 4.045070133e-08+2.164663757e-12i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60809394951159335E-01  + 
+RE_002 = 4.28137791708700088E-01  + 
+RE_003 = 2.65255200673272462E-01  + 
+RE_004 = 2.63455613070289918E-01  + 
+RE_005 = 2.37582577463905847E-01  + 
+RE_006 = 1.69963498287140691E-01  + 
+RE_007 = 1.38694019066347901E-01  + 
+RE_008 = 1.61217014572869299E-01  - 
+RE_009 = 1.31874723446725461E-01  + 
+RE_010 = 7.83377797376982321E-01  - 
+RE_011 = 1.97723891282776731E-01  -+
+RE_012 = 1.65829899259711311E-01  -+
+RE_013 = 1.22932071474261925E-01  + 
+RE_014 = 8.60583865326661340E-02  + 
+RE_015 = 7.72504454121290679E-02  + 
+RE_016 = 7.90517294477030980E-02  - 
+RE_017 = 1.36957301832684342E-01  - 
+RE_018 = 4.56018406643611540E-02  + 
+RE_019 = 3.93284631724310774E-02  + 
+RE_020 = 1.60009857179836679E-02  + 
+RE_021 = 2.00394812034151541E-02  - 
+RE_022 = 1.36648334912207129E-02  + 
+RE_023 = 1.11326066933610732E-02  + 
+RE_024 = 1.01560837353183667E-02  + 
+RE_025 = 9.65550507043470146E-03  + 
+RE_026 = 7.09094428773164587E-03  + 
+RE_027 = 6.49317213039361536E-03  + 
+RE_028 = 7.50466989116094479E-03  - 
+RE_029 = 8.58302287541415874E-03  - 
+RE_030 = 5.53413241482716631E-03  + 
+RE_031 = 2.92875376785513850E-03  + 
+RE_032 = 2.05880892062690899E-03  + 
+RE_033 = 1.62505511470521671E-03  + 
+RE_034 = 1.55816013030834880E-03  + 
+RE_035 = 1.28035817557218905E-03  + 
+RE_036 = 1.19730450220656057E-03  + 
+RE_037 = 1.03201504831295634E-03  + 
+RE_038 = 8.56696440864873903E-04  + 
+RE_039 = 8.28978072299901597E-04  + 
+RE_040 = 7.49261425900030068E-04  + 
+RE_041 = 7.18155781570989729E-04  + 
+RE_042 = 6.62619274080574784E-04  + 
+RE_043 = 5.92641362250809732E-04  + 
+RE_044 = 3.47893549512792092E-04  + 
+RE_045 = 4.09851956632241118E-04  - 
+RE_046 = 2.84326765624245156E-04  + 
+RE_047 = 1.91654642294478405E-04  + 
+RE_048 = 1.66446167138760052E-04  + 
+RE_049 = 1.57008455553112091E-04  + 
+RE_050 = 1.80852877384731934E-04  - 
+RE_051 = 1.55066889663981329E-04  + 
+RE_052 = 1.14205012626644137E-04  + 
+RE_053 = 1.03112775722728251E-04  + 
+RE_054 = 9.20301877034866359E-05  + 
+Cext	= 24.730049767265829
+Qext	= 3.589038158772579
+Cabs	= 2.9906572064701008e-18
+Qabs	= 4.340299730426344e-19
+	Command being timed: "./adda_ocl -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 250 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 233.28
+	System time (seconds): 3.46
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 3:59.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6594724
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2539354
+	Voluntary context switches: 147319
+	Involuntary context switches: 1523
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA GPU log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/ocl/run114_box_g250_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs_GPU_2000Ada/adda/adda_gpu_log_N=250_exe=adda_ocl_solver=bicgstab_rep=1.log
+Removing ADDA GPU run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/ocl/run114_box_g250_m1.313
+
+==============================
+ ADDA GPU job: N=250, exe=adda_ocl, solver=bicgstab, rep=3
+==============================
+all data is saved in 'run115_box_g250_m1.313'
+box dimensions: 250x250x250
+lambda: 0.5   Dipoles/lambda: 52.3599
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 15625000
+Searching for OpenCL devices
+Using OpenCL device NVIDIA RTX 2000 Ada Generation Laptop GPU, based on NVIDIA CUDA
+Device memory: total - 7808 MB, maximum object - 1952 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing clFFT
+Total memory usage: 6303.2 MB
+OpenCL memory usage: peak total - 6700.9 MB, maximum object - 2884.0 MB
+
+here we go, calc Y
+
+CoupleConstant: 4.045070133e-08+2.164663757e-12i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60809394951159335E-01  + 
+RE_002 = 4.28137791708700088E-01  + 
+RE_003 = 2.65255200673272462E-01  + 
+RE_004 = 2.63455613070289918E-01  + 
+RE_005 = 2.37582577463905847E-01  + 
+RE_006 = 1.69963498287140691E-01  + 
+RE_007 = 1.38694019066347901E-01  + 
+RE_008 = 1.61217014572869299E-01  - 
+RE_009 = 1.31874723446725461E-01  + 
+RE_010 = 7.83377797376982321E-01  - 
+RE_011 = 1.97723891282776731E-01  -+
+RE_012 = 1.65829899259711311E-01  -+
+RE_013 = 1.22932071474261925E-01  + 
+RE_014 = 8.60583865326661340E-02  + 
+RE_015 = 7.72504454121290679E-02  + 
+RE_016 = 7.90517294477030980E-02  - 
+RE_017 = 1.36957301832684342E-01  - 
+RE_018 = 4.56018406643611540E-02  + 
+RE_019 = 3.93284631724310774E-02  + 
+RE_020 = 1.60009857179836679E-02  + 
+RE_021 = 2.00394812034151541E-02  - 
+RE_022 = 1.36648334912207129E-02  + 
+RE_023 = 1.11326066933610732E-02  + 
+RE_024 = 1.01560837353183667E-02  + 
+RE_025 = 9.65550507043470146E-03  + 
+RE_026 = 7.09094428773164587E-03  + 
+RE_027 = 6.49317213039361536E-03  + 
+RE_028 = 7.50466989116094479E-03  - 
+RE_029 = 8.58302287541415874E-03  - 
+RE_030 = 5.53413241482716631E-03  + 
+RE_031 = 2.92875376785513850E-03  + 
+RE_032 = 2.05880892062690899E-03  + 
+RE_033 = 1.62505511470521671E-03  + 
+RE_034 = 1.55816013030834880E-03  + 
+RE_035 = 1.28035817557218905E-03  + 
+RE_036 = 1.19730450220656057E-03  + 
+RE_037 = 1.03201504831295634E-03  + 
+RE_038 = 8.56696440864873903E-04  + 
+RE_039 = 8.28978072299901597E-04  + 
+RE_040 = 7.49261425900030068E-04  + 
+RE_041 = 7.18155781570989729E-04  + 
+RE_042 = 6.62619274080574784E-04  + 
+RE_043 = 5.92641362250809732E-04  + 
+RE_044 = 3.47893549512792092E-04  + 
+RE_045 = 4.09851956632241118E-04  - 
+RE_046 = 2.84326765624245156E-04  + 
+RE_047 = 1.91654642294478405E-04  + 
+RE_048 = 1.66446167138760052E-04  + 
+RE_049 = 1.57008455553112091E-04  + 
+RE_050 = 1.80852877384731934E-04  - 
+RE_051 = 1.55066889663981329E-04  + 
+RE_052 = 1.14205012626644137E-04  + 
+RE_053 = 1.03112775722728251E-04  + 
+RE_054 = 9.20301877034866359E-05  + 
+Cext	= 24.730049767265829
+Qext	= 3.589038158772579
+Cabs	= 2.9906572064701008e-18
+Qabs	= 4.340299730426344e-19
+	Command being timed: "./adda_ocl -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 250 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 236.28
+	System time (seconds): 3.71
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:02.87
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6595504
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2539358
+	Voluntary context switches: 146959
+	Involuntary context switches: 1767
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA GPU log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/ocl/run115_box_g250_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs_GPU_2000Ada/adda/adda_gpu_log_N=250_exe=adda_ocl_solver=bicgstab_rep=3.log
+Removing ADDA GPU run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/ocl/run115_box_g250_m1.313
+
+==============================
+ ADDA GPU job: N=250, exe=adda_ocl, solver=bicgstab, rep=2
+==============================
+all data is saved in 'run116_box_g250_m1.313'
+box dimensions: 250x250x250
+lambda: 0.5   Dipoles/lambda: 52.3599
+Required relative residual norm: 9.46237e-05
+Total number of occupied dipoles: 15625000
+Searching for OpenCL devices
+Using OpenCL device NVIDIA RTX 2000 Ada Generation Laptop GPU, based on NVIDIA CUDA
+Device memory: total - 7808 MB, maximum object - 1952 MB
+Calculating Green's function (Dmatrix)
+Fourier transform of Dmatrix
+Initializing clFFT
+Total memory usage: 6303.2 MB
+OpenCL memory usage: peak total - 6700.9 MB, maximum object - 2884.0 MB
+
+here we go, calc Y
+
+CoupleConstant: 4.045070133e-08+2.164663757e-12i
+x_0 = 0
+RE_000 = 1.00000000000000000E+00
+RE_001 = 5.60809394951159335E-01  + 
+RE_002 = 4.28137791708700088E-01  + 
+RE_003 = 2.65255200673272462E-01  + 
+RE_004 = 2.63455613070289918E-01  + 
+RE_005 = 2.37582577463905847E-01  + 
+RE_006 = 1.69963498287140691E-01  + 
+RE_007 = 1.38694019066347901E-01  + 
+RE_008 = 1.61217014572869299E-01  - 
+RE_009 = 1.31874723446725461E-01  + 
+RE_010 = 7.83377797376982321E-01  - 
+RE_011 = 1.97723891282776731E-01  -+
+RE_012 = 1.65829899259711311E-01  -+
+RE_013 = 1.22932071474261925E-01  + 
+RE_014 = 8.60583865326661340E-02  + 
+RE_015 = 7.72504454121290679E-02  + 
+RE_016 = 7.90517294477030980E-02  - 
+RE_017 = 1.36957301832684342E-01  - 
+RE_018 = 4.56018406643611540E-02  + 
+RE_019 = 3.93284631724310774E-02  + 
+RE_020 = 1.60009857179836679E-02  + 
+RE_021 = 2.00394812034151541E-02  - 
+RE_022 = 1.36648334912207129E-02  + 
+RE_023 = 1.11326066933610732E-02  + 
+RE_024 = 1.01560837353183667E-02  + 
+RE_025 = 9.65550507043470146E-03  + 
+RE_026 = 7.09094428773164587E-03  + 
+RE_027 = 6.49317213039361536E-03  + 
+RE_028 = 7.50466989116094479E-03  - 
+RE_029 = 8.58302287541415874E-03  - 
+RE_030 = 5.53413241482716631E-03  + 
+RE_031 = 2.92875376785513850E-03  + 
+RE_032 = 2.05880892062690899E-03  + 
+RE_033 = 1.62505511470521671E-03  + 
+RE_034 = 1.55816013030834880E-03  + 
+RE_035 = 1.28035817557218905E-03  + 
+RE_036 = 1.19730450220656057E-03  + 
+RE_037 = 1.03201504831295634E-03  + 
+RE_038 = 8.56696440864873903E-04  + 
+RE_039 = 8.28978072299901597E-04  + 
+RE_040 = 7.49261425900030068E-04  + 
+RE_041 = 7.18155781570989729E-04  + 
+RE_042 = 6.62619274080574784E-04  + 
+RE_043 = 5.92641362250809732E-04  + 
+RE_044 = 3.47893549512792092E-04  + 
+RE_045 = 4.09851956632241118E-04  - 
+RE_046 = 2.84326765624245156E-04  + 
+RE_047 = 1.91654642294478405E-04  + 
+RE_048 = 1.66446167138760052E-04  + 
+RE_049 = 1.57008455553112091E-04  + 
+RE_050 = 1.80852877384731934E-04  - 
+RE_051 = 1.55066889663981329E-04  + 
+RE_052 = 1.14205012626644137E-04  + 
+RE_053 = 1.03112775722728251E-04  + 
+RE_054 = 9.20301877034866359E-05  + 
+Cext	= 24.730049767265829
+Qext	= 3.589038158772579
+Cabs	= 2.9906572064701008e-18
+Qabs	= 4.340299730426344e-19
+	Command being timed: "./adda_ocl -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 -init_field zero -grid 250 -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
+	User time (seconds): 239.50
+	System time (seconds): 3.63
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:05.80
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 6594272
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 2539354
+	Voluntary context switches: 146217
+	Involuntary context switches: 1986
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 64
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0
+Moving ADDA GPU log file: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/ocl/run116_box_g250_m1.313/log -> /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/logs_GPU_2000Ada/adda/adda_gpu_log_N=250_exe=adda_ocl_solver=bicgstab_rep=2.log
+Removing ADDA GPU run directory: /home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper/adda/src/ocl/run116_box_g250_m1.313
+./run_GPU_random_and_extract.sh: ligne 312: fin de fichier (EOF) prématurée lors de la recherche du « " » correspondant
