@@ -334,6 +334,60 @@ def grouped_stacked_bars_with_overlay_ax(
                         va="bottom",
                         fontsize=annotate_fontsize,
                     )
+    oom_gpu_label = "RTX 2000 Ada"
+    oom_series = ("IFDDA DP", "IFDDA SP")
+
+    # ------------------------------------------------------------
+    # OUT OF MEMORY markers (empty bars + text) for missing IFDDA data on RTX 2000 Ada
+    # ------------------------------------------------------------
+    if title == r"n_x=250":
+        if oom_gpu_label in x_labels:
+            oom_idx = x_labels.index(oom_gpu_label)
+
+            # hauteur "raisonnable" pour le rectangle : basée sur le max total visible
+            max_total = 0.0
+            for s in series_names:
+                arr = np.array(total_series[s], dtype=float)
+                arr = np.nan_to_num(arr, nan=0.0)
+                if arr.size > 0:
+                    max_total = max(max_total, float(np.max(arr)))
+
+            # fallback si tout est 0
+            if max_total <= 0:
+                max_total = 1.0
+
+            oom_h = 0.9 * max_total  # rectangle pas trop haut (ajuste si tu veux)
+            oom_y = 0.0
+
+            for s in oom_series:
+                if s not in bar_positions:
+                    continue
+
+                xi = float(bar_positions[s][oom_idx])
+
+                # rectangle vide (barre "fantôme")
+                rect = plt.Rectangle(
+                    (xi - width * 0.5, oom_y),
+                    width,
+                    oom_h,
+                    fill=False,
+                    linewidth=1.2,
+                    edgecolor="black",
+                    zorder=7,
+                )
+                ax.add_patch(rect)
+
+                # texte au centre
+                ax.text(
+                    xi,
+                    oom_y + 0.5 * oom_h,
+                    "OUT OF\nMEMORY",
+                    ha="center",
+                    va="center",
+                    fontsize=8,
+                    rotation=0,
+                    zorder=8,
+                )
 
     # --- X ticks: align labels with the chosen series (e.g. "IFDDA SP") ---
     if xtick_series is not None and xtick_series in bar_positions:
@@ -345,8 +399,6 @@ def grouped_stacked_bars_with_overlay_ax(
     ax.set_xticks(xtick_positions)
     ax.set_xticklabels(x_labels, rotation=15, ha="right")
     ax.set_ylabel(ylabel)
-    if title:
-        ax.set_title(title, pad=6)
 
 
 # -------------------------------------------------------------------
@@ -746,7 +798,7 @@ def main():
     # (b) N=250
     grouped_stacked_bars_with_overlay_ax(
         ax=ax_bot,
-        title=r"",
+        title=r"n_x=250",
         x_labels=x_labels_250,
         solver_series=solver_250,
         total_series=total_250,

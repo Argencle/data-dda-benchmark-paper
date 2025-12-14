@@ -1,6 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
+import matplotlib.patches as mpatches
 from matplotlib.colors import to_rgb
 
 
@@ -238,6 +239,53 @@ def grouped_stacked_bars_ax(
                         fontsize=annotate_fontsize,
                         color="black",
                     )
+        # ------------------------------------------------------------
+    # OUT OF MEMORY markers for RTX 2000 Ada
+    # ------------------------------------------------------------
+    oom_gpu_label = "RTX 2000 Ada"
+    oom_series = ("OCL BiCG", "OCL_BLAS BiCG")
+    if title == 'n_x=250':
+        if oom_gpu_label in x_labels:
+            oom_idx = x_labels.index(oom_gpu_label)
+
+            # hauteur visible basée sur les max des totaux
+            max_total = 0.0
+            for ss in series_names:
+                arr = np.array(total_series[ss], dtype=float)
+                arr = np.nan_to_num(arr, nan=0.0)
+                if arr.size > 0:
+                    max_total = max(max_total, float(np.max(arr)))
+
+            if max_total <= 0:
+                max_total = 1.0
+
+            oom_h = 0.9 * max_total   # hauteur du rectangle
+            oom_y = 0.0
+
+            for ss in oom_series:
+                xi = float(bar_positions[ss][oom_idx])
+
+                rect = mpatches.Rectangle(
+                    (xi - width * 0.5, oom_y),
+                    width,
+                    oom_h,
+                    fill=False,
+                    linewidth=1.2,
+                    edgecolor="black",
+                    zorder=7,
+                )
+                ax.add_patch(rect)
+
+                ax.text(
+                    xi,
+                    oom_y + 0.5 * oom_h,
+                    "OUT OF\nMEMORY",
+                    ha="center",
+                    va="center",
+                    rotation=0,
+                    fontsize=8,
+                    zorder=8,
+                )
 
     if xtick_series is not None and xtick_series in bar_positions:
         xtick_positions = bar_positions[xtick_series]
@@ -247,8 +295,6 @@ def grouped_stacked_bars_ax(
     ax.set_xticks(xtick_positions)
     ax.set_xticklabels(x_labels, rotation=15, ha="right")
     ax.set_ylabel(ylabel)
-    if title:
-        ax.set_title(title, pad=6)
 
 
 # -------------------------------------------------------------------
@@ -495,7 +541,7 @@ def main():
     # (b) N=250
     grouped_stacked_bars_ax(
         ax=ax_bot,
-        title=r"",
+        title=r"n_x=250",
         x_labels=x_labels_250,
         solver_series=solver_250,
         total_series=total_250,
