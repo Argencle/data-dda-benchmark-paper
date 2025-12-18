@@ -356,7 +356,9 @@ def grouped_stacked_bars_with_overlay_ax(
             if max_total <= 0:
                 max_total = 1.0
 
-            oom_h = 0.9 * max_total  # rectangle pas trop haut (ajuste si tu veux)
+            oom_h = (
+                0.9 * max_total
+            )  # rectangle pas trop haut (ajuste si tu veux)
             oom_y = 0.0
 
             for s in oom_series:
@@ -523,9 +525,13 @@ def get_ifdda_times(df_ifdda, N, gpu_label, precision, omp):
     solver_mean, total_mean  (floats or np.nan if no data)
     """
     if precision.lower() == "dp":
-        exe_names = ["ifdda_gpu", "ifdda_GPU"]
+        exe_names = [
+            "ifdda_gpu",
+        ]
     else:
-        exe_names = ["ifdda_gpu_sp", "ifdda_GPU_single"]
+        exe_names = [
+            "ifdda_gpu_sp",
+        ]
 
     mask = (
         (df_ifdda["n"] == N)
@@ -547,6 +553,27 @@ def get_ifdda_times(df_ifdda, N, gpu_label, precision, omp):
     solver_mean = sub["solver_time"].mean()
     total_mean = sub["total_time"].mean()
 
+    solver_std = sub["solver_time"].std(ddof=1)
+    total_std = sub["total_time"].std(ddof=1)
+
+    # coefficient de variation (CV) en %
+    solver_cv_pct = (
+        100 * solver_std / solver_mean if solver_mean != 0 else np.nan
+    )
+    total_cv_pct = 100 * total_std / total_mean if total_mean != 0 else np.nan
+
+    print(
+        f"Mean IFDDA solver time: {solver_mean:.1f} with std: {solver_cv_pct:.2f}"
+    )
+    print(
+        f"Mean IFDDA total time: {total_mean:.1f} with std: {total_cv_pct:.2f}"
+    )
+    with open("Figure3_mean_std_ifdda.txt", "a") as f:
+        f.write(
+            f"{N},{gpu_label},{precision},{omp},{solver_mean:.1f},{solver_cv_pct:.2f},{total_mean:.1f},{total_cv_pct:.2f}\n"
+        )
+    if solver_cv_pct > 5.0 or total_cv_pct > 5.0:
+        print(sub)
     return solver_mean, total_mean
 
 
@@ -570,6 +597,7 @@ def get_adda_times(df_adda, N, gpu_label):
         (df_adda["n"] == N)
         & (df_adda["gpu_label"] == gpu_label)
         & (df_adda["exe"].isin(exe_names))
+        & (df_adda["solver"] == "bicgstab")
     )
 
     sub = df_adda.loc[mask]
@@ -604,8 +632,38 @@ def get_adda_times(df_adda, N, gpu_label):
     total_mean = sub[total_col].mean()
     if matvec_col is not None:
         matvec_mean = sub[matvec_col].mean()
+        matvec_std = sub[matvec_col].std(ddof=1)
     else:
         matvec_mean = np.nan
+        matvec_std = np.nan
+
+    solver_std = sub["solver_time"].std(ddof=1)
+    total_std = sub[total_col].std(ddof=1)
+
+    # coefficient de variation (CV) en %
+    matvec_cv_pct = (
+        100 * matvec_std / matvec_mean if matvec_mean != 0 else np.nan
+    )
+    solver_cv_pct = (
+        100 * solver_std / solver_mean if solver_mean != 0 else np.nan
+    )
+    total_cv_pct = 100 * total_std / total_mean if total_mean != 0 else np.nan
+
+    print(
+        f"Mean ADDA matvec time: {matvec_mean:.1f} with std: {matvec_cv_pct:.2f}"
+    )
+    print(
+        f"Mean ADDA solver time: {solver_mean:.1f} with std: {solver_cv_pct:.2f}"
+    )
+    print(
+        f"Mean ADDA total time: {total_mean:.1f} with std: {total_cv_pct:.2f}"
+    )
+    with open("Figure3_mean_std_adda.txt", "a") as f:
+        f.write(
+            f"{N},{gpu_label},{matvec_mean:.1f},{matvec_cv_pct:.2f},{solver_mean:.1f},{solver_cv_pct:.2f},{total_mean:.1f},{total_cv_pct:.2f}\n"
+        )
+    if (solver_cv_pct > 5.0) or (total_cv_pct > 5.0):
+        print(sub)
 
     return solver_mean, total_mean, matvec_mean
 
@@ -627,6 +685,15 @@ def main():
         "RTX 6000 Ada",
         "RTX 2000 Ada",
     ]
+
+    with open("Figure3_mean_std_ifdda.txt", "a") as f:
+        f.write(
+            "N,GPU,Precision,OMP,SolverMean,SolverCVpct,TotalMean,TotalCVpct\n"
+        )
+    with open("Figure3_mean_std_adda.txt", "a") as f:
+        f.write(
+            "N,GPU,MatvecMean,MatvecCVpct,SolverMean,SolverCVpct,TotalMean,TotalCVpct\n"
+        )
 
     baseline_omp = 1  # baseline (bar filled)
     overlay_omp = 10  # 10-core overlay line
@@ -814,7 +881,7 @@ def main():
     )
 
     plt.tight_layout()
-    plt.savefig("Figure3.pdf", dpi=300, bbox_inches="tight")
+    plt.savefig("Figure3_cdm27.pdf", dpi=300, bbox_inches="tight")
     plt.show()
 
 

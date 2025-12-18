@@ -23,7 +23,7 @@ source "$VENV_DIR/bin/activate"
 # Logging setup (global script log)
 ###############################################################################
 
-LOG_ROOT="$PROJECT_ROOT/logs"
+LOG_ROOT="$PROJECT_ROOT/logs_MPI_laptop"
 mkdir -p "$LOG_ROOT"
 LOG="$LOG_ROOT/run_$(date +'%Y%m%d_%H%M%S').log"
 
@@ -80,7 +80,7 @@ N_VALUES=(150 250)        # <--- change N list if needed
 ADDA_NP=(1 2 5 10 15)
 ADDA_FFT=(FFTW GPFA)      # ADDA FFT modes (binaries: adda_mpi / adda_mpi_gpfa)
 IFDDA_OMP=(1 2 5 10 15 22)
-IFDDA_EXES=(ifdda_measure ifdda)  # list of IFDDA executables
+IFDDA_EXES=(ifdda)  # list of IFDDA executables
 DDSCAT_FFT=(FFTMKL GPFAFT)
 DDSCAT_OMP=(1 2 5 10 15)
 

@@ -243,8 +243,8 @@ def grouped_stacked_bars_ax(
     # OUT OF MEMORY markers for RTX 2000 Ada
     # ------------------------------------------------------------
     oom_gpu_label = "RTX 2000 Ada"
-    oom_series = ("OCL BiCG", "OCL_BLAS BiCG")
-    if title == 'n_x=250':
+    oom_series = ("OCL_BLAS BiCG",)
+    if title == "n_x=250":
         if oom_gpu_label in x_labels:
             oom_idx = x_labels.index(oom_gpu_label)
 
@@ -259,7 +259,7 @@ def grouped_stacked_bars_ax(
             if max_total <= 0:
                 max_total = 1.0
 
-            oom_h = 0.9 * max_total   # hauteur du rectangle
+            oom_h = 0.9 * max_total  # hauteur du rectangle
             oom_y = 0.0
 
             for ss in oom_series:
@@ -407,10 +407,35 @@ def get_adda_times_combo(df_adda, N, gpu_label, exe_name, solver_name):
 
     solver_mean = sub["solver_time"].mean()
     total_mean = sub[total_col].mean()
+
     if matvec_col is not None:
         matvec_mean = sub[matvec_col].mean()
+        matvec_std = sub[matvec_col].std(ddof=1)
+        matvec_cv_pct = (
+            100 * matvec_std / matvec_mean if matvec_mean != 0 else np.nan
+        )
+        print(
+            f"Mean ADDA matvec time: {matvec_mean:.1f} with std: {matvec_cv_pct:.2f}%"
+        )
     else:
         matvec_mean = np.nan
+        matvec_std = np.nan
+        matvec_cv_pct = np.nan
+    solver_std = sub["solver_time"].std(ddof=1)
+    total_std = sub[total_col].std(ddof=1)
+    solver_cv_pct = (
+        100 * solver_std / solver_mean if solver_mean != 0 else np.nan
+    )
+    total_cv_pct = 100 * total_std / total_mean if total_mean != 0 else np.nan
+    print(
+        f"Mean ADDA solver time: {solver_mean:.1f} with std: {solver_cv_pct:.2f}%, total time: {total_mean:.1f} with std: {total_cv_pct:.2f}%"
+    )
+    with open("Appendix_mean_std_adda.txt", "a") as f:
+        f.write(
+            f"{N},{gpu_label},{exe_name},{solver_name},{matvec_mean:.1f},{matvec_cv_pct:.2f},{solver_mean:.1f},{solver_cv_pct:.2f},{total_mean:.1f},{total_cv_pct:.2f}\n"
+        )
+    if (matvec_cv_pct > 5.0) or (total_cv_pct > 5.0) or (solver_cv_pct > 5.0):
+        print(sub)
 
     return solver_mean, total_mean, matvec_mean
 
@@ -430,6 +455,11 @@ def main():
         "NVIDIA H200",
         "RTX 2000 Ada",
     ]
+
+    with open("Appendix_mean_std_adda.txt", "a") as f:
+        f.write(
+            "N,GPU,exe,solver,MatvecMean,MatvecCVpct,SolverMean,SolverCVpct,TotalMean,TotalCVpct\n"
+        )
 
     df_adda = load_adda_gpu_data()
 

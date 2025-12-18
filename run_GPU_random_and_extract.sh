@@ -14,7 +14,7 @@ IFDDA_DIR="$PROJECT_ROOT/if-dda/tests/test_command"
 # Logging setup (global script log) - GPU
 ###############################################################################
 
-LOG_ROOT="$PROJECT_ROOT/logs_GPU"
+LOG_ROOT="$PROJECT_ROOT/logs_GPU_2000Ada"
 mkdir -p "$LOG_ROOT"
 LOG="$LOG_ROOT/run_GPU_$(date +'%Y%m%d_%H%M%S').log"
 
@@ -63,7 +63,7 @@ REPEATS=3                        # <--- change this to run each job X times
 ADDA_N_VALUES=(150 250)
 ADDA_EXES=(adda_ocl adda_ocl_blas)
 IFDDA_N=150                      # IFDDA GPU only for N=150
-IFDDA_EXES=(ifdda_GPU_single_measure ifdda_GPU_measure ifdda_GPU_single ifdda_GPU)
+IFDDA_EXES=(ifdda_gpu_sp ifdda_gpu)
 IFDDA_OMP_VALUES=(1 10)
 
 jobs=()
@@ -72,6 +72,9 @@ for rep in $(seq 1 "$REPEATS"); do
   # ADDA GPU jobs
   for N in "${ADDA_N_VALUES[@]}"; do
     for exe_name in "${ADDA_EXES[@]}"; do
+      if [ "$exe_name" = "adda_ocl_blas" ] && [ "$N" -ne 150 ]; then
+        continue
+      fi
       if [ "$exe_name" = "adda_ocl" ]; then
         solvers=(bicgstab bicg)
       else

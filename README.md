@@ -183,7 +183,7 @@ where `-Wl,-rpath,$HOME/lib64` adds `/home/…/lib64` to the binary's search tab
 
 ## On the cluster (CRIANN)
 ### DDSCAT
-1. Modify the `Makefile`
+1. Modify the `Makefile` and load `module load gcc-native/12.2`
 ```
 PRECISION       = dp
 CXFFTMKL.f      = $(MKL_f)
@@ -215,12 +215,14 @@ pip install ddscatcli
 2. Load the modules:
 - MPI:
 ```bash
+module load gcc-native/12.2
 module load cray-fftw cray-hdf5
 ```
 - GPU
-```GPU
-module load nvhpc-hpcx-cuda12/23.11
+```bash
+module load gcc-native/12.2
 module load cray-fftw cray-hdf5
+module load nvhpc-hpcx-cuda12/23.11
 ```
 3. Redo the same for `FFTW_ESTIMATE=0` but modified the Makefile to add `_measure` at the end of the executables to differentiate them
  
@@ -229,12 +231,14 @@ module load cray-fftw cray-hdf5
 2. Load the modules and compile:
 - SEQ and MPI
 ```bash
+module load gcc-native/12.2
 module load cray-fftw
 make CC=cc CF=ftn seq
 make CC=cc CF=ftn MPICC=cc mpi
 ```
 - GPU
 ```bash
+module load gcc-native/12.2
 module load cray-fftw
 module load nvhpc-byo-compiler
 module load math/clFFT/2.14.0-nvidia
