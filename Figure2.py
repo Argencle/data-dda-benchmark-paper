@@ -7,9 +7,9 @@ from matplotlib.lines import Line2D
 # ============================================================
 # 1. Input files
 # ============================================================
-ddscat_file = "logs/ddscat_results_sorted.csv"
-adda_file = "logs/adda_results_sorted.csv"
-ifdda_file = "logs/ifdda_results_sorted.csv"
+ddscat_file = "logs_MPI_laptop/ddscat_results_sorted.csv"
+adda_file = "logs_MPI_laptop/adda_results_sorted.csv"
+ifdda_file = "logs_MPI_laptop/ifdda_results_sorted.csv"
 
 # Grid sizes
 Ns = [150, 250]
@@ -111,7 +111,7 @@ for _, row in idf.iterrows():
     tsec = row["total_time"]
 
     # Here you keep only the FFTW (measure) flavor
-    if exe == "ifdda_measure":
+    if exe == "ifdda":
         method = "IFDDA (FFTW)"
     else:
         continue
@@ -415,6 +415,6 @@ fig.legend(
 )
 
 fig.tight_layout(rect=(0, 0.03, 1, 1))
-fig.savefig("Figure2.pdf", bbox_inches="tight", dpi=300)
+fig.savefig("Figure2_cdm27.pdf", bbox_inches="tight", dpi=300)
 
 plt.show()

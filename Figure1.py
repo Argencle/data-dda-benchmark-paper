@@ -72,7 +72,7 @@ for _, row in idf.iterrows():
     if pd.isna(tsec):
         continue
 
-    if exe == "ifdda_measure":
+    if exe == "ifdda":
         method = "IFDDA (FFTW)"
     else:
         continue
@@ -457,5 +457,5 @@ fig.legend(
 
 fig.tight_layout(rect=(0, 0.03, 1, 1))
 
-fig.savefig("Figure1.pdf", bbox_inches="tight", dpi=300)
+fig.savefig("Figure1_cdm27.pdf", bbox_inches="tight", dpi=300)
 plt.show()
