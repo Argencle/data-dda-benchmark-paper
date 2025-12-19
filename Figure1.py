@@ -138,9 +138,6 @@ for N in Ns:
     cores_N = sorted({k[2] for k in times_dict.keys() if k[1] == N})
     cores_per_N[N] = np.array(cores_N, dtype=int)
 
-print("Cores for n_x=150:", cores_per_N[150])
-print("Cores for n_x=250:", cores_per_N[250])
-
 # ============================================================
 # 5. Build mean/std arrays + speedups
 # ============================================================
@@ -267,6 +264,10 @@ def plot_line_with_errorbars(ax, x, y, yerr, method):
     return line
 
 
+with open("Figure1_time_mean_std.txt", "a") as log_file:
+    log_file.write("N, method, t_mean, t_std\n")
+with open("Figure1_speed_mean_std.txt", "a") as log_file:
+    log_file.write("N, method, s_mean, s_std\n")
 # ============================================================
 # 7. (a) Wall time, n_x=150
 # ============================================================
@@ -292,6 +293,8 @@ for method in method_labels:
         method,
     )
     legend_lines.setdefault(method, line)
+    with open("Figure1_time_mean_std.txt", "a") as log_file:
+        log_file.write(f"{N}, {method}, {t}, {e}\n")
 
 ax_time_150.set_ylabel("Wall-clock time (s)")
 ax_time_150.set_title(r"Grid $n_x=150$")
@@ -329,6 +332,8 @@ for method in method_labels:
         method,
     )
     legend_lines.setdefault(method, line)
+    with open("Figure1_time_mean_std.txt", "a") as log_file:
+        log_file.write(f"{N}, {method}, {t}, {e}\n")
 
 ax_time_250.set_title(r"Grid $n_x=250$")
 ax_time_250.set_xscale("log", base=5)
@@ -365,6 +370,8 @@ for method in method_labels:
         method,
     )
     legend_lines.setdefault(method, line)
+    with open("Figure1_speed_mean_std.txt", "a") as log_file:
+        log_file.write(f"{N}, {method}, {s}, {e}\n")
 
 # Ideal linear speedup (only on first few cores as in your previous script)
 ideal_150 = cores_150 / cores_150[0]
@@ -412,6 +419,8 @@ for method in method_labels:
         method,
     )
     legend_lines.setdefault(method, line)
+    with open("Figure1_speed_mean_std.txt", "a") as log_file:
+        log_file.write(f"{N}, {method}, {s}, {e}\n")
 
 ideal_250 = cores_250 / cores_250[0]
 ax_speed_250.plot(

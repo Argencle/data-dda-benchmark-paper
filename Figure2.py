@@ -212,6 +212,10 @@ CV_SPEED_MIN = 0.05  # 5%
 fig, axes = plt.subplots(2, 2, sharex="col", sharey=False)
 (ax_time_150, ax_time_250), (ax_speed_150, ax_speed_250) = axes
 
+with open("Figure2_time_mean_std.txt", "a") as log_file:
+    log_file.write("N, method, t_mean, t_std\n")
+with open("Figure2_speed_mean_std.txt", "a") as log_file:
+    log_file.write("N, method, s_mean, s_std\n")
 # ============================================================
 # 5. Panel (a): Wall time, N=150
 # ============================================================
@@ -235,6 +239,8 @@ for method in method_labels:
             capsize=3,
             linewidth=1.4,
         )
+    with open("Figure2_time_mean_std.txt", "a") as log_file:
+        log_file.write(f"{N}, {method}, {t}, {e}\n")
 
 ax_time_150.set_ylabel("Wall-clock time (s)")
 ax_time_150.set_title(r"Grid $n_x=150$")
@@ -271,6 +277,8 @@ for method in method_labels:
             capsize=3,
             linewidth=1.4,
         )
+    with open("Figure2_time_mean_std.txt", "a") as log_file:
+        log_file.write(f"{N}, {method}, {t}, {e}\n")
 
 ax_time_250.set_title(r"Grid $n_x=250$")
 ax_time_250.set_xscale("log", base=5)
@@ -307,6 +315,8 @@ for method in method_labels:
             capsize=3,
             linewidth=1.4,
         )
+    with open("Figure2_speed_mean_std.txt", "a") as log_file:
+        log_file.write(f"{N}, {method}, {s}, {e}\n")
 
 ideal_150 = cores / cores[0]
 ax_speed_150.plot(
@@ -353,6 +363,8 @@ for method in method_labels:
             capsize=3,
             linewidth=1.4,
         )
+    with open("Figure2_speed_mean_std.txt", "a") as log_file:
+        log_file.write(f"{N}, {method}, {s}, {e}\n")
 
 ideal_250 = cores / cores[0]
 ax_speed_250.plot(
