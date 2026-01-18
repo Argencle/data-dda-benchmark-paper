@@ -137,7 +137,7 @@ for line in "${shuffled_jobs[@]}"; do
         continue
       fi
 
-      ADDA_CMD="$exe -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 \
+      ADDA_CMD="$exe -shape box 1 1 -size 2387.3241463784303 -lambda 500 -m 1.313 0.0 \
         -init_field zero -grid ${N} -eps 4.024 -iter ${solver} -pol fcd -int fcd -scat dr -ntheta 10"
 
       ADDA_STDOUT="$ADDA_LOG_DIR/adda_gpu_stdout_N=${N}_exe=${exe_name}_solver=${solver}_rep=${REP}.log"
@@ -249,7 +249,7 @@ for line in "${shuffled_jobs[@]}"; do
       export OMP_NUM_THREADS="$OMP"
 
       IFDDA_CMD="$exe -object cube 2387.3241463784303 -lambda 500 \
-        -epsmulti 1.7239689999999999 0.0 \
+        -epsmulti 1.723969 0.0 \
         -ninitest 0 -nnnr ${N} -tolinit 9.46237161365793d-5 \
         -methodeit BICGSTAB -polarizability FG"
 

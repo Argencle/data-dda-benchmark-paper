@@ -699,6 +699,9 @@ def main():
     overlay_omp = 10  # 10-core overlay line
 
     df_ifdda = load_ifdda_gpu_data()
+    df_ifdda["omp"] = df_ifdda["omp"].replace(
+        2, 1
+    )  # to remove the GPU which count as one core
     df_adda = load_adda_gpu_data()
 
     # ----------------- N = 150 -----------------

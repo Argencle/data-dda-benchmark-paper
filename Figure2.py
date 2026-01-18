@@ -427,6 +427,6 @@ fig.legend(
 )
 
 fig.tight_layout(rect=(0, 0.03, 1, 1))
-fig.savefig("Figure2_cdm27.pdf", bbox_inches="tight", dpi=300)
+fig.savefig("Figure2.pdf", bbox_inches="tight", dpi=300)
 
 plt.show()

@@ -82,7 +82,7 @@ ADDA_FFT=(FFTW GPFA)      # ADDA FFT modes (binaries: adda_mpi / adda_mpi_gpfa)
 IFDDA_OMP=(1 2 5 10 15 22)
 IFDDA_EXES=(ifdda)  # list of IFDDA executables
 DDSCAT_FFT=(FFTMKL GPFAFT)
-DDSCAT_OMP=(1 2 5 10 15)
+DDSCAT_OMP=(1 2 5 10 15 22)
 
 jobs=()
 
@@ -161,7 +161,7 @@ for line in "${shuffled_jobs[@]}"; do
           ;;
       esac
 
-      ADDA_CMD="$ADDA_EXE -shape box 1 1 -size 2.3873241463784303 -lambda 0.5 -m 1.313 0.0 \
+      ADDA_CMD="$ADDA_EXE -shape box 1 1 -size 2387.3241463784303 -lambda 500 -m 1.313 0.0 \
         -init_field zero -grid ${N} -eps 4.024 -iter bicgstab -pol fcd -int fcd -scat dr -ntheta 10"
 
       ADDA_STDOUT="$ADDA_LOG_DIR/adda_stdout_N=${N}_np=${NP}_FFT=${FFT}_rep=${REP}.log"
@@ -261,7 +261,7 @@ for line in "${shuffled_jobs[@]}"; do
       export OMP_NUM_THREADS="$OMP"
 
       IFDDA_CMD="./${EXE} -object cube 2387.3241463784303 -lambda 500 \
-        -epsmulti 1.7239689999999999 0.0 \
+        -epsmulti 1.723969 0.0 \
         -ninitest 0 -nnnr ${N} -tolinit 9.46237161365793d-5 \
         -methodeit BICGSTAB -polarizability FG"
 
@@ -322,8 +322,8 @@ for line in "${shuffled_jobs[@]}"; do
 
       DDSCAT_ARGS_BASE=(
         -CSHAPE RCTGLPRSM
-        -AEFF "1.4809777061418503 1.4809777061418503 1 'LIN'"
-        -WAVELENGTHS "0.5 0.5 1 'LIN'"
+        -AEFF "1480.9777061418503 1480.9777061418503 1 'LIN'"
+        -WAVELENGTHS "500 500 1 'LIN'"
         -DIEL 'diel/m1.313_0.00'
         -MEM_ALLOW "${N} ${N} ${N}"
         -SHPAR "${N} ${N} ${N}"
