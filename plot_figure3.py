@@ -331,6 +331,8 @@ def print_cv_warnings(df, thr=0.05):
         if mask.any():
             print(f"\n[WARN] CV > {thr*100:.0f}% for {std_col}/{mean_col}:")
             print(df.loc[mask, ["N", "gpu", "code", mean_col, std_col]])
+            val = df.loc[mask, std_col] / df.loc[mask, mean_col] * 100
+            print(f"value: {val.map(lambda x: f'{x:.3f}').tolist()[0]}%")
 
 
 def main():
