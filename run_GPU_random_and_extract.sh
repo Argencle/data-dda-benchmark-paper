@@ -5,7 +5,7 @@ set -euo pipefail
 # Project setup
 ###############################################################################
 
-PROJECT_ROOT="/home/argentic@coria.fr/Bureau/Work/Data_DDA_benchmark_paper"
+PROJECT_ROOT="<Path_to_DDA_project_root>"  # <--- change this to your DDA project root directory
 
 ADDA_DIR="$PROJECT_ROOT/adda/src/ocl"
 IFDDA_DIR="$PROJECT_ROOT/if-dda/tests/test_command"

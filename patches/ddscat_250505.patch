@@ -1,0 +1,1404 @@
+diff -ruN -B ddscat7.3.4_250505/src/alphadiag.f90 ddscat7.3.4_modifs/src/alphadiag.f90
+--- ddscat7.3.4_250505/src/alphadiag.f90	2025-04-04 20:08:14.000000000 +0200
++++ ddscat7.3.4_modifs/src/alphadiag.f90	2026-02-25 14:55:32.266778593 +0100
+@@ -23,7 +23,7 @@
+          CXZC(NX+1+IPBC*(NX-1),NY+1+IPBC*(NY-1),NZ+1+IPBC*(NZ-1),6), &
+          CXZW(2*NX,2*NY,2*NZ,3),                                     &
+          CXRLOC(MXCOMP+1,3,3)
+-      INTEGER*2 ::     & 
++      INTEGER*2 ::     &
+          ICOMP(NAT,3), &
+          IOCC(NAT)
+       INTEGER ::     &
+@@ -75,7 +75,7 @@
+ !              = 'FLTRCD' for filtered coupled dipole approach
+ !                             of Gay-Balmaz & Martin (2002) and
+ !                             Yurkin, Min & Hoekstra (2010)
+-!              [= 'SCLDR' not supported in present version] 
++!              [= 'SCLDR' not supported in present version]
+ !       CMETHD = determines 3-d FFT routine used by ESELF
+ !       CSHAPE = descriptor of target shape
+ !       CXE0_TF(1-3) = polarization vector in lattice coordinates
+@@ -246,10 +246,10 @@
+ ! 11.08.03 (BTD): eliminated variable CXALDS from argument list -- not used
+ ! 11.12.20 (BTD): v7.1.1
+ !                 Dominika Dabrowska (Instituto Astrofisico de Andalucia)
+-!                 reported problem with rotations of dielectric frame when 
++!                 reported problem with rotations of dielectric frame when
+ !                 using option LATTDR
+ !                 problem has now been corrected:
+-!                 previous version of code only allowed for possible 
++!                 previous version of code only allowed for possible
+ !                 rotation of dielectric frames for option GKDLDR
+ !                 code has now been modified to also consider possible
+ !                 rotation of dielectric frames for option LATTDR
+@@ -317,8 +317,8 @@
+             SUM=SUM+(AK_TF(L)*ABS(CXE0_TF(L)))**2
+          ENDDO
+          SUM=SUM/AK2
+-         B1=-1.8915316_WP*AK2
+-         B2=(0.1648469_WP-1.7700004_WP*SUM)*AK2
++         B1=-1.8915316529870796511106114030718259_WP*AK2
++         B2=(0.1648469150877194730607936277818522_WP-1.7700004019321371908592738404451742_WP*SUM)*AK2
+          DO L=1,3
+             DO IA=1,NAT
+                IC=ICOMP(IA,L)
+@@ -380,9 +380,9 @@
+ !*** diagnostic
+ !         write(0,*)'alphadiag_v3 ckpt 6'
+ !***
+-         B1=-1.8915316_WP*AK2
+-         B2=0.1648469_WP*AK2
+-         B3=-1.7700004_WP*AK2
++         B1=-1.8915316529870796511106114030718259_WP*AK2
++         B2=0.1648469150877194730607936277818522_WP*AK2
++         B3=-1.7700004019321371908592738404451742_WP*AK2
+          DO L=1,3
+             B3L=B3*AK_TF(L)*AK_TF(L)/AK2
+             DO IA=1,NAT
+@@ -390,7 +390,7 @@
+ !*** diagnostic
+ !               write(0,fmt='(i7,i3,i3,a)')ia,l,ic,  &
+ !                    ' =ia,l,ic: alphadiag_v3 ckpt 7'
+-!*** 
++!***
+                IF(IC>0)THEN
+ 
+ !*** First compute Clausius-Mossotti polarizability:
+@@ -435,7 +435,7 @@
+          ENDIF
+ 
+ ! x = (kd)
+-! b1 = (4/3)*x^2 
++! b1 = (4/3)*x^2
+ ! b2 = (2/(3*pi))*ln[(pi-x)/(pi+x)]*x^3
+ ! B1 = b1 + b2
+ 
+@@ -455,7 +455,7 @@
+ !*** diagnostic
+ !               write(0,fmt='(i7,i3,i3,a)')ia,l,ic,  &
+ !                    ' =ia,l,ic: alphadiag_v3 ckpt 11'
+-!*** 
++!***
+                IF(IC>0)THEN
+ 
+ !*** First compute Clausius-Mossotti polarizability:
+@@ -468,7 +468,7 @@
+ 
+ !*** Radiative-reaction correction
+ !    Note that we are applying it differently from other authors
+-!    (e.g., Piller & Martin 1998, Gay-Balmaz & Martin 2002, 
++!    (e.g., Piller & Martin 1998, Gay-Balmaz & Martin 2002,
+ !    Yurkin, Min & Hoekstra 2010) who would have
+ !                 CXTERM=CXTERM/(1._WP+B1*CXTERM+CXTERM*CXRR)
+ !    whereas we write
+diff -ruN -B ddscat7.3.4_250505/src/cgcommon.f90 ddscat7.3.4_modifs/src/cgcommon.f90
+--- ddscat7.3.4_250505/src/cgcommon.f90	2014-10-31 19:50:22.000000000 +0100
++++ ddscat7.3.4_modifs/src/cgcommon.f90	2026-02-25 14:55:42.795909068 +0100
+@@ -278,8 +278,8 @@
+          ENDIF
+       ENDIF
+       RETURN
+-9000  FORMAT(1X,'iter= ',I5,' frac.err= ',0P,F11.7)
+-9001  FORMAT(1X,'iter= ',I5,' frac.err= ',0P,F11.7,' min.err=',0P,F11.7, &
++9000  FORMAT(1X,'iter= ',I5,' frac.err= ',0P,F25.16)
++9001  FORMAT(1X,'iter= ',I5,' frac.err= ',0P,F25.16,' min.err=',0P,F11.7, &
+         ' rate=',0P,F9.6)
+     END SUBROUTINE PROGRESS
+ 
+@@ -976,7 +976,7 @@
+ ! 07.08.05 (BTD) Modified for compatibility with both single or
+ !                double precision -- eliminate PARAMETER statements,
+ !                add executable statements.
+-!                Will these slow execution?? 
++!                Will these slow execution??
+ !                How often is DMACHCONS called?
+ ! 08.08.05 (BTD) Modified to use preprocessing to modify file
+ !                to use appropriate precision MACHEPS,OVERFlOW,
+diff -ruN -B ddscat7.3.4_250505/src/cisi.f90 ddscat7.3.4_modifs/src/cisi.f90
+--- ddscat7.3.4_250505/src/cisi.f90	2012-12-28 11:23:39.000000000 +0100
++++ ddscat7.3.4_modifs/src/cisi.f90	2026-02-25 14:55:48.556980441 +0100
+@@ -9,8 +9,8 @@
+ !     CI = gamma + ln(x) + \int_0^x [(cos(t)-1)/t] dt = "cosine integral"
+ 
+ !     SI = \int_0^x [sin(t)/t] dt = "sine integral"
+-! 
+-! Code adapted from Numerical Recipes in FORTRAN (2e) 
++!
++! Code adapted from Numerical Recipes in FORTRAN (2e)
+ ! by Press, Teukolsky, Vetterling, and Flannery (1994)
+ 
+ ! Arguments:
+@@ -21,8 +21,8 @@
+ 
+       INTEGER :: MAXIT
+       REAL(WP) :: EPMIN,EPS,EULER,FPMIN,PIBY2,TMIN
+-      PARAMETER(EPS=6.E-8,EULER=0.57721566_WP,MAXIT=100,  &
+-                PIBY2=1.5707963_WP,FPMIN=1.E-30,TMIN=2._WP)
++      PARAMETER(EPS=EPSILON(1.0_WP),EULER=0.57721566490153286060651209008240243_WP,MAXIT=100,  &
++                PIBY2=1.5707963267948966192313216916397514_WP,FPMIN=TINY(1.0_WP),TMIN=2._WP)
+       INTEGER :: I,K
+       REAL(WP) :: A,ERR,FACT,SGN,SU,SUMC,SUMS,T,TERM,ABSC
+       COMPLEX(WP) :: B,C,D,DEL,H
+@@ -35,7 +35,7 @@
+ 	 RETURN
+       ENDIF
+       IF(T.GT.TMIN)THEN
+-	 B=CMPLX(1._WP,T)
++	 B=CMPLX(1._WP,REAL(T,WP),KIND=WP)
+ 	 C=1._WP/FPMIN
+ 	 D=1._WP/B
+ 	 H=D
+@@ -51,7 +51,7 @@
+          CALL ERRMSG('FATAL','CISI',              &
+                      'Fatal error: failed in cisi')
+ 1	 CONTINUE
+-	 H=CMPLX(COS(T),-SIN(T))*H
++	 H=CMPLX(COS(T),-SIN(T),KIND=WP)*H
+ 	 CI=-REAL(H)
+ 	 SI=PIBY2+AIMAG(H)
+       ELSE
+diff -ruN -B ddscat7.3.4_250505/src/cxfft3_mkl.f90 ddscat7.3.4_modifs/src/cxfft3_mkl.f90
+--- ddscat7.3.4_250505/src/cxfft3_mkl.f90	2011-07-30 02:51:34.000000000 +0200
++++ ddscat7.3.4_modifs/src/cxfft3_mkl.f90	2026-02-25 14:55:53.925046937 +0100
+@@ -1,5 +1,5 @@
+       Subroutine CXFFT3_MKL(CX,MX,MY,MZ,ISIGN)
+-      USE DDPRECISION,ONLY : WP 
++      USE DDPRECISION,ONLY : WP
+ ! Library:
+ 
+       use mkl_dfti
+@@ -23,7 +23,7 @@
+       integer   lengths(3)
+       integer   strides_in(4)
+ 
+-        
++
+       integer i,j,k
+ 
+ !BTD 080605 start
+@@ -61,7 +61,7 @@
+ ! History
+ ! 080601 (ASL) first written
+ ! 080605 (BTD) modified
+-!              * IMPLICIT NONE 
++!              * IMPLICIT NONE
+ !              * initialize trig tables only when called for
+ !                new values of MX or MY or MZ
+ ! end history
+@@ -95,19 +95,19 @@
+ 
+          if(.not. DftiErrorClass(Status, DFTI_NO_ERROR)) then
+             write(0,*)'DftiCreateDescriptor, status = ',status
+-            stop'cannot create DftiDescriptor'
++            stop 'cannot create DftiDescriptor'
+          endif
+ 
+          Status = DftiSetValue(Desc_Handle, DFTI_INPUT_STRIDES, strides_in)
+          if (.not. DftiErrorClass(Status, DFTI_NO_ERROR)) then
+             write(0,*)'Dfti_input_strides, status = ',status
+-            stop'cannot create Dfti_input_strides'
++            stop 'cannot create Dfti_input_strides'
+          endif
+ 
+          Status = DftiSetValue(Desc_Handle, DFTI_OUTPUT_STRIDES, strides_in)
+          if (.not. DftiErrorClass(Status, DFTI_NO_ERROR)) then
+             write(0,*)'Dfti_output_strides, status = ',status
+-            stop'cannot create Dfti_output_strides'
++            stop 'cannot create Dfti_output_strides'
+          endif
+ 
+          Scale = 1._WP
+@@ -115,7 +115,7 @@
+          Status = DftiSetValue(Desc_Handle, DFTI_FORWARD_SCALE, Scale)
+          if (.not. DftiErrorClass(Status, DFTI_NO_ERROR)) then
+             write(0,*)'DFTI_FORWARD_SCALE status = ',Status
+-            stop'DFTI_FORWARD_SCALE'
++            stop 'DFTI_FORWARD_SCALE'
+          endif
+ 
+ !Art         scale = 1./real((mx*my*mz),WP)
+@@ -123,14 +123,14 @@
+          Status = DftiSetValue(Desc_Handle, DFTI_BACKWARD_SCALE, Scale)
+          if (.not. DftiErrorClass(Status, DFTI_NO_ERROR)) then
+             write(0,*)'DFTI_BACKWARD_SCALE status = ',Status
+-            stop'DFTI_BACKWARD_SCALE'
++            stop 'DFTI_BACKWARD_SCALE'
+          endif
+ 
+ 
+          Status = DftiCommitDescriptor( Desc_Handle )
+          if(.not. DftiErrorClass(Status, DFTI_NO_ERROR)) then
+             write(0,*)'DftiCommitDescriptor, status = ',status
+-            stop'cannot DftiCommitDescriptor'
++            stop 'cannot DftiCommitDescriptor'
+          endif
+ 
+          MXOLD = MX; MYOLD = MY; MZOLD = MZ
+@@ -138,7 +138,7 @@
+ !Art      write(0,*)'Dfti initialization done'
+       endif
+ 
+-!.......Compute 3d FFT 
++!.......Compute 3d FFT
+ 
+       if (isign .eq. -1 ) then
+ !Art     write(0,*)'DFTI_Backward_SCALE'
+@@ -146,22 +146,22 @@
+          Status = DftiComputeBackward( Desc_Handle, cx)
+          if (.not. DftiErrorClass(Status, DFTI_NO_ERROR) ) then
+             write(0,*)'DftiComputeBackward = ',Status
+-            stop'DftiComputeBackward'
++            stop 'DftiComputeBackward'
+          endif
+ !Art debug        write(62,*)'mx, my, mz = ',mx,my,mz
+ !Art debug        write(62,*)cx
+ !Art debug        stop'scsl debug'
+ 
+       else
+-        
++
+ !Art        write(0,*)'DftiComputeForward'
+ 
+          Status = DftiComputeForward( Desc_Handle, cx)
+-         if(.not. DftiErrorClass(Status, DFTI_NO_ERROR)) then 
++         if(.not. DftiErrorClass(Status, DFTI_NO_ERROR)) then
+             write(0,*)'DftiComputeForward, status = ',status
+-            stop'cannot DftiComputeForward'
++            stop 'cannot DftiComputeForward'
+          endif
+       endif   !isign test
+ 
+-       
++
+     end subroutine cxfft3_mkl
+diff -ruN -B ddscat7.3.4_250505/src/DDPOSTPROCESS.f90 ddscat7.3.4_modifs/src/DDPOSTPROCESS.f90
+--- ddscat7.3.4_250505/src/DDPOSTPROCESS.f90	2022-07-30 19:26:14.000000000 +0200
++++ ddscat7.3.4_modifs/src/DDPOSTPROCESS.f90	2026-02-25 15:13:47.569442142 +0100
+@@ -1,8 +1,8 @@
+       PROGRAM DDPOSTPROCESS
+ 
+ !---------------------------DDPOSTPROCESS v5 -----------------------------
+-! purpose: 
+-! to use subroutine READNF to read data from near-field files written 
++! purpose:
++! to use subroutine READNF to read data from near-field files written
+ ! by DDSCAT and then
+ ! postprocess as desired for visualization, etc.
+ 
+@@ -60,7 +60,7 @@
+          CXE_SCA(1:3), &
+          CXE0_TF(1:3), &
+          CXP(1:3)      !
+- 
++
+ !VTR related arrays
+       TYPE(VTR_FILE_HANDLE) :: fd
+ !VTR note that VTR graphics fields have to be in double precision
+@@ -122,13 +122,13 @@
+ !    ICOMP(1-3*NXYZ)  = composition identifier at all points
+ !                       (= 0 for vacuum)
+ !
+-! using extracted information, ddpostprocess uses simple interpolation to 
++! using extracted information, ddpostprocess uses simple interpolation to
+ ! evaluate, for each of NAB points on line:
+ !
+ !    CXE_INC(1-3)= (complex) incident E field at location (x_TF,y_TF,z_TF)
+ !    CXE_SCA(1-3)= (complex) radiated E field at location (x_TF,y_TF,z_TF)
+ !    CXP(1-3)    = (complex) polarization/d^3 at location (x_TF,y_TF,z_TF)
+-! 
++!
+ ! and, if NRFLDB=1:
+ !
+ !    CXB_INC(1-3) = (complex) incident B field at location (x_TF,y_TF,z_TF)
+@@ -145,16 +145,16 @@
+ !
+ ! If IVTR > 0, then generate VTR output files
+ !
+-!*** NB: Existing code simply writes out E and B at points along a 
++!*** NB: Existing code simply writes out E and B at points along a
+ !        straight line as a simple example with limited output.
+ !
+ !        Users who wish to write out other information for purposes
+ !        of display or analysis should go to the end of the existing
+ !        program and add additional code to write out whatever is desired
+ !        (e.g., you may want E or B at points on a 2-D plane, or 3-D volume).
+-!          
+-!---------------------------------------------------------------------- 
+-! DDPOSTPROCESS is adapted from program originally first named READE, 
++!
++!----------------------------------------------------------------------
++! DDPOSTPROCESS is adapted from program originally first named READE,
+ ! then renamed READNF.  READE was first written 2011.08.30
+ ! B.T. Draine, Princeton University Observatory
+ ! history
+@@ -246,6 +246,24 @@
+                   NX,NY,NZ,NAT0,X0,XMIN,XMAX,YMIN,YMAX,ZMIN,ZMAX,   &
+                   NAMBIENT,WAVE,AK_TF,CXE0_TF,CXB0_TF,NCOMP)        !
+ 
++      ! === Dump P everywhere on the 3D grid (P/d^3) ===
++      OPEN(UNIT=78,FILE='ddpostprocess_P3D.out')
++      WRITE(78,'(A)') '# x y z  Re(Px) Im(Px) Re(Py) Im(Py) Re(Pz) Im(Pz)'
++
++      DO JZ=1,NZ
++         DO JY=1,NY
++            DO JX=1,NX
++               IF (ICOMP(JX,JY,JZ,1) == 0) CYCLE
++                  WRITE(78,'(1X,1P3E26.16,1X,1P6E26.16)') &
++                     (JX+X0(1))*DPHYS, (JY+X0(2))*DPHYS, (JZ+X0(3))*DPHYS, &
++                     REAL(CXPOL(JX,JY,JZ,1)*DPHYS**3), AIMAG(CXPOL(JX,JY,JZ,1)*DPHYS**3), &
++                     REAL(CXPOL(JX,JY,JZ,2)*DPHYS**3), AIMAG(CXPOL(JX,JY,JZ,2)*DPHYS**3), &
++                     REAL(CXPOL(JX,JY,JZ,3)*DPHYS**3), AIMAG(CXPOL(JX,JY,JZ,3)*DPHYS**3)
++            END DO
++         END DO
++      END DO
++      CLOSE(78)
++
+ !==============================================================================
+ ! determine E_inc, E_sca, and P at points along defined track
+ 
+@@ -276,7 +294,7 @@
+       WRITE(IDVOUT,FMT='(A,1P3E11.3)')                        &
+          '>DDPOSTPROCESS: 8*pi*|<S>| for incident wave =',SNORM
+       WRITE(IDVOUT,FMT='(A,I4)')'>DDPOSTPROCESS: NRFLDB =',NRFLDB
+-!*** 
++!***
+       IF(NRFLDB==1)THEN
+ !*** diagnostic
+ !         write(0,*)'ddpostprocess_v2 ckpt 3'
+@@ -380,7 +398,7 @@
+             XTF(1)=XA+(XB-XA)*ZETA
+             XTF(2)=YA+(YB-YA)*ZETA
+             XTF(3)=ZA+(ZB-ZA)*ZETA
+-          
++
+ ! XTF is assumed to be in physical units
+ ! XTF/DPHYS is in dipole units
+ ! I + X0 = XTF/DPHYS
+@@ -441,7 +459,7 @@
+             IF(NRFLDB==0)THEN
+ 
+ ! write out total macroscopic E field at point on track
+-  
++
+                WRITE(7,FMT='(1PE10.3,1P2E11.3,0P6F10.5)')XTF,CXE
+ 
+             ELSEIF(NRFLDB==1)THEN
+@@ -500,7 +518,7 @@
+       CLOSE(7)
+       WRITE(IDVOUT,FMT='(A)')                             &
+             '>DDPOSTPROCESS: completed computing E along tracks'
+- 
++
+ ! have completed:
+ ! 1. reading data from file
+ ! 2. evaluating E_inc, E_sca, and P at points along track
+@@ -516,7 +534,7 @@
+ ! if IVTR > 0: now write VTK file for graphics
+ ! define mesh for graphics
+ 
+-!VTK supplementary arrays 
++!VTK supplementary arrays
+ ! mesh x,y,z assuming that we are on rectangular grid)
+ ! variables are dimensioned nx,ny,nz
+ 
+@@ -536,7 +554,7 @@
+       ELSE
+          WRITE(0,FMT='(A,I10)')'Fatal Error: unknown option IVTR=',IVTR
+       ENDIF
+-         
++
+ 
+ !write VTK file for graphics
+ !define mesh for graphics
+@@ -563,7 +581,7 @@
+          DO JY=1,NY
+             DO JX=1,NX
+                CXEE(1:3)=CXEINC(JX,JY,JZ,1:3)+CXESCA(JX,JY,JZ,1:3)
+-         
++
+ !intrinsic function dot_product(cx,cy)=sum(conjg(cx),cy)
+ !         vtr8(ix,iy,iz)=sqrt(sum(abs(cxee)**2))
+ 
+@@ -593,7 +611,7 @@
+          CALL VTR_WRITE_VAR(FD=fd,NAME="Poynting",VX=VTRVX,VY=VTRVY,VZ=VTRVZ)
+       ENDIF
+ 
+-! composition 
++! composition
+ ! This can be used to display nicely inhomogeneous objects
+ ! ICOMP=0 outside the target
+ 
+@@ -658,6 +676,6 @@
+ !                             total B = B_inc + B_sca
+ ! S(1:NX,1:NY,1:NZ,1:3)     = time-averaged Poynting vector, normalized
+ !                             by Poynting flux in incident wave
+- 
++
+       STOP
+     END PROGRAM DDPOSTPROCESS
+diff -ruN -B ddscat7.3.4_250505/src/DDSCAT.f90 ddscat7.3.4_modifs/src/DDSCAT.f90
+--- ddscat7.3.4_250505/src/DDSCAT.f90	2025-04-04 20:08:53.000000000 +0200
++++ ddscat7.3.4_modifs/src/DDSCAT.f90	2026-02-25 14:53:42.812419939 +0100
+@@ -31,7 +31,7 @@
+ !     parameter NRFLD set in ddscat.par
+ 
+ ! first call to DDSCAT has argument NRFLD=0
+-!               DDSCAT then reads parameters.  
++!               DDSCAT then reads parameters.
+ !                      Let NRFLD_param be the value input from ddscat.par
+ !                      If NRFLD_param = 0, then no nearfield calculation
+ !                                          set NRFLD=0
+@@ -45,7 +45,7 @@
+ ! if NRFLD=1, then make second call to DDSCAT
+ !             subroutine REAPAR will now reset NRFLD=2
+ !             DDSCAT will use stored polarizations to do nearfield calculations
+-!                      
++!
+       DATA CFLPAR_DEFAULT/'ddscat.par'/
+       CFLPAR=CFLPAR_DEFAULT
+       IF(IARGC().EQ.1)THEN
+@@ -98,7 +98,7 @@
+          WRITE(CMSGNM,FMT='(A)')                           &
+             'normal termination after nearfield calculation'
+          CALL WRIMSG('DDSCAT',CMSGNM)
+- 
++
+       ENDIF
+ 
+ ! MPI environment shutdown:
+@@ -207,7 +207,7 @@
+ !       c. Convex vector library implementation (if on Convex);
+ !    6. User may select prescription for determining dipole
+ !       polarizabilities:
+-!       a. 'LATTDR' = Lattice Dispersion Relation of 
++!       a. 'LATTDR' = Lattice Dispersion Relation of
+ !                     Draine & Goodman 1993
+ !       b. 'GKDLDR' = Lattice Dispersion Relation of
+ !                     Gutkowicz-Krusin & Draine 2004
+@@ -530,7 +530,7 @@
+ !                 * modify TARGET to set value of IANISO
+ !                 * modifications to support changes to WRITEPOL
+ ! 08.01.21 (BTD)  * add IANISO to argument list of SHARE1
+-! 08.02.01 (BTD)  * changed SHPAR(10) -> SHPAR(12) to allow up to 12 
++! 08.02.01 (BTD)  * changed SHPAR(10) -> SHPAR(12) to allow up to 12
+ !                   shape parameters to be passed to TARGET
+ ! 08.02.17 (BTD)  * add call to routine SHARE0 to share dimensioning
+ !                   information to all processes
+@@ -597,7 +597,7 @@
+ ! 10.01.28 (BTD) v7.1.0
+ !                 * when IWRKSC=0, change IORI from 0 to 1 in call to
+ !                   NAMER
+-! 10.01.30 (BTD)  * eliminate restriction against 
++! 10.01.30 (BTD)  * eliminate restriction against
+ !                   CMDFRM='TFRAME' and JPBC=0
+ ! 10.05.08 (BTD) v7.2.0
+ !                 * increase scratch space MXCXSC=12*MXN3 to support
+@@ -654,7 +654,7 @@
+ ! 12.01.30 (BTD) * add CMDSOL to argument list of WRITESCA
+ ! 12.02.12 (BTD) * add NRWORD to argument list of NEARFIELD
+ ! 12.04.21 (BTD) v7.2.1: correct MPI bugs identified by Mike Wolff
+-!                * add NAMBIENT to SHARE1 in 
++!                * add NAMBIENT to SHARE1 in
+ !                  DDSCAT.f90
+ !                  mpi_subs.f90
+ !                  mpi_fake.f90
+@@ -667,7 +667,7 @@
+ !                  but here we will be explicit).
+ ! 12.06.03 (BTD) * corrected inconsistency in argument list of WRITEPOL
+ !                  changed ISCR1,ICOMP -> ICOMP,ISCR1 to agree with WRITEPOL
+-!                  This corrects problem reported on 2012.05.17 by 
++!                  This corrects problem reported on 2012.05.17 by
+ !                  Rodrigo Alacaraz de la Osa (Univ. de Cantabria)
+ ! 12.08.02 (IYW) * add DIPINT to allow for FCD method
+ ! 12.08.11 (BTD) * move DIPINT to module DDCOMMON_0
+@@ -728,7 +728,7 @@
+ !                  will only be done once.
+ !                  With previous version, there were problems when
+ !                  MPI was used with NRFLD = 1 or 2
+-! 17.04.14 (BTD) * changed dimension 
++! 17.04.14 (BTD) * changed dimension
+ !                  SMIND1(9) -> SMIND1(16)
+ !                  SMIND1(9) -> SMIND1(16)
+ !                * concurrent changes in subroutines
+@@ -737,8 +737,8 @@
+ !                  SHARE1 (mpi_fake.f90 and mpi_subs.f90)
+ ! 19.07.10 (BTD) v7.3.3
+ !                * added IDIPINT to USE DDCOMMON_0 following suggestion
+-!                  from Fangzhou Liu 
+-!                * added CALL MPI_BCAST_INT(IDIPINT,1,0,IERR) 
++!                  from Fangzhou Liu
++!                * added CALL MPI_BCAST_INT(IDIPINT,1,0,IERR)
+ !                  and   CALL MPI_BCAST_INT(NLAR,1,0,IERR)
+ !                  following suggestions by Fangzhou Liu
+ ! 20.05.01 (BTD) * corrected handling of nearfield calculations when
+@@ -1093,7 +1093,7 @@
+ !              (i.e., for every dipole, Dielectric Frame = Target Frame)
+ !        2 for general anisotropic target, where orientation of
+ !              Dielectric Frame is specified for every dipole
+-!                                  
++!
+ ! Arrays describing target properties:
+ ! A1_TF(1-3)=direction of target axis a1 in Target Frame
+ !           =initial direction of target axis a1 in Lab Frame
+@@ -1163,7 +1163,7 @@
+ ! SCRRS1(1-NAT,3)=scratch array used by DDACCG and SCAT
+ ! SCRRS2(1-NAT)=scratch array used by SCAT
+ 
+-!12.04.16 to support OpenMP call 
++!12.04.16 to support OpenMP call
+       INTEGER NTHREADS,TID,OMP_GET_NUM_THREADS,OMP_GET_THREAD_NUM
+ !-----------------------
+ 
+@@ -1425,7 +1425,7 @@
+ ! here determine the actual size of the original target
+ 
+ !***
+-! we wish to extend volume by 
++! we wish to extend volume by
+ !    fraction SHPAR(1) in -xlab direction
+ !    fraction SHPAR(2) in +xlab direction
+ !    fraction SHPAR(3) in -ylab direction
+@@ -1446,7 +1446,7 @@
+             MXNY=JYMAX-JYMIN+1
+             MXNZ=JZMAX-JZMIN+1
+ 
+-! if CMETHD = GPFAFT, need to allow for requirement that extended NX,NY,NZ 
++! if CMETHD = GPFAFT, need to allow for requirement that extended NX,NY,NZ
+ ! be factorizable by 2,3,5
+ 
+             IF(CMDFFT=='GPFAFT')THEN
+@@ -1479,7 +1479,7 @@
+          ELSEIF(NRFLD<=1)THEN
+ 
+ ! if target has not yet been defined, need generous allocation
+-! for first call to TARGET 
++! for first call to TARGET
+ ! (allocations MXNX,MXNY,MXNZ are specified in ddscat.par)
+ 
+             MXNAT=MXNX*MXNY*MXNZ
+@@ -1493,9 +1493,9 @@
+          MB=REAL(1024**2)
+ 
+ ! STORAGE0 = estimate of storage (bytes) that is independent of target size
+-        
++
+          IF(KIND(STORAGE)==KIND(0.E0))THEN
+-            STORAGE0=37.6E6/MB     !35.0E6 MB 
++            STORAGE0=37.6E6/MB     !35.0E6 MB
+          ELSE
+             STORAGE0=41.9E6/MB    !40.0D6 MB
+          ENDIF
+@@ -1572,7 +1572,7 @@
+ 
+ !*** diagnostic
+ !         write(0,*)'ddscat ckpt 7, NRFLD=',NRFLD
+-!*** 
++!***
+          IF(NRFLD==2)THEN
+ 
+ ! With IXYZ0 allocated, we can now read more data in from the stored
+@@ -1847,7 +1847,7 @@
+ ! NAT0=number of dipoles in "real" target
+ ! Extend target to rectangular volume suitable for FFT
+ 
+-! enter EXTEND with 
++! enter EXTEND with
+ !   NX,NY,NZ = extent of physical target in x,y,z directions
+ 
+ ! 14.10.16 (BTD)
+@@ -1923,7 +1923,7 @@
+ 
+ !    IXYZ0(JA,1-3) = coordinates JX,JY,JZ of occupied lattice sites JA=1-NAT0
+ 
+-! location JX,JY,JZ in extended target corresponds to 
++! location JX,JY,JZ in extended target corresponds to
+ ! JE=NX*NY*(JZ-1)+NX*(JY-1)+JX, where JE runs from 1 to NX*NY*NZ=NAT
+ 
+ !    ICOMP(JE,1-3)  = composition for each site in extended target
+@@ -1934,7 +1934,7 @@
+ ! THETADF(JE=1-NAT) = rotation angle theta for DF in extended target
+ !    X0(1-3)        = location in TF of lattice site JX,JY,JZ=0,0,0
+ 
+-! With actual size of extended target determined, 
++! With actual size of extended target determined,
+ ! now set required values of MXNX,MXNY,MXNZ,MXNAT,MXN3 and reallocate arrays
+ ! IXYZ0,ICOMP,IOCC,ISCR1,BETADF,PHIDF,THETADF,SCRRS2
+ 
+@@ -2038,14 +2038,14 @@
+ 
+ ! 19.07.10 as noted by Fangzhou Liu, IDIPINT and NLAR need to be broadcast
+ !          IDIPINT is needed by DIRECT_CALC in every MPI process
+-      
++
+       CALL MPI_BCAST_INT(IDIPINT,1,0,IERR)
+       CALL MPI_BCAST_INT(NLAR,1,0,IERR)
+-      
++
+ !*** diagnostic
+ !      write(0,*)'ddscat ckpt 10, myid,CDESCR=',myid,CDESCR
+ !      write(0,*)'   myid,CFLEPS(1)=',myid,CFLEPS(1)
+-!***      
++!***
+ 
+       CALL SHARE0(LACE,LAXI,LCLM,LGI,LPI,LQI,                        &
+                   MXN3,MXNAT,MXNX,MXNY,MXNZ,MXPBC_SH,MXCXSC,MYID,NAT0)
+@@ -2053,7 +2053,7 @@
+ !*** diagnostic
+ !      write(0,*)'ddscat ckpt 10.1, myid,CDESCR=',myid,CDESCR
+ !      write(0,*)'   myid,CFLEPS(1)=',myid,CFLEPS(1)
+-!***      
++!***
+ 
+ !----------------------------------------------------------------
+ ! 150929 (BTD) move this out of MYID=0 section
+@@ -2167,7 +2167,7 @@
+          CALL WRIMSG('DDSCAT',CMSGNM)
+          DO J=1,NAT
+             ISCR1(J)=IOCC(J)
+-         ENDDO 
++         ENDDO
+ 
+          DEALLOCATE(IOCC)
+ 
+@@ -2344,7 +2344,7 @@
+ 
+          DO JZ=1,2*MXNZ
+             DO JY=1,2*MXNY
+-               DO JX=1,2*MXNX 
++               DO JX=1,2*MXNX
+                   CXZW(JX,JY,JZ,JJ)=(0._WP,0._WP)
+                ENDDO
+             ENDDO
+@@ -2569,7 +2569,7 @@
+          PHIMID=DEGRAD*PHIMIN
+          PHIMXD=DEGRAD*PHIMAX
+ 
+-! If JPBC=0, obtain scattering vectors and scattering pol. vectors in 
++! If JPBC=0, obtain scattering vectors and scattering pol. vectors in
+ ! Lab Frame
+ 
+          IF(JPBC==0)THEN
+@@ -2652,7 +2652,7 @@
+ 
+ !*** diagnostic
+ !         write(0,*)'DDSCAT ckpt 14, NRFLD=',nrfld
+-!*** 
++!***
+          IF(NRFLD<2)THEN
+             OPEN(UNIT=10,FILE='qtable',STATUS='UNKNOWN')
+             OPEN(UNIT=11,FILE='mtable',STATUS='UNKNOWN')
+@@ -2721,7 +2721,7 @@
+ !      write(0,*)'DDSCAT ckpt 14.6: about to call SHARE1 with myid=',myid
+ !      write(0,*)'DDSCAT ckpt 14.6: myid,CDESCR=',myid,CDESCR
+ !      write(0,*)'DDSCAT ckpt 14.6: myid,CFLEPS(1)=',myid,CFLEPS(1)
+-!*** 
++!***
+       CALL SHARE1(A1_TF,A2_TF,A3_TF,AEFFA,AK1,BETA,BETADF,BETMID,BETMXD,      &
+                   CALPHA,CBINFLAG,CDESCR,CFLEPS,CMDFFT,CMDFRM,CMDSOL,CMDTRQ,  &
+                   CSHAPE,CXE01_LF,CXE02_LF,DAEFF,DX,ENSC_LF,EM1_LF,EM2_LF,    &
+@@ -2740,7 +2740,7 @@
+ !      write(0,*)'DDSCAT ckpt 14.65, returned from SHARE1 with'
+ !      write(0,*)'DDSCAT ckpt 14.65:    CDESCR=',CDESCR
+ !      write(0,*)'DDSCAT ckpt 14.65: CFLEPS(1)=',CFLEPS(1)
+-!*** 
++!***
+ ! IWAV0,IRAD0,IORI0 were obtained from REAPAR
+ 
+       IWAV1=IWAV0+1
+@@ -2758,7 +2758,7 @@
+ 
+ !*** diagnostic
+ !            write(0,*)'DDSCAT ckpt 14.7 norichar=',norichar
+-!*** 
++!***
+             CALL NAMER(IWAV-1,IRAD0,IORI0,NORICHAR,CFLPOL1,CFLPOL2, &
+                        CFLSCA,CFLAVG,CFLE1,CFLE2,CFLEB1,CFLEB2)     !
+ 
+@@ -2844,7 +2844,7 @@
+ 
+ !*** diagnostic
+ !               write(0,*)'DDSCAT ckpt 14.8, norichar=',norichar
+-!*** 
++!***
+                CALL NAMER(IWAV-1,IRAD-1,IORI1-1,NORICHAR,CFLPOL1,CFLPOL2, &
+                           CFLSCA,CFLAVG,CFLE1,CFLE2,CFLEB1,CFLEB2)        !
+ !*** diagnostic
+@@ -2967,7 +2967,7 @@
+ !***
+                   IF(NRFLD==2)THEN
+ !*** diagnostic
+-!                     write(0,*)'DDSCAT ckpt 15.2, norichar=',norichar 
++!                     write(0,*)'DDSCAT ckpt 15.2, norichar=',norichar
+ !***
+                      CALL NAMER(IWAV-1,IRAD-1,IORI-1,NORICHAR,CFLPOL1,CFLPOL2, &
+                                 CFLSCA,CFLAVG,CFLE1,CFLE2,CFLEB1,CFLEB2)       !
+@@ -3014,9 +3014,9 @@
+ 
+ !-----------------------------------------------------------------------
+ !**** For specified target rotations BETA,THETA,PHI in the Lab Frame,
+-!     and predefined 
++!     and predefined
+ 
+-!     ENSC_LF(1-3,1-NSCAT) scattering directions in the Lab Frame 
++!     ENSC_LF(1-3,1-NSCAT) scattering directions in the Lab Frame
+ !     EM1_LF(1-3,1-NSCAT) scattered pol. vectors 1 in the Lab Frame
+ !     EM2_LF(1-3,1-NSCAT) scattered pol. vectors 2 in the Lab Frame
+ 
+@@ -3088,7 +3088,7 @@
+                         ENDDO
+                      ELSE
+ 
+-! JPBC= 1, 2, or 3: call PBCSCAVEC to calculate scattering vectors 
++! JPBC= 1, 2, or 3: call PBCSCAVEC to calculate scattering vectors
+ !                        AKS_TF,EM1_TF,EM2_TF in TF,
+ !                        ENSC_LF,EM1_LF,EM2_LF in LF
+ 
+@@ -3445,7 +3445,7 @@
+                           CXF22,PYDDX,PZDDX,XMIN,XMAX,YMIN,YMAX,ZMIN,ZMAX)     !
+ 
+                ENDIF
+-            ENDIF ! endif(NRFLD<2)   
++            ENDIF ! endif(NRFLD<2)
+          ENDDO ! end loop over IRAD
+          IRAD1=1
+ 
+@@ -3466,7 +3466,7 @@
+ !------------------------------------------------------------------------
+ ! 2012.04.22 (BTD) change deallocation of ISCR1
+ !                  problem and solution identified by M. Wolff 2012.04.21
+-!                  
++!
+ !      DEALLOCATE(ICOMP,IOCC,ISCR1,IXYZ0)
+ 
+       IF(MYID==0)THEN
+@@ -3493,7 +3493,7 @@
+          '>DDSCAT m= (',F10.5,' ,',F10.5,'), epsilon= (',F10.5,' , ',F10.5, &
+          ') :material 1',I2)                                                !
+ 9032  FORMAT(                                                                &
+-         '>DDSCAT',F12.6,' = AEFF = effective radius (physical units)',/,    &
++         '>DDSCAT',F24.16,' = AEFF = effective radius (physical units)',/,    &
+          '>DDSCAT',F12.6,' = d/aeff for this target',/,                      &
+          '>DDSCAT',F12.6,' = WAVE = wavelength in vacuo (physical units)',/, &
+          '>DDSCAT',F12.6,' = wavelength in ambient medium (phys. units)',/,  &
+diff -ruN -B ddscat7.3.4_250505/src/getfml.f90 ddscat7.3.4_modifs/src/getfml.f90
+--- ddscat7.3.4_250505/src/getfml.f90	2019-07-11 19:04:27.000000000 +0200
++++ ddscat7.3.4_modifs/src/getfml.f90	2026-02-25 14:57:58.069582367 +0100
+@@ -18,7 +18,7 @@
+ 
+       USE DDPRECISION,ONLY: WP
+       USE DDCOMMON_9,ONLY: ERRSCAL,IDVOUT2,ITERMX,ITERN
+-! v6 flatau added 
++! v6 flatau added
+       USE CGMODULE
+       IMPLICIT NONE
+ ! v6 flatau added
+@@ -37,7 +37,7 @@
+          NAT0,NAT3,NAVG,NCOMP,NLAR,NSCAT,NTIMERS,NX,NY,NZ
+ 
+       INTEGER :: MXITER
+-      INTEGER :: & 
++      INTEGER :: &
+          ITNUM(2)
+ 
+       INTEGER*2 ::    &
+@@ -130,10 +130,10 @@
+       EXTERNAL CMATVEC,DIAGL,DUMMY,MATVEC,PCSUM,PRECOND,PROGRESS,PSCNRM2
+ 
+ !***********************************************************************
+-! Function of GETFML is to 
+-! (1) obtain a solution to the scattering problem for given target 
+-!     orientation, and 
+-! (2) return the scattering function fml in preselected scattering 
++! Function of GETFML is to
++! (1) obtain a solution to the scattering problem for given target
++!     orientation, and
++! (2) return the scattering function fml in preselected scattering
+ !     directions.
+ 
+ ! Given:
+@@ -458,9 +458,9 @@
+ ! 08.05.08 (BTD): changed SCRRS1(MXNAT3) -> SCRRS1(MXNAT,3)
+ ! 08.05.12 (BTD): changed declaration of DUMMY from REAL to EXTERNAL
+ !                 as suggested by Lazanoff
+-! 08.07.16 (BTD): changed 
+-!                 ITERMX=IPAR(10) 
+-!                 -> 
++! 08.07.16 (BTD): changed
++!                 ITERMX=IPAR(10)
++!                 ->
+ !                 ITERMX=MXITER
+ !                 IPAR(10)=MXITER
+ ! 10.05.07 (PJF): ver7.2.0: added support for option GPBICG
+@@ -470,7 +470,7 @@
+ ! 11.08.03 (BTD): removed CXALOS from argument list of GETFML and
+ !                 AlPHADIAG: CXALOS never set and never used.
+ ! 11.08.16 (BTD): disable diagnostic write statements
+-!                 remove code for ONEMUL option -- 
++!                 remove code for ONEMUL option --
+ !                 we now do nearfield calculations in subroutine
+ !                 NEARFIELD
+ ! 11.08.31 (BTD): v4
+@@ -487,7 +487,7 @@
+ !                 EM2R   -> EM2_TF
+ ! 12.12.19 (BTD): v5
+ !                 correct problem for circular polarizations
+-!                 reported 2012.12.03 by Hui Zhang, 
++!                 reported 2012.12.03 by Hui Zhang,
+ !                 Dept. of Physics & Astronomy, Ohio University
+ !                 * modify calculation of cxpol for iphi>1
+ !                   original algebra worked OK for linear polarization
+@@ -629,7 +629,7 @@
+ !               jy=1+(j-1-(jz-1)*nx*ny)/nx
+ !               jx=1+(j-1-(jz-1)*nx*ny)-(jy-1)*nx
+ !               write(0,fmt='(i5,3i3,1p6e11.3)')j,jx,jy,jz, &
+-!                     cxadia(j),cxadia(j+nat),cxadia(j+2*nat) 
++!                     cxadia(j),cxadia(j+nat),cxadia(j+2*nat)
+ !            enddo
+ !            write(0,*)'getfml_v7 ckpt 7.1'
+ !***
+@@ -653,7 +653,7 @@
+ 
+ ! on return from PIM, following are defined:
+ !      IPAR(11) = itno   (Number of iterations executed)
+-!      IPAR(12) = exit status 
++!      IPAR(12) = exit status
+ !                 0: converged
+ !                -1: no convergence has been achieved
+ !                -2: soft breakdown, solution may have been found
+@@ -753,7 +753,7 @@
+ !               call smcg90ver2(cxpol_tf,cxe_tf,nat3,cxsc,mxcxsc,matvec,cg)
+ 
+ ! search directions scaled at each iteration
+-!               call srcg90ver2(cxpol_tf,cxe_tf,nat3,cxsc,mxcxsc,matvec,cg) 
++!               call srcg90ver2(cxpol_tf,cxe_tf,nat3,cxsc,mxcxsc,matvec,cg)
+ 
+ ! the error between the true solution ... minimized
+ !               call xcg90ver2(cxpol_tf,cxe_tf,nat3,cxsc,mxcxsc,matvec, &
+@@ -829,7 +829,7 @@
+ !               enddo
+ !***
+                CALL TIMEIT('PBCGS2',DTIME)
+-							   
++
+             ELSEIF(CMDSOL=='GPBICG')THEN
+ 
+ ! sanity check added by Fangzhou Liu to check NLAR
+@@ -839,7 +839,7 @@
+                         ' incompatible with GPBICG'
+                   CALL ERRMSG('FATAL','GETFML',CMSGNM)
+                ENDIF
+-               
++
+ !*** diagnostic
+ !               write(0,*)'getfml_v6 ckpt 16, myid=',myid
+ !***
+@@ -883,7 +883,8 @@
+                ITERN=ITERN+1
+ !          PRINT*, ' MULTIPLICATIONS ', MULTIPLICATIONS, TOL, TOLR, ITERN
+ !           stop ' flatau2 '
+-
++               write(0,*) ' GPBICG: ITERN=',ITERN, &
++                     ' MULTIPLICATIONS=',MULTIPLICATIONS
+                CALL TIMEIT('GPBICG',DTIME)
+ 
+             ELSEIF(CMDSOL=='QMRCCG')THEN
+@@ -903,12 +904,13 @@
+ 
+                CALL PIMQMRCG(NAT3,MATVEC,CXE_TF,NAT3,NLAR,CXPOL_TF,CXSCR1, &
+                              CXSC,MXITER,ITERN,TOL,TOLR,MULTIPLICATIONS)
+-
++               write(0,*) ' QMRCCG: ITERN=',ITERN, &
++                     ' MULTIPLICATIONS=',MULTIPLICATIONS
+                CALL TIMEIT('QMRCCG',DTIME)
+ 
+             ELSEIF(CMDSOL=='PBCGST')THEN
+ 
+-! CALL PIMSGETPAR(IPAR,SPAR,LDA,N,BLKSZ,LOCLEN,BASISDIM,NPROCS,PROCID, 
++! CALL PIMSGETPAR(IPAR,SPAR,LDA,N,BLKSZ,LOCLEN,BASISDIM,NPROCS,PROCID,
+ !                 PRECONTYPE,STOPTYPE,MAXIT,ITNO,STATUS,STEPERR,EPSILON,EXITNORM)
+ !flatau warning something is wrong with timers because they also time eself - check this
+ !we need to write better timming routine
+@@ -916,12 +918,12 @@
+ !flatau I am just hardwiring number of iterations (mxiter is not used anymore)
+ !BTD 07.08.12 minor revision
+ 
+-               NO_CG_RESTART=5
++               NO_CG_RESTART=MXITER
+                IPAR(12)=-1
+ 	       NO_CG_ITER=0
+ 
+                CALL PIMSSETPAR(IPAR,SPAR,MXN3,NAT3,NAT3,NAT3, &
+-                               10,-1,-1,1,2,NO_CG_RESTART,TOL)
++                               10,-1,-1,0,5,NO_CG_RESTART,TOL)
+ 
+                CALL CINIT(NAT3,CMPLX(0._WP,0._WP,KIND=WP),CXPOL_TF,1)
+                CALL TIMEIT('PBCGST',DTIME)
+@@ -937,7 +939,7 @@
+                      IF(ITER.GT.0)WRITE(0,*)'restart PIMZBICGSTAG: ',ITER
+ !*** diagnostic
+ !                     write(0,*)'getfml_v6 ckpt 21 : about to call pimbicgstab'
+-!*** 
++!***
+                      CALL PIMCBICGSTAB(CXPOL_TF,CXE_TF,CXSC,IPAR,SPAR,MATVEC, &
+                                        DIAGL,DUMMY,PCSUM,PSCNRM2,PROGRESS)
+                   ENDIF
+@@ -946,6 +948,7 @@
+                CALL TIMEIT('PBCGST',DTIME)
+                TIMERS(1)=DTIME
+                TIMERS(2)=REAL(NO_CG_ITER,KIND=WP)
++               write(0,*) 'BICGSTAB: ITERN', IPAR(11)
+ 	    ELSE
+                STOP 'Error -- invalid CMDSOL in getfml'
+             ENDIF
+@@ -963,7 +966,7 @@
+ !                  jy=1+(j-1-(jz-1)*nx*ny)/nx
+ !                  jx=1+(j-1-(jz-1)*nx*ny)-(jy-1)*nx
+ !                  write(0,fmt='(i5,3i3,1p6e11.3)')j,jx,jy,jz, &
+-!                        cxpol(j),cxpol(j+nat),cxpol(j+2*nat) 
++!                        cxpol(j),cxpol(j+nat),cxpol(j+2*nat)
+ !               enddo
+ !            endif ! endif(nat<301)
+ !***
+@@ -1027,7 +1030,7 @@
+ !         write(0,fmt='(A,1pe10.3)')'qabs(1)=',qabs(1)
+ !         write(0,fmt='(A,1pe10.3)')'qext(1)=',qext(1)
+ !***
+-            WRITE(IDVOUT,FMT='(A,1PE11.4,A,1PE11.4)')       &
++            WRITE(IDVOUT,FMT='(A,1PE24.16,A,1PE24.16)')       &
+                '>GETFML Q_abs =',QABS(JO),' Q_ext= ',QEXT(JO)
+ 
+ !*** diagnostic
+@@ -1147,7 +1150,7 @@
+                ENDIF
+ 
+ !*** diagnostic
+-!               write(0,*)'getfml_v6 ckpt 37, myid=',myid 
++!               write(0,*)'getfml_v6 ckpt 37, myid=',myid
+ !***
+             ENDIF !--- end IF(JPBC==0)
+          ENDDO !--- end DO J=1,IORTH for IPHI=1
+@@ -1247,7 +1250,7 @@
+ 
+          CALL TIMEIT(' EVALQ',DTIME)
+          TIMERS(7)=DTIME
+- 
++
+          QABS(1)=CABS/PIA2
+          QEXT(1)=CEXT/PIA2
+          QPHA(1)=CPHA/PIA2
+diff -ruN -B ddscat7.3.4_250505/src/gpbicg.f90 ddscat7.3.4_modifs/src/gpbicg.f90
+--- ddscat7.3.4_250505/src/gpbicg.f90	2011-07-30 02:51:36.000000000 +0200
++++ ddscat7.3.4_modifs/src/gpbicg.f90	2026-02-25 14:56:04.971183738 +0100
+@@ -48,7 +48,7 @@
+ ! History:
+ ! (PJF) = Piotr J. Flatau
+ ! May 6, 2010 - added wrmsg, converted to Fortran 90, added single/double precision kinds
+-!               corrected "40 elseif" statement such that it is on separate lines 
++!               corrected "40 elseif" statement such that it is on separate lines
+ 
+ !     .. Local Scalars ..
+ 
+@@ -248,7 +248,7 @@
+ 
+ !flatau add wrimsg call
+ !btd modify
+-           WRITE(CMSGNM,FMT='(A,I8,A,1P,E10.3)') &
++           WRITE(CMSGNM,FMT='(A,I8,A,1P,E25.16)') &
+                  'IT=',itno+1,' f.err=',residu
+            CALL WRIMSG('GPBICG',CMSGNM)
+ 
+diff -ruN -B ddscat7.3.4_250505/src/Makefile ddscat7.3.4_modifs/src/Makefile
+--- ddscat7.3.4_250505/src/Makefile	2025-04-06 17:05:52.000000000 +0200
++++ ddscat7.3.4_modifs/src/Makefile	2026-02-25 15:00:27.507425566 +0100
+@@ -111,18 +111,20 @@
+ #     sp + no MKL + no OpenMP + no MPI
+ 
+ # define the following:
+-PRECISION	= sp
+-CXFFTMKL.f	= cxfft3_mkl_fake.f90
+-CXFFTMKL.o	= cxfft3_mkl_fake.o
+-MKLM		=
+-DOMP		=
+-OPENMP		=
++PRECISION	= dp
++CXFFTMKL.f	= $(MKL_f)
++CXFFTMKL.o	= $(MKL_o)
++MKLM		= $(MKL_m)
++DOMP		= -Dopenmp
++OPENMP		= -fopenmp
+ MPI.f		= mpi_fake.f90
+ MPI.o		= mpi_fake.o
+ DMPI		=
+ FC		= gfortran
+ FFLAGS		= -O2
+-LFLAGS	 	=
++LFLAGS	 	= -L/opt/intel/oneapi/mkl/2025.0/lib \
++			  -Wl,-rpath,/opt/intel/oneapi/mkl/2025.0/lib \
++              -lmkl_gf_lp64 -lmkl_sequential -lmkl_core -lpthread -lm
+ 
+ #----------------------------------------------------------------------
+ # 2.a  g95 compiler
+diff -ruN -B ddscat7.3.4_250505/src/qmrpim2.f90 ddscat7.3.4_modifs/src/qmrpim2.f90
+--- ddscat7.3.4_250505/src/qmrpim2.f90	2011-07-30 02:51:36.000000000 +0200
++++ ddscat7.3.4_modifs/src/qmrpim2.f90	2026-02-25 14:56:10.149247853 +0100
+@@ -18,14 +18,14 @@
+ 
+ ! IMPORTANT NOTES
+ !
+-! Change DDSCAT.f90 
++! Change DDSCAT.f90
+ !         MXCXSC=10*MXN3
+-! 
++!
+ ! (PJF) NOTE: nlar needs to be handled more gracefully i.e. test should be done if NLAR is
+ ! sufficiently large. Nlar has to be at least 10 because I use 1 for vector xs and 9
+ ! vectors for conjugate gradient. This is how it was implemented by PCC and AR
+-! 
+-! Bruce - we need to discuss the nlar issue for all CG routines. 
++!
++! Bruce - we need to discuss the nlar issue for all CG routines.
+ ! it needs to be set in DDSCAT and transfered to getfml so one can add some tests
+ ! this is simple
+ 
+@@ -57,9 +57,9 @@
+ ! (AR) = A. Rahmani
+ ! February 4, 2010  P. C. Chaumet and A. Rahmani
+ ! May 6, 2010 (PJF) converted to Fortran90, introduce  DDPRECISION to
+-!                    handle single/double precision easily, 
++!                    handle single/double precision easily,
+ !                    introduced pointer/target to split work array
+-           
++
+ !     license: GNU GPL
+      USE DDPRECISION,ONLY: WP
+      IMPLICIT NONE
+@@ -76,11 +76,11 @@
+       INTEGER :: IPAR
+ !     ..
+ !     .. Local Arrays ..
+-      COMPLEX(WP) :: & 
++      COMPLEX(WP) :: &
+          B(LDA),     &
+          DOTS(4),    &
+          XI(LDA),    &
+-         XR(LDA)     
++         XR(LDA)
+       COMPLEX(WP), TARGET:: WRK(LDA,NLAR)
+       COMPLEX(WP), POINTER:: XS(:), WRK2(:,:)
+ !     ..
+@@ -101,7 +101,7 @@
+         ksi,rho,epsilon,mu,tau,dots,nou,nt,itno,maxit,tole,tol,status,steperr)
+ 
+       IF(ITNO.GT.ITLAST)THEN
+-         WRITE(CMSGNM,FMT='(A,I8,A,1P,E10.3)') &
++         WRITE(CMSGNM,FMT='(A,I8,A,1P,E25.16)') &
+               'IT=',ITNO-2,' f.err=',TOLE
+          CALL WRIMSG('QMRCCG',CMSGNM)
+          ITLAST=ITNO
+@@ -143,7 +143,7 @@
+          WRITE(CMSGNM,FMT='(A,I6,A,I6)')'IT=',ITNO,' has reached MAXIT=',MAXIT
+          CALL ERRMSG('FATAL','pimqmrcg',CMSGNM)
+       ENDIF
+-! FLATAU after all is done assign xs (solution) to xi 
++! FLATAU after all is done assign xs (solution) to xi
+      xi(1:lda)=xs(1:lda)
+     return
+     END
+diff -ruN -B ddscat7.3.4_250505/src/readnf.f90 ddscat7.3.4_modifs/src/readnf.f90
+--- ddscat7.3.4_250505/src/readnf.f90	2019-08-25 15:45:33.000000000 +0200
++++ ddscat7.3.4_modifs/src/readnf.f90	2026-02-25 15:10:04.249916446 +0100
+@@ -71,7 +71,7 @@
+ !    ZMIN,ZMAX  = z_min,z_max (physical units) for computational volume (in TF)
+ !    NAMBIENT   = refractive index of ambient medium (real)
+ !    WAVE       = wavelength **in vacuo** (physical units)
+-!    AK_TF(3)   = (k_x,k_y,k_z)*d in the Target Frame, where 
++!    AK_TF(3)   = (k_x,k_y,k_z)*d in the Target Frame, where
+ !                 (k_x,k_y,k_z) = 2*pi*NAMBIENT/WAVE = wavevector in the medium
+ !    CXE0_TF(3) = complex (E_x,E_y,E_z)_TF at (x,y,z)_TF=0 and t=0
+ !                 for the incident plane wave
+@@ -158,7 +158,7 @@
+ 
+ !              >>>>> Important Note! <<<<<
+ ! The structure of the READ statements below *must* conform to the
+-! structure of the corresponding WRITE statements in nearfield.f90 
++! structure of the corresponding WRITE statements in nearfield.f90
+ ! Any changes must be made in both modules.
+ 
+       IOBIN=17
+@@ -173,7 +173,7 @@
+ !      write(0,*)'              versnum=',versnum
+ !***
+       IF(VERSNUM.EQ.730.OR.VERSNUM.EQ.731.OR.VERSNUM.EQ.732.OR. &
+-         VERSNUM.EQ.733)THEN
++         VERSNUM.EQ.733.OR.VERSNUM.EQ.734)THEN
+ !*** diagnostic
+ !         write(0,*)'readnf ckpt 5, about to read file'
+ !***
+@@ -293,7 +293,7 @@
+                                         YMIN,YMAX,' physical units'  !
+       WRITE(IDVOUT,FMT='(A,1P2E12.4,A)')'>READNF target zmin,zmax=', &
+                                         ZMIN,ZMAX,' physical units'  !
+-                                        
++
+ ! check solution
+ ! this check neglects the off-diagonal elements of A
+ ! this will not be a valid assumption for anisotropic materials
+@@ -320,7 +320,7 @@
+                            (CXEPS(IC)+2._WP)/3._WP                  !
+                      SUMERR2=SUMERR2+CXERR*CONJG(CXERR)
+                   ENDDO
+-! count number of occupied sites as a sanity check 
++! count number of occupied sites as a sanity check
+                   J1=J1+1
+                ENDIF
+             ENDDO
+diff -ruN -B ddscat7.3.4_250505/src/writesca.f90 ddscat7.3.4_modifs/src/writesca.f90
+--- ddscat7.3.4_250505/src/writesca.f90	2020-02-23 00:12:58.000000000 +0100
++++ ddscat7.3.4_modifs/src/writesca.f90	2026-02-25 15:07:00.278253539 +0100
+@@ -197,7 +197,7 @@
+ !                changed IXYZ0(MXNAT,3) -> IXYZ0(NAT0,3)
+ ! 08.04.13 (BTD) v7.0.5
+ !                * modified format so the first two S_ij elements are
+-!                  written out with 5 sig figs instead of 4 
++!                  written out with 5 sig figs instead of 4
+ ! 08.05.09 (BTD) * added MYID to argument list
+ ! 08.05.12 (BTD) * following suggestion from Art Lazanoff, initialize
+ !                  DAEFF=0._WP and DPHYS=0._WP [WHY?]
+@@ -232,14 +232,14 @@
+ ! 12.12.23 (BTD) v6 / v7.3.0
+ !                * minor changes to formatting -- put space between
+ !                  end of number and ")"
+-! 13.03.22 (BTD) * changed 
++! 13.03.22 (BTD) * changed
+ !                  CFLAVG*15  -> CFLAVG*12
+ !                  CFLE1*15   -> CFLE1*18
+ !                  CFLE2*15   -> CFLE2*18
+ !                  CFLB1*15   -> CFLEB1*19
+ !                  CFLB2*15   -> CFLEB2*19
+-!                  CFLPOL1*17 -> CFLPOL1*20 
+-!                  CFLPOL2*17 -> CFLPOL2*20 
++!                  CFLPOL1*17 -> CFLPOL1*20
++!                  CFLPOL2*17 -> CFLPOL2*20
+ !                * added NORICHAR to argument list, and to argument list
+ !                  in call to NAMER
+ ! 14.10.13 (BTD) v9 / v7.3.1
+@@ -258,7 +258,7 @@
+ !                  Mueller matrix
+ ! 18.08.22 (BTD) * cosmetic changes to headings specified by FORMAT statements
+ !                  9092,9093,9094,9095,9096
+-! 20.02.22 (BTD) * change format statements to allow larger refractive 
++! 20.02.22 (BTD) * change format statements to allow larger refractive
+ !                  index
+ !                * change format statement to output one more digit in |m|kd
+ ! end history
+@@ -573,7 +573,7 @@
+                ENDIF
+ 
+                DO ND=1,NSCAT
+-  
++
+ ! convert scattering angles to degrees
+ 
+                   PHIND=DEGRAD*PHIN(ND)
+@@ -742,7 +742,7 @@
+                                    (QTRQSCSUM(J,2),J=1,3),                  &
+                                    (QTRQABSUM(J,2)+QTRQSCSUM(J,2),J=1,3),   &
+                                    (QAV(J),J=13,18),(QAV(J)+QAV(J+3),J=13,15)
+-                                   
++
+                ENDIF
+             ELSE
+                WRITE(8,FMT=9054)QEXSUM(2),QABSUM(2),QSCSUM(2), &
+@@ -905,7 +905,7 @@
+          '                   and ',I4,' incident polarizations')
+ 9050  FORMAT(                                                        &
+          9X,'Qext',8X,'Qabs',8X,'Qsca',6X,'g(1)=<cos>',2X,'<cos^2>', &
+-         5X,'Qbk',7X,'Qpha',/,'JO=1:',1P,4E12.4,2E11.4,E12.4)
++         5X,'Qbk',7X,'Qpha',/,'JO=1:',1P,4E24.16,2E11.4,E12.4)
+ 9051  FORMAT(9X,'Qext',7X,'Qabs',7X,'Qsca',/,'JO=1:',1P,3E12.4)
+ 9054  FORMAT('JO=2:',1P,3E12.4,/,1X,'mean:',3E12.4,/,'Qpol= ',E11.4)
+ 9055  FORMAT(                                                  &
+@@ -925,7 +925,7 @@
+          '**** Selected scattering directions ',                           &
+          ' [note: incident pol state 1 is FIXED!]',/,                      &
+          ' ND orderM orderN <|f11|^2> <|f21|^2> Re<f11*f21>',' Im<f11*f21>')
+-9070  FORMAT(I3,2F6.1,1P,2E10.3,2E11.3)
++9070  FORMAT(I3,2F6.1,1P,2E24.16,2E24.16)
+ 9080  FORMAT(                                                    &
+          12X,'Mueller matrix elements for selected scattering ', &
+          'directions in ',A12)
+@@ -1007,17 +1007,17 @@
+         7X,'S_',2I1,7X,'S_',2I1,7X,'S_',2I1,7X,'S_',2I1,7X,'S_',2I1,7X,'S_',  &
+         2I1,7X,'S_',2I1)
+ !-----------------------------------------------------------------------
+-9200  FORMAT(F6.2,F7.2,F9.5,1P,2E12.4,14E11.3)
++9200  FORMAT(F6.2,F7.2,F9.5,1P,2E24.16,14E24.16)
+ 9300  FORMAT(8X,'Qsca*g(1)   Qsca*g(2)   Qsca*g(3)   iter  mxiter',2X, &
+-        'Nsca',/,'JO=1:',1P,3E12.4,3I7)
++        'Nsca',/,'JO=1:',1P,3E24.16,3I7)
+ 9310  FORMAT(42X,' iter  mxiter')
+ 9320  FORMAT('JO=2:',1P,3E12.4,3I7,/,'mean:',1P,3E12.4)
+ 9330  FORMAT(7X,'Qtrqinc(1) Qtrqinc(2) Qtrqinc(3) ', &
+         'Qtrqsca(1) Qtrqsca(2) Qtrqsca(3) ',         &
+      &  '  Qtrq(1)    Qtrq(2)    Qtrq(3)',/,         &
+-     &  'JO=1:',1P,9E11.3)
++     &  'JO=1:',1P,9E24.16)
+ 9335  FORMAT('JO=2:',1P,9E11.3,/,'mean:',1P,9E11.3)
+-9350  FORMAT('(dC_ext/dLength) / lambda =',1PE12.4) 
++9350  FORMAT('(dC_ext/dLength) / lambda =',1PE12.4)
+ 9399  FORMAT('*** need to figure out what we want to print for total cross section/unit length for JPBC=1,2 ***')
+ 9550  FORMAT(' absorption coeff.  iter  mxiter',/,1X,'JO=1: ',1PE11.4,2I6)
+ 9551  FORMAT('JO=2: ',1PE11.4,2I6,/,'mean: ',1PE11.4)
+diff -ruN -B ddscat7.3.4_250505/src/zbcg2wp.f90 ddscat7.3.4_modifs/src/zbcg2wp.f90
+--- ddscat7.3.4_250505/src/zbcg2wp.f90	2014-10-30 20:56:53.000000000 +0100
++++ ddscat7.3.4_modifs/src/zbcg2wp.f90	2026-02-25 14:56:24.268422637 +0100
+@@ -22,9 +22,9 @@
+ ! This is the "vanilla" version of BiCGstab(\ell) as described
+ ! in PhD thesis of D.R.Fokkema, Chapter 3 (also available as
+ ! Preprint 976, Dept. of Mathematics, Utrecht University, URL
+-! http://www.math.uu.nl/publications/).  It includes two enhancements 
++! http://www.math.uu.nl/publications/).  It includes two enhancements
+ ! to BiCGstab(\ell) proposed by G.Sleijpen and H.van der Vorst in
+-! 1) G.Sleijpen and H.van der Vorst "Maintaining convergence 
++! 1) G.Sleijpen and H.van der Vorst "Maintaining convergence
+ !    properties of BiCGstab methods in finite precision arithmetic",
+ !    Numerical Algorithms, 10, 1995, pp.203-223
+ ! 2) G.Sleijpen and H.van der Vorst "Reliable updated residuals in
+@@ -32,23 +32,23 @@
+ 
+ ! {{ This code based on original work of D.R.Fokkema:
+ 
+-! subroutine zbistbl v1.1 1998    
++! subroutine zbistbl v1.1 1998
+ ! Copyright (c) 1995-1998 by D.R. Fokkema.
+-! Permission to copy all or part of this work is granted, 
+-! provided that the copies are not made or distributed 
+-! for resale, and that the copyright notice and this 
++! Permission to copy all or part of this work is granted,
++! provided that the copies are not made or distributed
++! for resale, and that the copyright notice and this
+ ! notice are retained.
+ 
+ ! }}
+ 
+-! Your bug reports, comments, etc. are welcome: 
++! Your bug reports, comments, etc. are welcome:
+ ! m.a.botchev@math.utwente.nl
+ 
+ ! ------------------------------
+ ! Description of the parameters:
+ ! ------------------------------
+ 
+-! print_resid (input) LOGICAL. If print_resid=.true. the number of 
++! print_resid (input) LOGICAL. If print_resid=.true. the number of
+ !            matrix-vector multiplications done so far and residual norm will
+ !            be printed to the standard output each iteration
+ 
+@@ -56,7 +56,7 @@
+ !            in this simple version it is required that l <= 2
+ !            l=2 is often useful for systems with nonsymmetric matrices
+ 
+-! n          (input) INTEGER size of the linear system to solve 
++! n          (input) INTEGER size of the linear system to solve
+ 
+ ! x          (input/output) COMPLEX*16 array dimension n
+ !            initial guess on input, solution on output
+@@ -68,24 +68,24 @@
+ !            to deliver y:=A*x by CALL matvec(n,x,y)
+ 
+ ! nonzero_x  (input) LOGICAL tells
+-!            BiCGstab(\ell) if the initial guess x is zero or not. 
++!            BiCGstab(\ell) if the initial guess x is zero or not.
+ !            If nonzero_x is .FALSE., initial residual equals r.h.s. vector
+ !            and one MATVEC call is avoided
+ 
+-! toler      (input/output) DOUBLE PRECISION tolerance: the iterations are 
++! toler      (input/output) DOUBLE PRECISION tolerance: the iterations are
+ !            stopped as soon as || residual ||/|| initial residual|| <= toler,
+-!            the norm is Euclidean.  On output, if info>=0, the value of 
++!            the norm is Euclidean.  On output, if info>=0, the value of
+ !            toler is set to the actually achieved residual reduction
+ 
+-! mxmatvec   (input/output) INTEGER.  On input: maximum number of matrix 
+-!            vector multiplications allowed to be done.  On output: 
+-!            if info>=0, mxmatvec is set to the actual number of matrix 
++! mxmatvec   (input/output) INTEGER.  On input: maximum number of matrix
++!            vector multiplications allowed to be done.  On output:
++!            if info>=0, mxmatvec is set to the actual number of matrix
+ !            vector multiplications done
+ 
+ ! work       (workspace) COMPLEX*16 array of dimension (n,2*l+5)
+ 
+ ! info       (output) INTEGER.  info = 0 in case of succesful computations
+-!            and 
++!            and
+ !            info = -m (<0) - means paramater number m has an illegal value
+ !            info = 1 - means no convergence achieved (stopping criterion
+ !            is not fulfilled)
+@@ -93,7 +93,7 @@
+ !            value of parameter l usually helps)
+ 
+ ! WARNING: If the iterations are ended normally (info=0 or info=1),
+-! the true residual norm is computed and returned as an output value 
++! the true residual norm is computed and returned as an output value
+ ! of the parameter toler.  The true residual norm can be slightly larger
+ ! than the projected residual norm used by the algorithm to stop the
+ ! iterations.  It may thus happen that on output info=0 but the value
+@@ -102,7 +102,7 @@
+ ! history:
+ ! 08.03.14 (BTD) added declaration of dummy array IPAR(*)
+ !                changed
+-!                CALL MATVEC(X,WORK(1:N,R),N) -> 
++!                CALL MATVEC(X,WORK(1:N,R),N) ->
+ !                CALL MATVEC(X,WORK(1:N,R),IPAR)
+ ! 08.05.12 (BTD) Following suggestion by Art Lazanoff, NASA Ames:
+ !                CALL MATVEC(X,WORK(1:N,R),IPAR)
+@@ -287,7 +287,7 @@
+ !***
+          IF(ITERN>ITERMX)CALL ERRMSG('FATAL','ZBCG2WP',' ITERN>ITERMX')
+ !-----------
+-         
++
+ ! =====================
+ ! The BiCG part ---
+ ! =====================
+@@ -342,7 +342,7 @@
+ !              write(0,fmt='(a,i5,a,1p2e11.3,a,1p2e11.3,a,1p2e11.3)') &
+ !                 'j=',j,                                             &
+ !                 ' work(j,rr)=',work(j,rr),                          &
+-!                 ' work(j,u+k-1)=',work(j,u+k-1)                   
++!                 ' work(j,u+k-1)=',work(j,u+k-1)
+ !                 ' work(j,u+k)=',work(j,u+k)
+ !           enddo
+ !***
+@@ -459,7 +459,7 @@
+ !                 write(0,*)'   work(1,r+j-1)=',  &
+ !                           work(1,r+j-1),' for r+j-1=',r+j-1
+ !                 write(0,*)'   work(1,r+i-1)=',  &
+-!                           work(1,r+i-1),' for r+i-1=',r+i-1 
++!                           work(1,r+i-1),' for r+i-1=',r+i-1
+ !              endif
+ !***
+            ENDDO
+@@ -648,7 +648,7 @@
+ !           endif
+ !        enddo
+ !***
+-        
++
+ ! y0 has changed; compute Z*y0 once more
+ 
+         ZY0=ZZERO
+@@ -683,9 +683,9 @@
+         ENDIF
+ 
+ !        IF(print_resid)PRINT *,nmatvec,' ',rnrm
+-        
++
+         IF(PRINT_RESID)THEN
+-           WRITE(CMSGNM,FMT='(A,I8,A,1P,E10.3)') &
++           WRITE(CMSGNM,FMT='(A,I8,A,1P,E25.16)') &
+                  'IT=',ITERN,' f.err=',RNRM/RNRM0
+ ! BTD 100430 why user NMATVEC?
+ !                 'IT=',NMATVEC/4,' f.err=',RNRM/RNRM0
