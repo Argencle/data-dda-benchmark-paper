@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/1106070872.svg)](https://doi.org/10.5281/zenodo.18777306)
+
 # Data Availability - DDA Benchmark Paper
 
 This repository contains the data, scripts, and figures used in the paper.
