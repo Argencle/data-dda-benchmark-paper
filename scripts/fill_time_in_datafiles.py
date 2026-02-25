@@ -23,10 +23,10 @@ def find_out_file_for_jobid(
     Find the SLURM output file corresponding to a given JOBID.
 
     It searches inside:
-        <base_dir>/<logs_subdir>/*_{JOBID}.out
+        <base_dir>/<datas>/<logs_subdir>/*_{JOBID}.out
 
     Example:
-        logs_MPI_cluster/slurm_logs/mpi_ADDA_N150_np1_FFTFFTW_rep1_1595389.out
+        datas/logs_MPI_cluster/slurm_logs/mpi_ADDA_N150_np1_FFTFFTW_rep1_1595389.out
     """
     search_dir = os.path.join(base_dir, logs_subdir)
     pattern = os.path.join(search_dir, f"*_{jobid}.out")
@@ -99,18 +99,18 @@ def fill_elapsed_in_csv(
 def main():
     JOBS = [
         (
-            "logs_MPI_cluster/adda_results_sorted.csv",
-            "logs_MPI_cluster/adda_results_filled.csv",
+            "datas/logs_MPI_cluster/adda_results_sorted.csv",
+            "datas/logs_MPI_cluster/adda_results_filled.csv",
             False,
         ),
         (
-            "logs_MPI_cluster/ddscat_results_sorted.csv",
-            "logs_MPI_cluster/ddscat_results_filled.csv",
+            "datas/logs_MPI_cluster/ddscat_results_sorted.csv",
+            "datas/logs_MPI_cluster/ddscat_results_filled.csv",
             True,
         ),
         (
-            "logs_MPI_cluster/ifdda_results_sorted.csv",
-            "logs_MPI_cluster/ifdda_results_filled.csv",
+            "datas/logs_MPI_cluster/ifdda_results_sorted.csv",
+            "datas/logs_MPI_cluster/ifdda_results_filled.csv",
             False,
         ),
     ]

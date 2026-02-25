@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
 from matplotlib.colors import to_rgb
 
-DATA = "Figures/appendix_figure_data.csv"
-OUTFIG = "Figures/Figure_Appendix.pdf"
+DATA = "datas/appendix_figure_data.csv"
+OUTFIG = "figures/Figure_Appendix.pdf"
 
 GPUS_150 = ["NVIDIA A100", "NVIDIA H200", "RTX 2000 Ada"]
 GPUS_250 = ["NVIDIA A100", "NVIDIA H200", "RTX 2000 Ada"]

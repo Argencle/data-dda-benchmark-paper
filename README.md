@@ -21,15 +21,17 @@ This repository contains the data, scripts, and figures used in the paper.
 - `patches/`
 - `patches/adda_b03d648.patch`: ADDA patch.
 - `patches/ddscat_250505.patch`: DDSCAT patch.
+- `datas/`
 - `logs_MPI_laptop/`, `logs_MPI_cluster/`: CPU/MPI results.
 - `logs_GPU_2000Ada/`, `logs_GPU_6000Ada/`, `logs_GPU_cluster/`: GPU results.
-- `Figures/`: aggregated figure datasets and final figures.
+- `*.csv`: aggregated figure datasets.
+- `scripts/`
 - `run_MPI_random_and_extract.sh`: runs MPI/CPU simulations and extracts metrics.
 - `run_GPU_random_and_extract.sh`: runs GPU simulations and extracts metrics.
 - `sort_datafiles.py`: standard sorting of result CSV files.
 - `fill_time_in_datafiles.py`: fills elapsed times (cluster/SLURM case).
 - `make_figure1_data.py`, `make_figure2_data.py`, `make_figure3_data.py`, `make_appendix_data.py`: build figure CSV datasets.
-- `plot_figure1.py`, `plot_figure2.py`, `plot_figure3.py`, `plot_appendix.py`: generate PDF figures in `Figures/`.
+- `plot_figure1.py`, `plot_figure2.py`, `plot_figure3.py`, `plot_appendix.py`: generate PDF figures in `figures/`.
 
 ## Python Requirements
 
@@ -37,7 +39,7 @@ This repository contains the data, scripts, and figures used in the paper.
 python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
-pip install pandas matplotlib
+pip install -r requirements.txt
 ```
 
 ## Reproducing Code Modifications

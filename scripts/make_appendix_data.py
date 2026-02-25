@@ -1,11 +1,15 @@
 import numpy as np
 import pandas as pd
 
-OUT = "Figures/appendix_figure_data.csv"
+OUT = "datas/appendix_figure_data.csv"
 
 SOURCES = [
-    ("logs_GPU_cluster/adda_gpu_results_sorted.csv", "cluster", None),
-    ("logs_GPU_2000Ada/adda_gpu_results_sorted.csv", "single", "RTX 2000 Ada"),
+    ("datas/logs_GPU_cluster/adda_gpu_results_sorted.csv", "cluster", None),
+    (
+        "datas/logs_GPU_2000Ada/adda_gpu_results_sorted.csv",
+        "single",
+        "RTX 2000 Ada",
+    ),
 ]
 
 PARTITION_TO_GPU = {

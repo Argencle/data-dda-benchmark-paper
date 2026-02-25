@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 
-OUT = "Figures/figure3_data.csv"
+OUT = "datas/figure3_data.csv"
 
 NS = [150, 250]
 GPUS = ["NVIDIA A100", "NVIDIA H200", "RTX 6000 Ada", "RTX 2000 Ada"]
@@ -10,19 +10,23 @@ BASELINE_OMP = 1
 OVERLAY_OMP = 10
 
 IFDDA_SOURCES = [
-    ("logs_GPU_cluster/ifdda_gpu_results_sorted.csv", "cluster", None),
-    ("logs_GPU_6000Ada/ifdda_gpu_results.csv", "single", "RTX 6000 Ada"),
+    ("datas/logs_GPU_cluster/ifdda_gpu_results_sorted.csv", "cluster", None),
+    ("datas/logs_GPU_6000Ada/ifdda_gpu_results.csv", "single", "RTX 6000 Ada"),
     (
-        "logs_GPU_2000Ada/ifdda_gpu_results_sorted.csv",
+        "datas/logs_GPU_2000Ada/ifdda_gpu_results_sorted.csv",
         "single",
         "RTX 2000 Ada",
     ),
 ]
 
 ADDA_SOURCES = [
-    ("logs_GPU_cluster/adda_gpu_results_sorted.csv", "cluster", None),
-    ("logs_GPU_6000Ada/adda_gpu_results.csv", "single", "RTX 6000 Ada"),
-    ("logs_GPU_2000Ada/adda_gpu_results_sorted.csv", "single", "RTX 2000 Ada"),
+    ("datas/logs_GPU_cluster/adda_gpu_results_sorted.csv", "cluster", None),
+    ("datas/logs_GPU_6000Ada/adda_gpu_results.csv", "single", "RTX 6000 Ada"),
+    (
+        "datas/logs_GPU_2000Ada/adda_gpu_results_sorted.csv",
+        "single",
+        "RTX 2000 Ada",
+    ),
 ]
 
 PARTITION_TO_GPU = {

@@ -4,8 +4,8 @@ import pandas as pd
 from matplotlib.lines import Line2D
 from matplotlib.colors import to_rgb
 
-DATA = "Figures/figure3_data.csv"
-OUTFIG = "Figures/Figure3.pdf"
+DATA = "datas/figure3_data.csv"
+OUTFIG = "figures/Figure3.pdf"
 
 CV_PRINT_THR = 0.05  # 5%
 
