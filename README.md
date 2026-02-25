@@ -2,6 +2,11 @@
 
 This repository contains the data, scripts, and figures used in the paper.
 
+## Related Repository
+
+The benchmark software used in this work is available at:
+- https://github.com/Argencle/dda-bench.git
+
 ## License
 
 - Source code is licensed under the MIT License.
