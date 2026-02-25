@@ -2,6 +2,11 @@
 
 This repository contains the data, scripts, and figures used in the paper.
 
+## License
+
+- Source code is licensed under the MIT License.
+- Data and figures are licensed under CC-BY-4.0.
+
 ## Repository Purpose
 
 - Provide the raw benchmark results (logs + CSV) used in the paper.
