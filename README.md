@@ -74,19 +74,19 @@ Then compile DDSCAT.
 If raw CSV files are already present:
 
 ```bash
-python sort_datafiles.py
-python fill_time_in_datafiles.py
-python make_figure1_data.py
-python make_figure2_data.py
-python make_figure3_data.py
-python make_appendix_data.py
-python plot_figure1.py
-python plot_figure2.py
-python plot_figure3.py
-python plot_appendix.py
+python scripts/sort_datafiles.py
+python scripts/fill_time_in_datafiles.py
+python scripts/make_figure1_data.py
+python scripts/make_figure2_data.py
+python scripts/make_figure3_data.py
+python scripts/make_appendix_data.py
+python scripts/plot_figure1.py
+python scripts/plot_figure2.py
+python scripts/plot_figure3.py
+python scripts/plot_appendix.py
 ```
 
-Outputs are written to `Figures/`.
+Outputs are written to `figures/`.
 
 ## Notes
 
