@@ -26,7 +26,7 @@ def find_out_file_for_jobid(
         <base_dir>/<datas>/<logs_subdir>/*_{JOBID}.out
 
     Example:
-        datas/logs_MPI_cluster/slurm_logs/mpi_ADDA_N150_np1_FFTFFTW_rep1_1595389.out
+        datas/logs_MPI_cluster/outputs/slurm_logs/mpi_ADDA_N150_np1_FFTFFTW_rep1_1595389.out
     """
     search_dir = os.path.join(base_dir, logs_subdir)
     pattern = os.path.join(search_dir, f"*_{jobid}.out")
@@ -75,6 +75,14 @@ def fill_elapsed_in_csv(
     """
     df = pd.read_csv(csv_path)
 
+    if "elapsed_time" in df.columns:
+        df["elapsed_time"] = df["elapsed_time"].astype("string")
+    else:
+        df["elapsed_time"] = pd.Series(pd.NA, index=df.index, dtype="string")
+
+    if add_elapsed_seconds and "elapsed_seconds" not in df.columns:
+        df["elapsed_seconds"] = pd.Series(pd.NA, index=df.index, dtype="Int64")
+
     base_dir = os.path.dirname(os.path.abspath(csv_path))
 
     for idx, row in df.iterrows():
@@ -99,17 +107,17 @@ def fill_elapsed_in_csv(
 def main():
     JOBS = [
         (
-            "datas/logs_MPI_cluster/adda_results_sorted.csv",
+            "datas/logs_MPI_cluster/outputs/adda_results_sorted.csv",
             "datas/logs_MPI_cluster/adda_results_filled.csv",
             False,
         ),
         (
-            "datas/logs_MPI_cluster/ddscat_results_sorted.csv",
+            "datas/logs_MPI_cluster/outputs/ddscat_results_sorted.csv",
             "datas/logs_MPI_cluster/ddscat_results_filled.csv",
             True,
         ),
         (
-            "datas/logs_MPI_cluster/ifdda_results_sorted.csv",
+            "datas/logs_MPI_cluster/outputs/ifdda_results_sorted.csv",
             "datas/logs_MPI_cluster/ifdda_results_filled.csv",
             False,
         ),
