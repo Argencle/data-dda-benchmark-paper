@@ -2,7 +2,7 @@
 
 # Data Availability - DDA Benchmark Paper
 
-This repository contains the data, scripts, and figures used in the paper.
+This repository contains the data, scripts, and figures used in the [paper](https://arxiv.org/abs/2603.02871).
 
 ## Related Repository
 
@@ -138,3 +138,18 @@ python scripts/plot_appendix.py
 ```
 
 Outputs are written to `figures/`.
+
+## Citation
+
+If you use this dataset, please cite the dataset archive and the associated paper.
+
+### Dataset
+
+Argentin, C., & Chaumet, P. C., (2026). *data-dda-benchmark-paper*. Zenodo.  
+https://doi.org/10.5281/zenodo.18847515
+
+### Paper
+
+Argentin, C., Chaumet, P. C., Gross, M., & Yurkin, M. A. (2026).  
+*Floating-point--consistent cross-verification methodology for reproducible and interoperable DDA solvers with fair benchmarking*.  
+arXiv:2603.02871
