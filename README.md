@@ -2,7 +2,7 @@
 
 # Data Availability - DDA Benchmark Paper
 
-This repository contains the data, scripts, and figures used in the [paper](https://arxiv.org/abs/2603.02871).
+This repository contains the data, scripts, and figures used in the [paper](https://doi.org/10.1016/j.cpc.2026.110172).
 
 ## Related Repository
 
@@ -152,4 +152,4 @@ If you use this dataset, please cite the dataset archive and the associated pape
 
 > Argentin, C., Chaumet, P. C., Gross, M., & Yurkin, M. A. (2026).  
 > *Floating-point--consistent cross-verification methodology for reproducible and interoperable DDA solvers with fair benchmarking*.  
-> [arXiv:2603.02871]( https://doi.org/10.48550/arXiv.2603.02871)
+> [Computer Physics Communications](https://doi.org/10.1016/j.cpc.2026.110172)
