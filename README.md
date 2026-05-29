@@ -1,4 +1,4 @@
-[![DOI](https://zenodo.org/badge/1106070872.svg)](https://doi.org/10.5281/zenodo.18777306)
+[![DOI](https://zenodo.org/badge/1106070872.svg)](https://zenodo.org/badge/latestdoi/1106070872)
 
 # Data Availability - DDA Benchmark Paper
 
@@ -141,12 +141,14 @@ Outputs are written to `figures/`.
 
 ## Citation
 
-If you use this dataset, please cite the dataset archive and the associated paper.
+If you use this dataset, please cite both the archived dataset version on Zenodo and the associated paper.
 
 ### Dataset
 
-> Argentin, C., & Chaumet, P. C., (2026). *data-dda-benchmark-paper*. Zenodo.  
-> https://doi.org/10.5281/zenodo.18847515
+> Argentin, C., & Chaumet, P. C., (2026). *data-dda-benchmark-paper* (vX.Y.Z). Zenodo.  
+> https://doi.org/10.5281/zenodo.18777306
+
+Please replace `vX.Y.Z` with the exact release version used.
 
 ### Paper
 
